@@ -53,7 +53,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .section-subtitle { font-size: 1.0625rem; color: var(--gray-500); max-width: 600px; margin: 0 auto; }
 
 /* ── Buttons ──────────────────────────────────────────────── */
-.btn { display: inline-flex; align-items: center; gap: 8px; font-family: inherit; font-weight: 600; border-radius: 100px; transition: var(--transition); cursor: pointer; white-space: nowrap; }
+.btn { display: inline-flex; align-items: center; gap: 8px; font-family: inherit; font-weight: 600; border-radius: 100px; transition: var(--transition); cursor: pointer; white-space: nowrap; user-select: none; -webkit-tap-highlight-color: transparent; }
+.btn:active { transform: scale(0.96); }
 .btn--whatsapp { background: var(--wa-green); color: #fff; }
 .btn--whatsapp:hover { background: var(--wa-dark); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(37,211,102,.35); }
 .btn--outline { border: 2px solid var(--teal); color: var(--teal); background: transparent; }
@@ -72,10 +73,9 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .btn-add-request.added { pointer-events: none; }
 
 /* ── Scroll Reveal ────────────────────────────────────────── */
-.fade-in { opacity: 0; transform: translateY(28px); transition: opacity .6s ease, transform .6s ease; }
-.fade-in.visible { opacity: 1; transform: none; }
-
-/* ══════════════════════════════════════════════════════════
+.fade-in { opacity: 0; transform: translateY(20px); transition: opacity .6s cubic-bezier(0.4, 0, 0.2, 1), transform .6s cubic-bezier(0.4, 0, 0.2, 1); will-change: opacity, transform; }
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+@media (prefers-reduced-motion: reduce) { .fade-in { transition: none; opacity: 1; transform: none; } }══════════════════════════════════════════════════════
    HEADER
 ══════════════════════════════════════════════════════════ */
 .header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; height: var(--header-h); background: rgba(255,255,255,.95); backdrop-filter: blur(12px); border-bottom: 1px solid var(--gray-300); transition: box-shadow var(--transition); }
@@ -154,8 +154,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .tab { font-size: .875rem; font-weight: 600; padding: 10px 22px; border-radius: 100px; color: var(--gray-500); transition: var(--transition); }
 .tab:hover { color: var(--teal); background: var(--teal-xlight); }
 .tab.tab--active { background: var(--teal); color: #fff; box-shadow: 0 4px 12px rgba(13,148,136,.3); }
-.tab-panel { display: none; }
-.tab-panel.tab-panel--active { display: block; }
+.tab-panel { display: none; opacity: 0; transform: translateY(10px); transition: opacity 0.4s ease, transform 0.4s ease; }
+.tab-panel.tab-panel--active { display: block; opacity: 1; transform: translateY(0); }
 
 /* ── Cards Grid ───────────────────────────────────────────── */
 .cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 24px; }
@@ -181,11 +181,16 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 
 /* ── Adrenaline Cards ─────────────────────────────────────── */
 .adv-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 20px; }
-.adv-card { background: #fff; border-radius: var(--radius-md); padding: 28px 20px; text-align: center; box-shadow: var(--shadow-sm); transition: var(--transition); }
+.adv-card { background: #fff; border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-sm); transition: var(--transition); }
 .adv-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+.adv-card__img-wrap { position: relative; height: 180px; overflow: hidden; }
+.adv-card__img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; display: block; }
+.adv-card:hover .adv-card__img-wrap img { transform: scale(1.06); }
+.adv-card__content { padding: 20px; text-align: center; }
 .adv-card__emoji { font-size: 2.5rem; margin-bottom: 12px; }
 .adv-card__badge { display: inline-block; background: linear-gradient(135deg, #f97316, #ef4444); color: #fff; font-size: .6875rem; font-weight: 700; padding: 4px 12px; border-radius: 100px; margin-bottom: 10px; }
 .adv-card h3 { font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+.adv-card h4 { font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
 .adv-card p { font-size: .8125rem; color: var(--gray-500); margin-bottom: 16px; }
 
 /* ── Sky Cards ────────────────────────────────────────────── */

@@ -46,6 +46,7 @@ function initMobileNav() {
     drawer.setAttribute('aria-hidden', 'false');
     overlay.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
+    document.body.style.paddingRight = (window.innerWidth - document.documentElement.clientWidth) + 'px';
   }
 
   function closeDrawer() {
@@ -56,6 +57,7 @@ function initMobileNav() {
     drawer.setAttribute('aria-hidden', 'true');
     overlay.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
+    document.body.style.paddingRight = '';
   }
 
   hamburger.addEventListener('click', () => {
@@ -150,8 +152,15 @@ function initTabs() {
 
       tabPanels.forEach(panel => {
         const isTarget = panel.id === 'tab-' + target;
-        panel.hidden = !isTarget;
-        panel.classList.toggle('tab-panel--active', isTarget);
+        if (isTarget) {
+          panel.hidden = false;
+          requestAnimationFrame(() => {
+            panel.classList.add('tab-panel--active');
+          });
+        } else {
+          panel.classList.remove('tab-panel--active');
+          panel.hidden = true;
+        }
       });
 
       setTimeout(() => {
