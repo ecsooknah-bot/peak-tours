@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Preview — PeaK Tours Mauritius</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --teal:        #0d9488;
+      --teal-dark:   #0f766e;
+      --teal-light:  #ccfbf1;
+      --teal-xlight: #f0fdfa;
+      --gray-50:     #f8fafc;
+      --gray-100:    #f1f5f9;
+      --gray-200:    #e2e8f0;
+      --gray-400:    #94a3b8;
+      --gray-500:    #64748b;
+      --gray-700:    #334155;
+      --gray-800:    #1e293b;
+      --gray-900:    #0f172a;
+      --white:       #ffffff;
+      --gold:        #f59e0b;
+      --wa-green:    #25d366;
+      --shadow-sm:   0 1px 4px rgba(0,0,0,0.08);
+      --shadow-md:   0 4px 20px rgba(0,0,0,0.10);
+      --shadow-lg:   0 12px 40px rgba(0,0,0,0.14);
+      --shadow-xl:   0 24px 60px rgba(0,0,0,0.22);
+      --font:        'Poppins', sans-serif;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: var(--font);
+      background: var(--gray-100);
+      color: var(--gray-700);
+      overflow-x: hidden;
+    }
+
+    /* ── Top Bar ── */
+    .topbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      height: 58px;
+      background: var(--gray-900);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+      gap: 12px;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.35);
+    }
+
+    .topbar__brand {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      flex-shrink: 0;
+    }
+
+    .topbar__dot {
+      width: 9px; height: 9px;
+      border-radius: 50%;
+      background: var(--teal);
+      animation: pulse 2.5s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50%       { opacity: 0.55; transform: scale(1.25); }
+    }
+
+    .topbar__title {
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--white);
+      white-space: nowrap;
+    }
+
+    .topbar__title span { color: var(--teal); }
+
+    .topbar__badge {
+      font-size: 0.6875rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: rgba(13,148,136,0.18);
+      color: var(--teal-light);
+      border: 1px solid rgba(13,148,136,0.38);
+      padding: 3px 10px;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+
+    /* Device switcher */
+    .topbar__devices {
+      display: flex;
+      align-items: center;
+      gap: 3px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.09);
+      border-radius: 10px;
+      padding: 4px;
+    }
+
+    .device-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 34px; height: 30px;
+      border-radius: 7px;
+      border: none;
+      background: transparent;
+      color: var(--gray-400);
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .device-btn:hover { background: rgba(255,255,255,0.09); color: var(--white); }
+    .device-btn.active { background: var(--teal); color: var(--white); }
+    .device-btn svg { width: 17px; height: 17px; }
+
+    /* URL bar */
+    .topbar__url {
+      flex: 1;
+      max-width: 380px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.09);
+      border-radius: 8px;
+      padding: 6px 13px;
+      font-size: 0.8125rem;
+      color: var(--gray-400);
+      overflow: hidden;
+    }
+
+    .topbar__url svg { flex-shrink: 0; color: var(--teal); width: 14px; height: 14px; }
+    .topbar__url span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+    /* Open full screen */
+    .topbar__open {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--teal);
+      color: var(--white);
+      border: none;
+      border-radius: 8px;
+      padding: 7px 15px;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      font-family: var(--font);
+      cursor: pointer;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: background 0.2s, transform 0.2s;
+      flex-shrink: 0;
+    }
+    .topbar__open:hover { background: var(--teal-dark); transform: translateY(-1px); }
+    .topbar__open svg { width: 14px; height: 14px; }
+
+    /* ── Stage ── */
+    .stage {
+      padding-top: 58px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background:
+        radial-gradient(ellipse at 15% 20%, rgba(13,148,136,0.09) 0%, transparent 55%),
+        radial-gradient(ellipse at 85% 80%, rgba(13,148,136,0.06) 0%, transparent 55%),
+        var(--gray-100);
+    }
+
+    /* Section jump chips */
+    .section-nav {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 18px 24px 0;
+      max-width: 1100px;
+      width: 100%;
+    }
+
+    .section-nav__label {
+      font-size: 0.6875rem;
+      font-weight: 600;
+      color: var(--gray-500);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-right: 2px;
+    }
+
+    .section-chip {
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--gray-500);
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      padding: 5px 13px;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s, border-color 0.2s, transform 0.2s;
+      text-decoration: none;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .section-chip:hover {
+      background: var(--teal-xlight);
+      color: var(--teal);
+      border-color: var(--teal-light);
+      transform: translateY(-1px);
+    }
+
+    /* ── Browser Wrap ── */
+    .browser-wrap {
+      padding: 20px 24px 8px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+
+    /* ── Browser Frame ── */
+    .browser-frame {
+      width: 100%;
+      max-width: 1200px;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: var(--shadow-xl);
+      background: var(--white);
+      transition: max-width 0.4s cubic-bezier(0.4,0,0.2,1), border-radius 0.4s ease;
+    }
+
+    .browser-frame.tablet { max-width: 768px; border-radius: 18px; }
+
+    .browser-frame.mobile {
+      max-width: 390px;
+      border-radius: 38px;
+      box-shadow: 0 28px 70px rgba(0,0,0,0.28), 0 0 0 9px #1e293b, 0 0 0 11px #334155;
+    }
+
+    /* ── Browser Chrome ── */
+    .browser-chrome {
+      background: var(--gray-800);
+      padding: 10px 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .browser-frame.mobile .browser-chrome { display: none; }
+
+    .chrome-dots { display: flex; gap: 6px; flex-shrink: 0; }
+    .chrome-dot { width: 12px; height: 12px; border-radius: 50%; }
+    .chrome-dot--red    { background: #ff5f57; }
+    .chrome-dot--yellow { background: #febc2e; }
+    .chrome-dot--green  { background: #28c840; }
+
+    .chrome-bar {
+      flex: 1;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 6px;
+      padding: 5px 12px;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.42);
+      overflow: hidden;
+    }
+
+    .chrome-bar svg { flex-shrink: 0; color: #28c840; width: 12px; height: 12px; }
+    .chrome-bar span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+    .chrome-actions { display: flex; gap: 7px; flex-shrink: 0; }
+
+    .chrome-action {
+      width: 28px; height: 28px;
+      border-radius: 6px;
+      background: rgba(255,255,255,0.06);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,0.38);
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+      border: none;
+    }
+    .chrome-action:hover { background: rgba(255,255,255,0.12); color: rgba(255,255,255,0.8); }
+    .chrome-action svg { width: 14px; height: 14px; }
+
+    /* ── Mobile notch ── */
+    .mobile-notch {
+      display: none;
+      background: var(--gray-800);
+      height: 30px;
+      align-items: center;
+      justify-content: center;
+    }
+    .browser-frame.mobile .mobile-notch { display: flex; }
+    .notch-pill { width: 96px; height: 22px; background: var(--gray-900); border-radius: 999px; }
+
+    /* ── iFrame ── */
+    .browser-iframe {
+      width: 100%;
+      height: 84vh;
+      border: none;
+      display: block;
+      background: var(--white);
+      transition: height 0.4s ease;
+    }
+
+    .browser-frame.mobile .browser-iframe { height: 76vh; }
+    .browser-frame.tablet .browser-iframe { height: 80vh; }
+
+    /* ── Mobile home bar ── */
+    .mobile-bar {
+      display: none;
+      background: var(--gray-800);
+      height: 26px;
+      align-items: center;
+      justify-content: center;
+    }
+    .browser-frame.mobile .mobile-bar { display: flex; }
+    .mobile-bar-pill { width: 110px; height: 4px; background: rgba(255,255,255,0.22); border-radius: 999px; }
+
+    /* ── Feature pills ── */
+    .features-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      justify-content: center;
+      padding: 18px 24px 28px;
+      max-width: 900px;
+    }
+
+    .feature-pill {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      font-size: 0.8125rem;
+      font-weight: 500;
+      color: var(--gray-500);
+      padding: 7px 16px;
+      border-radius: 999px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .feature-pill svg { color: var(--teal); width: 14px; height: 14px; flex-shrink: 0; }
+
+    /* ── Responsive ── */
+    @media (max-width: 640px) {
+      .topbar__url, .topbar__badge { display: none; }
+      .topbar { padding: 0 14px; }
+      .browser-wrap { padding: 12px 12px 6px; }
+      .section-nav { display: none; }
+      .features-row { padding: 14px 12px 20px; gap: 7px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== TOP BAR ===== -->
+  <header class="topbar">
+    <div class="topbar__brand">
+      <div class="topbar__dot"></div>
+      <span class="topbar__title"><span>PeaK</span> Tours Mauritius</span>
+      <span class="topbar__badge">Live Preview</span>
+    </div>
+
+    <div class="topbar__url">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+      <span>peak-tours-mauritius.com / index.html</span>
+    </div>
+
+    <div class="topbar__devices">
+      <button class="device-btn active" id="btn-desktop" title="Desktop (1)" onclick="setDevice('desktop', this)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+      </button>
+      <button class="device-btn" id="btn-tablet" title="Tablet (2)" onclick="setDevice('tablet', this)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2"/><circle cx="12" cy="18" r="1" fill="currentColor"/></svg>
+      </button>
+      <button class="device-btn" id="btn-mobile" title="Mobile (3)" onclick="setDevice('mobile', this)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><circle cx="12" cy="18" r="1" fill="currentColor"/></svg>
+      </button>
+    </div>
+
+    <a href="index.html" target="_blank" class="topbar__open">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+      Open Full Screen
+    </a>
+  </header>
+
+  <!-- ===== STAGE ===== -->
+  <main class="stage">
+
+    <!-- Section jump chips -->
+    <nav class="section-nav" aria-label="Section navigation">
+      <span class="section-nav__label">Jump to:</span>
+      <a class="section-chip" href="#" onclick="return jumpTo('#home')">Hero</a>
+      <a class="section-chip" href="#" onclick="return jumpTo('#about')">About</a>
+      <a class="section-chip" href="#" onclick="return jumpTo('#tours')">Land Tours</a>
+      <a class="section-chip" href="#" onclick="return jumpTo('#experiences')">Experiences</a>
+      <a class="section-chip" href="#" onclick="return jumpTo('#transfers')">Transfers</a>
+      <a class="section-chip" href="#" onclick="return jumpTo('#gallery')">Gallery</a>
+      <a class="section-chip" href="#" onclick="return jumpTo('#why')">Why Us</a>
+      <a class="section-chip" href="#" onclick="return jumpTo('#contact')">CTA</a>
+    </nav>
+
+    <!-- Browser frame -->
+    <div class="browser-wrap">
+      <div class="browser-frame" id="browser-frame">
+
+        <!-- Mobile notch -->
+        <div class="mobile-notch" aria-hidden="true"><div class="notch-pill"></div></div>
+
+        <!-- Browser chrome (desktop/tablet) -->
+        <div class="browser-chrome">
+          <div class="chrome-dots" aria-hidden="true">
+            <div class="chrome-dot chrome-dot--red"></div>
+            <div class="chrome-dot chrome-dot--yellow"></div>
+            <div class="chrome-dot chrome-dot--green"></div>
+          </div>
+          <div class="chrome-bar">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <span>peak-tours-mauritius.com</span>
+          </div>
+          <div class="chrome-actions">
+            <button class="chrome-action" title="Reload" onclick="document.getElementById('site-frame').src = document.getElementById('site-frame').src" aria-label="Reload">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 4v6h-6"/><path d="M1 20v-6h6"/><path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/></svg>
+            </button>
+            <button class="chrome-action" title="Open in new tab" onclick="window.open('index.html','_blank')" aria-label="Open in new tab">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- The actual site in an iframe -->
+        <iframe
+          id="site-frame"
+          class="browser-iframe"
+          src="index.html"
+          title="PeaK Tours Mauritius Website Preview"
+          loading="eager"
+        ></iframe>
+
+        <!-- Mobile home bar -->
+        <div class="mobile-bar" aria-hidden="true"><div class="mobile-bar-pill"></div></div>
+      </div>
+    </div>
+
+    <!-- Feature pills -->
+    <div class="features-row" aria-label="Website features">
+      <div class="feature-pill">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        Pure HTML / CSS / JS
+      </div>
+      <div class="feature-pill">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><circle cx="12" cy="18" r="1" fill="currentColor"/></svg>
+        Mobile-First Responsive
+      </div>
+      <div class="feature-pill">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        Tripadvisor Award 2022–2025
+      </div>
+      <div class="feature-pill">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .99h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        WhatsApp-First Conversion
+      </div>
+      <div class="feature-pill">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        Scroll Reveal Animations
+      </div>
+      <div class="feature-pill">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+        Gallery Lightbox
+      </div>
+      <div class="feature-pill">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        11 Complete Sections
+      </div>
+      <div class="feature-pill">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+        Real WhatsApp Links
+      </div>
+    </div>
+
+  </main>
+
+  <script>
+    const frame  = document.getElementById('browser-frame');
+    const iframe = document.getElementById('site-frame');
+    const btns   = document.querySelectorAll('.device-btn');
+
+    function setDevice(device, btn) {
+      btns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      frame.className = 'browser-frame';
+      if (device !== 'desktop') frame.classList.add(device);
+    }
+
+    function jumpTo(hash) {
+      try {
+        const win = iframe.contentWindow;
+        if (win && win.location) {
+          // Try setting hash directly
+          const target = win.document.querySelector(hash);
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth' });
+          } else {
+            win.location.hash = hash;
+          }
+        }
+      } catch(e) {
+        // Cross-origin fallback: reload with hash
+        iframe.src = 'index.html' + hash;
+      }
+      return false;
+    }
+
+    // Keyboard shortcuts: 1=desktop, 2=tablet, 3=mobile
+    document.addEventListener('keydown', (e) => {
+      if (e.key === '1') setDevice('desktop', document.getElementById('btn-desktop'));
+      if (e.key === '2') setDevice('tablet',  document.getElementById('btn-tablet'));
+      if (e.key === '3') setDevice('mobile',  document.getElementById('btn-mobile'));
+    });
+  </script>
+
+</body>
+</html>

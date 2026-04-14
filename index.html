@@ -13,6 +13,34 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="index.css" />
+<style>
+/* ── Peak Tours Carousel ─────────────────────────────────────────────────── */
+.pt-carousel { position: relative; overflow: hidden; }
+.pt-track { display: flex; height: 100%; transition: transform .45s cubic-bezier(.4,0,.2,1); will-change: transform; }
+.pt-slide { flex: 0 0 100%; height: 100%; }
+.pt-slide img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.pt-prev, .pt-next {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  background: rgba(0,0,0,.45); color: #fff; border: none; cursor: pointer;
+  width: 32px; height: 32px; border-radius: 50%;
+  font-size: 20px; line-height: 1; display: flex; align-items: center; justify-content: center;
+  z-index: 10; transition: background .2s; padding: 0;
+}
+.pt-prev { left: 8px; }
+.pt-next { right: 8px; }
+.pt-prev:hover, .pt-next:hover { background: rgba(0,0,0,.7); }
+.pt-dots {
+  position: absolute; bottom: 8px; left: 50%; transform: translateX(-50%);
+  display: flex; gap: 5px; z-index: 10;
+}
+.pt-dot {
+  width: 7px; height: 7px; border-radius: 50%; border: none;
+  background: rgba(255,255,255,.55); cursor: pointer; padding: 0; transition: background .2s;
+}
+.pt-dot--active { background: #fff; }
+/* Pause hover scale on carousel so it doesn't fight the slide */
+.pt-carousel:hover img { transform: none !important; }
+</style>
 </head>
 <body>
 
@@ -188,7 +216,7 @@
         <!-- Best Seller 1: South West -->
         <div class="bs-card">
           <div class="bs-card__img-wrap">
-            <img src="assets/peak-tours-assets/waterfall-view.jpg" alt="South West Tour Mauritius" loading="lazy" />
+            <img src="assets/peak-tours-assets/sw-chamarel-earth.jpg" alt="South West Tour Mauritius" loading="lazy" />
 
           </div>
           <div class="bs-card__body">
@@ -208,7 +236,7 @@
         <!-- Best Seller 2: 3 Northern Islands -->
         <div class="bs-card">
           <div class="bs-card__img-wrap">
-            <img src="assets/peak-tours-assets/beach-couple-selfie.jpg" alt="3 Northern Islands Mauritius" loading="lazy" />
+            <img src="assets/peak-tours-assets/ile-aux-cerfs.jpg" alt="3 Northern Islands Mauritius" loading="lazy" />
 
           </div>
           <div class="bs-card__body">
@@ -228,7 +256,7 @@
         <!-- Best Seller 3: Island Hopping -->
         <div class="bs-card">
           <div class="bs-card__img-wrap">
-            <img src="assets/peak-tours-assets/beach-swing-couple.jpg" alt="Island Hopping 5 Islands Mauritius" loading="lazy" />
+            <img src="assets/peak-tours-assets/deux-cocos-island.jpg" alt="Island Hopping 5 Islands Mauritius" loading="lazy" />
 
           </div>
           <div class="bs-card__body">
@@ -249,7 +277,7 @@
         <!-- Best Seller 4: Dolphins & Whales -->
         <div class="bs-card">
           <div class="bs-card__img-wrap">
-            <img src="assets/peak-tours-assets/nature-greenery.jpg" alt="Dolphins and Whales Mauritius" loading="lazy" />
+            <img src="assets/peak-tours-assets/dolphins-ocean.jpg" alt="Dolphins and Whales Mauritius" loading="lazy" />
 
           </div>
           <div class="bs-card__body">
@@ -299,14 +327,27 @@
 
           <!-- South West — BEST SELLER -->
           <div class="card fade-in">
-            <div class="card__img-wrap">
-              <img src="assets/peak-tours-assets/waterfall-view.jpg" alt="South West Tour Mauritius" loading="lazy" />
-              <span class="card__badge card__badge--pop" data-en="Must-Do" data-fr="Incontournable">Must-Do</span>
-              <span class="best-seller-badge">
-                <svg viewBox="0 0 24 24" fill="currentColor" width="11" height="11"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                <span data-en="Best Seller" data-fr="Best Seller">Best Seller</span>
-              </span>
-            </div>
+            <div class="card__img-wrap pt-carousel" data-carousel="sw">
+        <div class="pt-track">
+          <div class="pt-slide"><img src="assets/peak-tours-assets/sw-chamarel-earth.jpg" alt="Chamarel 7 Coloured Earth" loading="lazy" /></div>
+          <div class="pt-slide"><img src="assets/peak-tours-assets/sw-rhumerie.jpg" alt="Rhumerie de Chamarel" loading="lazy" /></div>
+          <div class="pt-slide"><img src="assets/peak-tours-assets/sw-black-river.jpg" alt="Black River Gorges" loading="lazy" /></div>
+          <div class="pt-slide"><img src="assets/peak-tours-assets/sw-grand-bassin.jpg" alt="Grand Bassin Sacred Lake" loading="lazy" /></div>
+        </div>
+        <button class="pt-prev" aria-label="Previous">&#8249;</button>
+        <button class="pt-next" aria-label="Next">&#8250;</button>
+        <div class="pt-dots">
+          <button class="pt-dot pt-dot--active" data-idx="0" aria-label="Slide 1"></button>
+          <button class="pt-dot" data-idx="1" aria-label="Slide 2"></button>
+          <button class="pt-dot" data-idx="2" aria-label="Slide 3"></button>
+          <button class="pt-dot" data-idx="3" aria-label="Slide 4"></button>
+        </div>
+        <span class="card__badge card__badge--pop" data-en="Must-Do" data-fr="Incontournable">Must-Do</span>
+        <span class="best-seller-badge">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="11" height="11"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <span data-en="Best Seller" data-fr="Best Seller">Best Seller</span>
+        </span>
+      </div>
             <div class="card__body">
               <h3 data-en="South West — A must-do experience" data-fr="Sud-Ouest — Un incontournable de l'île Maurice">South West — A must-do experience</h3>
               <p data-en="Le Grand Bassin, Les Gorges de Rivière Noire, La Rhumerie de Chamarel, Point de Vue Chamarel &amp; Chamarel Geopark." data-fr="Le Grand Bassin, Les Gorges de Rivière Noire, La Rhumerie de Chamarel, Point de Vue Chamarel &amp; Chamarel Geopark.">Le Grand Bassin, Les Gorges de Rivière Noire, La Rhumerie de Chamarel, Point de Vue Chamarel &amp; Chamarel Geopark.</p>
@@ -361,10 +402,23 @@
 
           <!-- South -->
           <div class="card fade-in">
-            <div class="card__img-wrap">
-              <img src="assets/peak-tours-assets/sea-cliff-view.jpg" alt="South Tour Mauritius" loading="lazy" />
-              <span class="card__badge" data-en="Authenticity" data-fr="Authenticité">Authenticity</span>
-            </div>
+            <div class="card__img-wrap pt-carousel" data-carousel="south">
+        <div class="pt-track">
+          <div class="pt-slide"><img src="assets/peak-tours-assets/south-rochester-falls.jpg" alt="Rochester Falls" loading="lazy" /></div>
+          <div class="pt-slide"><img src="assets/peak-tours-assets/south-blue-bay.jpg" alt="Blue Bay Beach" loading="lazy" /></div>
+          <div class="pt-slide"><img src="assets/peak-tours-assets/south-mahebourg.jpg" alt="Mahebourg Waterfront" loading="lazy" /></div>
+          <div class="pt-slide"><img src="assets/peak-tours-assets/south-gris-gris.jpg" alt="Gris Gris Wild Coast" loading="lazy" /></div>
+        </div>
+        <button class="pt-prev" aria-label="Previous">&#8249;</button>
+        <button class="pt-next" aria-label="Next">&#8250;</button>
+        <div class="pt-dots">
+          <button class="pt-dot pt-dot--active" data-idx="0" aria-label="Slide 1"></button>
+          <button class="pt-dot" data-idx="1" aria-label="Slide 2"></button>
+          <button class="pt-dot" data-idx="2" aria-label="Slide 3"></button>
+          <button class="pt-dot" data-idx="3" aria-label="Slide 4"></button>
+        </div>
+        <span class="card__badge" data-en="Authenticity" data-fr="Authenticité">Authenticity</span>
+      </div>
             <div class="card__body">
               <h3 data-en="South — Authenticity &amp; Wild South" data-fr="Sud — Authenticité &amp; Sud Sauvage">South — Authenticity &amp; Wild South</h3>
               <p data-en="Le Bois Cheri, La Vanille Nature Park, La Plage de Gris Gris &amp; La Roche qui Pleure." data-fr="Le Bois Cheri, La Vanille Nature Park, La Plage de Gris Gris &amp; La Roche qui Pleure.">Le Bois Cheri, La Vanille Nature Park, La Plage de Gris Gris &amp; La Roche qui Pleure.</p>
@@ -421,10 +475,23 @@
 
           <!-- North -->
           <div class="card fade-in">
-            <div class="card__img-wrap">
-              <img src="assets/peak-tours-assets/nature-greenery.jpg" alt="North Tour Port Louis Mauritius" loading="lazy" />
-              <span class="card__badge" data-en="Culture &amp; City" data-fr="Culture &amp; Ville">Culture &amp; City</span>
-            </div>
+            <div class="card__img-wrap pt-carousel" data-carousel="north">
+        <div class="pt-track">
+          <div class="pt-slide"><img src="assets/peak-tours-assets/north-port-louis.jpg" alt="Port Louis Central Market" loading="lazy" /></div>
+          <div class="pt-slide"><img src="assets/peak-tours-assets/north-cap-malheureux.jpg" alt="Cap Malheureux Church" loading="lazy" /></div>
+          <div class="pt-slide"><img src="assets/peak-tours-assets/north-pamplemousses.jpg" alt="Pamplemousses Botanical Garden" loading="lazy" /></div>
+          <div class="pt-slide"><img src="assets/peak-tours-assets/north-beach.jpg" alt="North Coast Beach" loading="lazy" /></div>
+        </div>
+        <button class="pt-prev" aria-label="Previous">&#8249;</button>
+        <button class="pt-next" aria-label="Next">&#8250;</button>
+        <div class="pt-dots">
+          <button class="pt-dot pt-dot--active" data-idx="0" aria-label="Slide 1"></button>
+          <button class="pt-dot" data-idx="1" aria-label="Slide 2"></button>
+          <button class="pt-dot" data-idx="2" aria-label="Slide 3"></button>
+          <button class="pt-dot" data-idx="3" aria-label="Slide 4"></button>
+        </div>
+        <span class="card__badge" data-en="Culture &amp; City" data-fr="Culture &amp; Ville">Culture &amp; City</span>
+      </div>
             <div class="card__body">
               <h3 data-en="North — Port Louis, Beaches &amp; Culture" data-fr="Nord — Port Louis, Plages &amp; Culture">North — Port Louis, Beaches &amp; Culture</h3>
               <p data-en="Port Louis (La Citadelle, Le Marché, China Town &amp; Le Caudan), Jardin de Pamplemousse &amp; Cap Malheureux." data-fr="Port Louis (La Citadelle, Le Marché, China Town &amp; Le Caudan), Jardin de Pamplemousse &amp; Cap Malheureux.">Port Louis (La Citadelle, Le Marché, China Town &amp; Le Caudan), Jardin de Pamplemousse &amp; Cap Malheureux.</p>
@@ -478,10 +545,21 @@
 
           <!-- Street Food -->
           <div class="card fade-in">
-            <div class="card__img-wrap">
-              <img src="assets/peak-tours-assets/local-food-coconut.jpg" alt="Port Louis Street Food Tour Mauritius" loading="lazy" />
-              <span class="card__badge card__badge--food" data-en="Food &amp; Culture" data-fr="Gastronomie &amp; Culture">Food &amp; Culture</span>
-            </div>
+            <div class="card__img-wrap pt-carousel" data-carousel="food">
+        <div class="pt-track">
+          <div class="pt-slide"><img src="assets/peak-tours-assets/food-market.jpg" alt="Port Louis Central Market" loading="lazy" /></div>
+          <div class="pt-slide"><img src="assets/peak-tours-assets/food-dishes.jpg" alt="Mauritius Street Food" loading="lazy" /></div>
+          <div class="pt-slide"><img src="assets/peak-tours-assets/food-chinatown.jpg" alt="China Town Port Louis" loading="lazy" /></div>
+        </div>
+        <button class="pt-prev" aria-label="Previous">&#8249;</button>
+        <button class="pt-next" aria-label="Next">&#8250;</button>
+        <div class="pt-dots">
+          <button class="pt-dot pt-dot--active" data-idx="0" aria-label="Slide 1"></button>
+          <button class="pt-dot" data-idx="1" aria-label="Slide 2"></button>
+          <button class="pt-dot" data-idx="2" aria-label="Slide 3"></button>
+        </div>
+        <span class="card__badge card__badge--food" data-en="Food &amp; Culture" data-fr="Gastronomie &amp; Culture">Food &amp; Culture</span>
+      </div>
             <div class="card__body">
               <h3 data-en="Port Louis Street Food Tour — to be defined" data-fr="Port Louis Street Food Tour — à définir">Port Louis Street Food Tour — <em class="card__tbd" data-en="to be defined" data-fr="à définir">to be defined</em></h3>
               <p class="card__coming-soon" data-en="Discover the vibrant flavours of Mauritius — details coming soon." data-fr="Découvrez les saveurs vibrantes de Maurice — détails bientôt disponibles.">Discover the vibrant flavours of Mauritius — details coming soon.</p>
@@ -514,7 +592,7 @@
           <!-- Dolphins & Whales (combined card with sub-options) -->
           <div class="card fade-in">
             <div class="card__img-wrap">
-              <img src="assets/peak-tours-assets/beach-couple-selfie.jpg" alt="Dolphins and Whales Mauritius" loading="lazy" />
+              <img src="assets/peak-tours-assets/dolphins-ocean.jpg" alt="Dolphins and Whales Mauritius" loading="lazy" />
               <span class="card__badge card__badge--ocean" data-en="Ocean Wildlife" data-fr="Faune Marine">Ocean Wildlife</span>
             </div>
             <div class="card__body">
@@ -556,7 +634,7 @@
           <!-- Catamaran with sub-options -->
           <div class="card fade-in">
             <div class="card__img-wrap">
-              <img src="assets/peak-tours-assets/beach-swing-couple.jpg" alt="Catamaran Mauritius" loading="lazy" />
+              <img src="assets/peak-tours-assets/catamaran-sailing.jpg" alt="Catamaran Mauritius" loading="lazy" />
               <span class="card__badge card__badge--ocean" data-en="Relaxation" data-fr="Détente">Relaxation</span>
             </div>
             <div class="card__body">
@@ -592,7 +670,7 @@
           <!-- Speedboat with sub-options -->
           <div class="card fade-in">
             <div class="card__img-wrap">
-              <img src="assets/peak-tours-assets/beach-swing-solo.jpg" alt="Speedboat Mauritius" loading="lazy" />
+              <img src="assets/peak-tours-assets/speedboat-racing.jpg" alt="Speedboat Mauritius" loading="lazy" />
               <span class="card__badge card__badge--ocean" data-en="Adrenaline" data-fr="Adrénaline">Adrenaline</span>
             </div>
             <div class="card__body">
@@ -644,7 +722,7 @@
           <!-- Île des Deux Cocos — standalone card -->
           <div class="card fade-in">
             <div class="card__img-wrap">
-              <img src="assets/peak-tours-assets/sea-cliff-view.jpg" alt="Île des Deux Cocos Mauritius" loading="lazy" />
+              <img src="assets/peak-tours-assets/deux-cocos-island.jpg" alt="Île des Deux Cocos Mauritius" loading="lazy" />
               <span class="card__badge card__badge--ocean" data-en="Exclusive Island" data-fr="Île Exclusive">Exclusive Island</span>
             </div>
             <div class="card__body">
@@ -753,7 +831,7 @@
           <!-- Le Morne -->
           <div class="card fade-in">
             <div class="card__img-wrap">
-              <img src="assets/peak-tours-assets/sea-cliff-view.jpg" alt="Le Morne Hike Mauritius" loading="lazy" />
+              <img src="assets/peak-tours-assets/helicopter-aerial.jpg" alt="Le Morne Hike Mauritius" loading="lazy" />
               <span class="card__badge card__badge--hike" data-en="UNESCO Hike" data-fr="Randonnée UNESCO">UNESCO Hike</span>
             </div>
             <div class="card__body">
@@ -863,7 +941,7 @@
           <!-- Helicopter first (most premium) -->
           <div class="card card--helicopter fade-in">
             <div class="card__img-wrap">
-              <img src="assets/peak-tours-assets/hero-sea-bridge.jpg" alt="Helicopter Tour Mauritius" loading="lazy" />
+              <img src="assets/peak-tours-assets/helicopter-flight.jpg" alt="Helicopter Tour Mauritius" loading="lazy" />
               <span class="card__badge card__badge--heli" data-en="Premium" data-fr="Premium">Premium</span>
             </div>
             <div class="card__body">
@@ -884,7 +962,7 @@
           <!-- Seaplane second -->
           <div class="card card--sky fade-in">
             <div class="card__img-wrap">
-              <img src="assets/peak-tours-assets/sea-cliff-view.jpg" alt="Seaplane Tour Mauritius" loading="lazy" />
+              <img src="assets/peak-tours-assets/seaplane-water.jpg" alt="Seaplane Tour Mauritius" loading="lazy" />
               <span class="card__badge card__badge--sky" data-en="Luxury Air" data-fr="Luxe Aérien">Luxury Air</span>
             </div>
             <div class="card__body">
@@ -1094,7 +1172,7 @@
 
             <!-- Image -->
             <div class="full-service-img-wrap">
-              <img src="assets/peak-tours-assets/beach-swing-couple.jpg" alt="Luxury accommodation in Mauritius" loading="lazy" />
+              <img src="assets/peak-tours-assets/deux-cocos-beach.jpg" alt="Luxury accommodation in Mauritius" loading="lazy" />
               <div class="full-service-img-badge">
                 <span class="full-service-img-badge__icon">🏨</span>
                 <div>
@@ -1442,5 +1520,62 @@
   </a>
 
   <script src="main.js"></script>
+
+<script>
+(function() {
+  function initCarousel(el) {
+    var track = el.querySelector('.pt-track');
+    var slides = el.querySelectorAll('.pt-slide');
+    var dots = el.querySelectorAll('.pt-dot');
+    var total = slides.length;
+    var current = 0;
+    var timer;
+
+    function goTo(idx) {
+      current = (idx + total) % total;
+      track.style.transform = 'translateX(-' + (current * 100) + '%)';
+      dots.forEach(function(d, i) {
+        d.classList.toggle('pt-dot--active', i === current);
+      });
+    }
+
+    function next() { goTo(current + 1); }
+    function prev() { goTo(current - 1); }
+
+    function startAuto() {
+      timer = setInterval(next, 3800);
+    }
+    function stopAuto() {
+      clearInterval(timer);
+    }
+
+    el.querySelector('.pt-next').addEventListener('click', function(e) {
+      e.stopPropagation(); stopAuto(); next(); startAuto();
+    });
+    el.querySelector('.pt-prev').addEventListener('click', function(e) {
+      e.stopPropagation(); stopAuto(); prev(); startAuto();
+    });
+    dots.forEach(function(d, i) {
+      d.addEventListener('click', function(e) {
+        e.stopPropagation(); stopAuto(); goTo(i); startAuto();
+      });
+    });
+
+    // Touch/swipe support
+    var startX = 0;
+    el.addEventListener('touchstart', function(e) { startX = e.touches[0].clientX; stopAuto(); }, {passive: true});
+    el.addEventListener('touchend', function(e) {
+      var dx = e.changedTouches[0].clientX - startX;
+      if (Math.abs(dx) > 40) { dx < 0 ? next() : prev(); }
+      startAuto();
+    }, {passive: true});
+
+    startAuto();
+  }
+
+  document.querySelectorAll('.pt-carousel').forEach(initCarousel);
+})();
+</script>
+
 </body>
 </html>
