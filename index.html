@@ -41,6 +41,7 @@
 /* Pause hover scale on carousel so it doesn't fight the slide */
 .pt-carousel:hover img { transform: none !important; }
 </style>
+  <link rel="preload" as="image" href="assets/peak-tours-assets/hero-sea-bridge.webp" type="image/webp" />
 </head>
 <body>
 
@@ -136,7 +137,7 @@
        HERO
   ═══════════════════════════════════════════════ -->
   <section class="hero" id="home">
-    <div class="hero__bg" style="background-image: url('assets/peak-tours-assets/hero-sea-bridge.jpg');" fetchpriority="high"></div>
+    <div class="hero__bg" style="background-image: url('assets/peak-tours-assets/hero-sea-bridge.webp');" fetchpriority="high"></div>
     <div class="hero__overlay"></div>
     <div class="container hero__content">
       <div class="hero__badge">
@@ -216,7 +217,7 @@
         <!-- Best Seller 1: South West -->
         <div class="bs-card">
           <div class="bs-card__img-wrap">
-            <img src="assets/peak-tours-assets/sw-chamarel-earth.jpg" alt="South West Tour Mauritius" loading="lazy" decoding="async" />
+            <img src="assets/peak-tours-assets/sw-chamarel-earth.webp" alt="South West Tour Mauritius" loading="lazy" decoding="async" />
 
           </div>
           <div class="bs-card__body">
@@ -236,7 +237,7 @@
         <!-- Best Seller 2: 3 Northern Islands -->
         <div class="bs-card">
           <div class="bs-card__img-wrap">
-            <img src="assets/peak-tours-assets/ile-aux-cerfs.jpg" alt="3 Northern Islands Mauritius" loading="lazy" decoding="async" />
+            <img src="assets/peak-tours-assets/coin-de-mire-north.webp" alt="3 Northern Islands Mauritius" loading="lazy" decoding="async" />
 
           </div>
           <div class="bs-card__body">
@@ -256,7 +257,7 @@
         <!-- Best Seller 3: Island Hopping -->
         <div class="bs-card">
           <div class="bs-card__img-wrap">
-            <img src="assets/peak-tours-assets/deux-cocos-island.jpg" alt="Island Hopping 5 Islands Mauritius" loading="lazy" decoding="async" />
+            <img src="assets/peak-tours-assets/ile-aux-cerfs-beach-new.webp" alt="Island Hopping 5 Islands Mauritius" loading="lazy" decoding="async" />
 
           </div>
           <div class="bs-card__body">
@@ -277,7 +278,7 @@
         <!-- Best Seller 4: Dolphins & Whales -->
         <div class="bs-card">
           <div class="bs-card__img-wrap">
-            <img src="assets/peak-tours-assets/dolphins-ocean.jpg" alt="Dolphins and Whales Mauritius" loading="lazy" decoding="async" />
+            <img src="assets/peak-tours-assets/dolphins-ocean.webp" alt="Dolphins and Whales Mauritius" loading="lazy" decoding="async" />
 
           </div>
           <div class="bs-card__body">
@@ -329,10 +330,10 @@
           <div class="card fade-in">
             <div class="card__img-wrap pt-carousel" data-carousel="sw">
         <div class="pt-track">
-          <div class="pt-slide"><img src="assets/peak-tours-assets/sw-chamarel-earth.jpg" alt="Chamarel 7 Coloured Earth" loading="lazy" decoding="async" /></div>
-          <div class="pt-slide"><img src="assets/peak-tours-assets/sw-rhumerie.jpg" alt="Rhumerie de Chamarel" loading="lazy" decoding="async" /></div>
-          <div class="pt-slide"><img src="assets/peak-tours-assets/sw-black-river.jpg" alt="Black River Gorges" loading="lazy" decoding="async" /></div>
-          <div class="pt-slide"><img src="assets/peak-tours-assets/sw-grand-bassin.jpg" alt="Grand Bassin Sacred Lake" loading="lazy" decoding="async" /></div>
+          <div class="pt-slide"><img src="assets/peak-tours-assets/sw-chamarel-earth.webp" alt="Chamarel 7 Coloured Earth" loading="lazy" decoding="async" /></div>
+          <div class="pt-slide"><img src="assets/peak-tours-assets/sw-rhumerie.webp" alt="Rhumerie de Chamarel" loading="lazy" decoding="async" /></div>
+          <div class="pt-slide"><img src="assets/peak-tours-assets/sw-black-river.webp" alt="Black River Gorges" loading="lazy" decoding="async" /></div>
+          <div class="pt-slide"><img src="assets/peak-tours-assets/sw-grand-bassin.webp" alt="Grand Bassin Sacred Lake" loading="lazy" decoding="async" /></div>
         </div>
         <button class="pt-prev" aria-label="Previous">&#8249;</button>
         <button class="pt-next" aria-label="Next">&#8250;</button>
@@ -366,6 +367,7 @@
                   </div>
                   <div class="subtour-option">
                     <span class="subtour-option__name" data-en="Classic Tour" data-fr="Circuit Classique">Classic Tour</span>
+                    <span class="subtour-option__mix" data-en="the must-see" data-fr="les incontournables">the must-see</span>
                     <span class="subtour-option__duration">7–8 hrs</span>
                     <button class="btn-add-request" data-item="South West — Classic Tour (7–8hrs)" data-item-fr="Sud-Ouest — Circuit Classique (7–8h)" aria-label="Add South West Classic Tour to request">
                       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="14" height="14"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
@@ -374,8 +376,8 @@
                   </div>
                   <div class="subtour-option">
                     <span class="subtour-option__name" data-en="Extreme Tour" data-fr="Circuit Extrême">Extreme Tour</span>
+                    <span class="subtour-option__mix" data-en="the complete experience with more sites and discoveries" data-fr="l'expérience complète avec davantage de sites">the complete experience with more sites and discoveries</span>
                     <span class="subtour-option__duration">8–9 hrs</span>
-                    <span class="subtour-option__mix" data-en="More hidden gems &amp; exclusive stops" data-fr="Plus de joyaux cachés &amp; arrêts exclusifs">More hidden gems &amp; exclusive stops</span>
                     <button class="btn-add-request" data-item="South West — Extreme Tour (8–9hrs)" data-item-fr="Sud-Ouest — Circuit Extrême (8–9h)" aria-label="Add South West Extreme Tour to request">
                       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="14" height="14"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
                       <span data-en="Add" data-fr="Ajouter">Add</span>
@@ -383,8 +385,8 @@
                   </div>
                   <div class="subtour-option subtour-option--fusion">
                     <span class="subtour-option__name" data-en="Fusion Tour" data-fr="Circuit Fusion">Fusion Tour</span>
+                    <span class="subtour-option__mix" data-en="a mix of the South &amp; South-West tailored to your preferences and interests" data-fr="un mix du Sud et du Sud-Ouest adapté à vos envies">a mix of the South &amp; South-West tailored to your preferences and interests</span>
                     <span class="subtour-option__duration">9–10 hrs</span>
-                    <span class="subtour-option__mix" data-en="Mix of South West &amp; South — conditions applied" data-fr="Mix du Sud-Ouest &amp; Sud — conditions appliquées">Mix of South West &amp; South — conditions applied</span>
                     <button class="btn-add-request" data-item="South West — Fusion Tour (9–10hrs, Mix South West &amp; South)" data-item-fr="Sud-Ouest — Circuit Fusion (9–10h, Mix Sud-Ouest &amp; Sud)" aria-label="Add South West Fusion Tour to request">
                       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="14" height="14"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
                       <span data-en="Add" data-fr="Ajouter">Add</span>
@@ -404,10 +406,10 @@
           <div class="card fade-in">
             <div class="card__img-wrap pt-carousel" data-carousel="south">
         <div class="pt-track">
-          <div class="pt-slide"><img src="assets/peak-tours-assets/south-rochester-falls.jpg" alt="Rochester Falls" loading="lazy" decoding="async" /></div>
-          <div class="pt-slide"><img src="assets/peak-tours-assets/south-blue-bay.jpg" alt="Blue Bay Beach" loading="lazy" decoding="async" /></div>
-          <div class="pt-slide"><img src="assets/peak-tours-assets/south-mahebourg.jpg" alt="Mahebourg Waterfront" loading="lazy" decoding="async" /></div>
-          <div class="pt-slide"><img src="assets/peak-tours-assets/south-gris-gris.jpg" alt="Gris Gris Wild Coast" loading="lazy" decoding="async" /></div>
+          <div class="pt-slide"><img src="assets/peak-tours-assets/south-rochester-falls.webp" alt="Rochester Falls" loading="lazy" decoding="async" /></div>
+          <div class="pt-slide"><img src="assets/peak-tours-assets/south-blue-bay.webp" alt="Blue Bay Beach" loading="lazy" decoding="async" /></div>
+          <div class="pt-slide"><img src="assets/peak-tours-assets/south-mahebourg.webp" alt="Mahebourg Waterfront" loading="lazy" decoding="async" /></div>
+          <div class="pt-slide"><img src="assets/peak-tours-assets/south-gris-gris.webp" alt="Gris Gris Wild Coast" loading="lazy" decoding="async" /></div>
         </div>
         <button class="pt-prev" aria-label="Previous">&#8249;</button>
         <button class="pt-next" aria-label="Next">&#8250;</button>
@@ -437,6 +439,7 @@
                   </div>
                   <div class="subtour-option">
                     <span class="subtour-option__name" data-en="Classic Tour" data-fr="Circuit Classique">Classic Tour</span>
+                    <span class="subtour-option__mix" data-en="the must-see" data-fr="les incontournables">the must-see</span>
                     <span class="subtour-option__duration">7–8 hrs</span>
                     <button class="btn-add-request" data-item="South — Classic Tour (7–8hrs)" data-item-fr="Sud — Circuit Classique (7–8h)">
                       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="14" height="14"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
@@ -445,8 +448,8 @@
                   </div>
                   <div class="subtour-option">
                     <span class="subtour-option__name" data-en="Extreme Tour" data-fr="Circuit Extrême">Extreme Tour</span>
+                    <span class="subtour-option__mix" data-en="the complete experience with more sites and discoveries" data-fr="l'expérience complète avec davantage de sites">the complete experience with more sites and discoveries</span>
                     <span class="subtour-option__duration">8–9 hrs</span>
-                    <span class="subtour-option__mix" data-en="More hidden gems &amp; exclusive stops" data-fr="Plus de joyaux cachés &amp; arrêts exclusifs">More hidden gems &amp; exclusive stops</span>
                     <button class="btn-add-request" data-item="South — Extreme Tour (8–9hrs)" data-item-fr="Sud — Circuit Extrême (8–9h)">
                       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="14" height="14"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
                       <span data-en="Add" data-fr="Ajouter">Add</span>
@@ -454,8 +457,8 @@
                   </div>
                   <div class="subtour-option subtour-option--fusion">
                     <span class="subtour-option__name" data-en="Fusion Tour" data-fr="Circuit Fusion">Fusion Tour</span>
+                    <span class="subtour-option__mix" data-en="a mix of the South &amp; South-West tailored to your preferences and interests" data-fr="un mix du Sud et du Sud-Ouest adapté à vos envies">a mix of the South &amp; South-West tailored to your preferences and interests</span>
                     <span class="subtour-option__duration">9–10 hrs</span>
-                    <span class="subtour-option__mix" data-en="Mix of South &amp; South West — conditions applied" data-fr="Mix du Sud &amp; Sud-Ouest — conditions appliquées">Mix of South &amp; South West — conditions applied</span>
                     <button class="btn-add-request" data-item="South — Fusion Tour (9–10hrs, Mix South &amp; South West)" data-item-fr="Sud — Circuit Fusion (9–10h, Mix Sud &amp; Sud-Ouest)">
                       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="14" height="14"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
                       <span data-en="Add" data-fr="Ajouter">Add</span>
@@ -477,10 +480,10 @@
           <div class="card fade-in">
             <div class="card__img-wrap pt-carousel" data-carousel="north">
         <div class="pt-track">
-          <div class="pt-slide"><img src="assets/peak-tours-assets/north-port-louis.jpg" alt="Port Louis Central Market" loading="lazy" decoding="async" /></div>
-          <div class="pt-slide"><img src="assets/peak-tours-assets/north-cap-malheureux.jpg" alt="Cap Malheureux Church" loading="lazy" decoding="async" /></div>
-          <div class="pt-slide"><img src="assets/peak-tours-assets/north-pamplemousses.jpg" alt="Pamplemousses Botanical Garden" loading="lazy" decoding="async" /></div>
-          <div class="pt-slide"><img src="assets/peak-tours-assets/north-beach.jpg" alt="North Coast Beach" loading="lazy" decoding="async" /></div>
+          <div class="pt-slide"><img src="assets/peak-tours-assets/north-port-louis.webp" alt="Port Louis Central Market" loading="lazy" decoding="async" /></div>
+          <div class="pt-slide"><img src="assets/peak-tours-assets/north-cap-malheureux.webp" alt="Cap Malheureux Church" loading="lazy" decoding="async" /></div>
+          <div class="pt-slide"><img src="assets/peak-tours-assets/north-pamplemousses.webp" alt="Pamplemousses Botanical Garden" loading="lazy" decoding="async" /></div>
+          <div class="pt-slide"><img src="assets/peak-tours-assets/north-beach.webp" alt="North Coast Beach" loading="lazy" decoding="async" /></div>
         </div>
         <button class="pt-prev" aria-label="Previous">&#8249;</button>
         <button class="pt-next" aria-label="Next">&#8250;</button>
@@ -510,8 +513,18 @@
                   </div>
                   <div class="subtour-option">
                     <span class="subtour-option__name" data-en="Classic Tour" data-fr="Circuit Classique">Classic Tour</span>
+                    <span class="subtour-option__mix" data-en="the must-see" data-fr="les incontournables">the must-see</span>
                     <span class="subtour-option__duration">7–8 hrs</span>
                     <button class="btn-add-request" data-item="North — Classic Tour (7–8hrs)" data-item-fr="Nord — Circuit Classique (7–8h)">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="14" height="14"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                      <span data-en="Add" data-fr="Ajouter">Add</span>
+                    </button>
+                  </div>
+                  <div class="subtour-option">
+                    <span class="subtour-option__name" data-en="Extreme Tour" data-fr="Circuit Extrême">Extreme Tour</span>
+                    <span class="subtour-option__mix" data-en="the complete experience with more sites and discoveries" data-fr="l'expérience complète avec davantage de sites">the complete experience with more sites and discoveries</span>
+                    <span class="subtour-option__duration">8–9 hrs</span>
+                    <button class="btn-add-request" data-item="North — Extreme Tour (8–9hrs)" data-item-fr="Nord — Circuit Extrême (8–9h)">
                       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="14" height="14"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
                       <span data-en="Add" data-fr="Ajouter">Add</span>
                     </button>
@@ -526,8 +539,8 @@
                   </div>
                   <div class="subtour-option subtour-option--fusion">
                     <span class="subtour-option__name" data-en="Fusion Tour" data-fr="Circuit Fusion">Fusion Tour</span>
+                    <span class="subtour-option__mix" data-en="a mix of Port Louis, the North &amp; Beaches tailored to your preferences and interests" data-fr="un mix de Port Louis, du Nord et les Plages adapté à vos envies">a mix of Port Louis, the North &amp; Beaches tailored to your preferences and interests</span>
                     <span class="subtour-option__duration">8–9 hrs</span>
-                    <span class="subtour-option__mix" data-en="Mix of the North — conditions applied" data-fr="Mix du Nord — conditions appliquées">Mix of the North — conditions applied</span>
                     <button class="btn-add-request" data-item="North — Fusion Tour (8–9hrs, Mix of the North)" data-item-fr="Nord — Circuit Fusion (8–9h, Mix du Nord)">
                       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="14" height="14"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
                       <span data-en="Add" data-fr="Ajouter">Add</span>
@@ -547,9 +560,9 @@
           <div class="card fade-in">
             <div class="card__img-wrap pt-carousel" data-carousel="food">
         <div class="pt-track">
-          <div class="pt-slide"><img src="assets/peak-tours-assets/food-market.jpg" alt="Port Louis Central Market" loading="lazy" decoding="async" /></div>
-          <div class="pt-slide"><img src="assets/peak-tours-assets/food-dishes.jpg" alt="Mauritius Street Food" loading="lazy" decoding="async" /></div>
-          <div class="pt-slide"><img src="assets/peak-tours-assets/food-chinatown.jpg" alt="China Town Port Louis" loading="lazy" decoding="async" /></div>
+          <div class="pt-slide"><img src="assets/peak-tours-assets/food-market.webp" alt="Port Louis Central Market" loading="lazy" decoding="async" /></div>
+          <div class="pt-slide"><img src="assets/peak-tours-assets/food-dishes.webp" alt="Mauritius Street Food" loading="lazy" decoding="async" /></div>
+          <div class="pt-slide"><img src="assets/peak-tours-assets/food-chinatown.webp" alt="China Town Port Louis" loading="lazy" decoding="async" /></div>
         </div>
         <button class="pt-prev" aria-label="Previous">&#8249;</button>
         <button class="pt-next" aria-label="Next">&#8250;</button>
@@ -592,7 +605,7 @@
           <!-- Dolphins & Whales (combined card with sub-options) -->
           <div class="card fade-in">
             <div class="card__img-wrap">
-              <img src="assets/peak-tours-assets/dolphins-ocean.jpg" alt="Dolphins and Whales Mauritius" loading="lazy" decoding="async" />
+              <img src="assets/peak-tours-assets/dolphins-ocean.webp" alt="Dolphins and Whales Mauritius" loading="lazy" decoding="async" />
               <span class="card__badge card__badge--ocean" data-en="Ocean Wildlife" data-fr="Faune Marine">Ocean Wildlife</span>
             </div>
             <div class="card__body">
@@ -634,7 +647,7 @@
           <!-- Catamaran with sub-options -->
           <div class="card fade-in">
             <div class="card__img-wrap">
-              <img src="assets/peak-tours-assets/catamaran-sailing.jpg" alt="Catamaran Mauritius" loading="lazy" decoding="async" />
+              <img src="assets/peak-tours-assets/catamaran-sailing.webp" alt="Catamaran Mauritius" loading="lazy" decoding="async" />
               <span class="card__badge card__badge--ocean" data-en="Relaxation" data-fr="Détente">Relaxation</span>
             </div>
             <div class="card__body">
@@ -670,7 +683,7 @@
           <!-- Speedboat with sub-options -->
           <div class="card fade-in">
             <div class="card__img-wrap">
-              <img src="assets/peak-tours-assets/speedboat-racing.jpg" alt="Speedboat Mauritius" loading="lazy" decoding="async" />
+              <img src="assets/peak-tours-assets/speedboat-racing.webp" alt="Speedboat Mauritius" loading="lazy" decoding="async" />
               <span class="card__badge card__badge--ocean" data-en="Adrenaline" data-fr="Adrénaline">Adrenaline</span>
             </div>
             <div class="card__body">
@@ -722,7 +735,7 @@
           <!-- Île des Deux Cocos — standalone card -->
           <div class="card fade-in">
             <div class="card__img-wrap">
-              <img src="assets/peak-tours-assets/deux-cocos-island.jpg" alt="Île des Deux Cocos Mauritius" loading="lazy" decoding="async" />
+              <img src="assets/peak-tours-assets/deux-cocos-island.webp" alt="Île des Deux Cocos Mauritius" loading="lazy" decoding="async" />
               <span class="card__badge card__badge--ocean" data-en="Exclusive Island" data-fr="Île Exclusive">Exclusive Island</span>
             </div>
             <div class="card__body">
@@ -746,92 +759,59 @@
       <div class="tab-panel" id="tab-hiking" role="tabpanel" hidden>
         <div class="cards-grid">
 
-          <!-- 7 Cascades — BEST SELLER — 3-tier feature card -->
-          <div class="hike-feature fade-in">
-            <div class="hike-feature__header">
-              <div class="hike-feature__img-wrap">
-                <img src="assets/peak-tours-assets/waterfall-view.jpg" alt="7 Cascades Tamarind Falls Mauritius" loading="lazy" decoding="async" />
-              </div>
-              <div class="hike-feature__intro">
-                <span class="best-seller-badge best-seller-badge--inline">
-                  <svg viewBox="0 0 24 24" fill="currentColor" width="11" height="11"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                  <span data-en="Top Choice" data-fr="Top Choix">Top Choice</span>
-                </span>
-                <h3 data-en="7 Cascades / Tamarind Falls" data-fr="7 Cascades / Chutes de Tamarin">7 Cascades / Tamarind Falls</h3>
-                <p data-en="Hike through lush tropical jungle to discover stunning waterfalls — swim in natural pools &amp; experience Mauritius at its most raw and beautiful." data-fr="Randonnez à travers la jungle tropicale luxuriante pour découvrir des cascades époustouflantes — nagez dans des bassins naturels &amp; vivez Maurice dans toute sa beauté sauvage.">Hike through lush tropical jungle to discover stunning waterfalls — swim in natural pools &amp; experience Mauritius at its most raw and beautiful.</p>
-              </div>
+          <!-- 7 Cascades — Waterfall Hike -->
+          <div class="card fade-in">
+            <div class="card__img-wrap">
+              <img src="assets/peak-tours-assets/tamarin-falls.webp" alt="7 Cascades Tamarind Falls Mauritius" loading="lazy" decoding="async" />
+              <span class="card__badge card__badge--hike" data-en="Waterfall Hike" data-fr="Randonnée Cascades">Waterfall Hike</span>
             </div>
-            <div class="hike-tiers">
-              <div class="hike-tier hike-tier--hard">
-                <span class="hike-tier__badge">⛰️ <span data-en="Challenge Trek" data-fr="Trek Défi">Challenge Trek</span></span>
-                <div class="hike-tier__body">
-                  <h4 data-en="Big Loop" data-fr="Grand Circuit">Big Loop</h4>
-                  <div class="hike-tier__meta">
-                    <span class="hike-tier__stat">🕐 <strong data-en="5–7 hrs" data-fr="5–7 h">5–7 hrs</strong></span>
-                    <span class="hike-tier__stat">💧 <strong data-en="11 waterfalls" data-fr="11 cascades">11 waterfalls</strong></span>
+            <div class="card__body">
+              <h3 data-en="7 Cascades / Tamarind Falls" data-fr="7 Cascades / Chutes de Tamarin">7 Cascades / Tamarind Falls</h3>
+              <p data-en="Hike through lush tropical jungle to discover stunning waterfalls — swim in natural pools &amp; experience Mauritius at its most raw and beautiful." data-fr="Randonnez à travers la jungle tropicale luxuriante pour découvrir des cascades époustouflantes — nagez dans des bassins naturels &amp; vivez Maurice dans toute sa beauté sauvage.">Hike through lush tropical jungle to discover stunning waterfalls — swim in natural pools &amp; experience Mauritius at its most raw and beautiful.</p>
+              <div class="cascade-tiers">
+                <div class="cascade-tier">
+                  <div class="cascade-tier__head">
+                    <span class="cascade-tier__badge cascade-tier__badge--hard">⛰️ <span data-en="Challenge Trek" data-fr="Trek Défi">Challenge Trek</span></span>
+                    <span class="cascade-tier__name" data-en="Big Loop" data-fr="Grand Circuit">Big Loop</span>
+                    <span class="cascade-tier__meta">🕐 <strong data-en="5–7 hrs" data-fr="5–7 h">5–7 hrs</strong> &nbsp;💧 <strong data-en="11 waterfalls" data-fr="11 cascades">11 waterfalls</strong></span>
                   </div>
-                  <p data-en="Steep, long route for experienced hikers" data-fr="Itinéraire long et escarpé pour randonneurs expérimentés">Steep, long route for experienced hikers</p>
-                </div>
-                <div class="hike-tier__actions">
-                  <button class="btn-add-request" data-item="7 Cascades — Big Loop (5–7hrs, 11 waterfalls)" data-item-fr="7 Cascades — Grand Circuit (5–7h, 11 cascades)">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="14" height="14"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                    <span data-en="Add" data-fr="Ajouter">Add</span>
-                  </button>
-                  <a href="https://wa.me/23052596260?text=Hello!%20I%20am%20interested%20in%20the%207%20Cascades%20Big%20Loop%20hike.%20Could%20you%20share%20details%3F" target="_blank" rel="noopener noreferrer" class="btn btn--whatsapp btn--sm">
-                    <svg class="btn__icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                    <span data-en="Enquire" data-fr="Demander">Enquire</span>
-                  </a>
-                </div>
-              </div>
-              <div class="hike-tier hike-tier--medium">
-                <span class="hike-tier__badge">🥾 <span data-en="Adventure Path" data-fr="Sentier Aventure">Adventure Path</span></span>
-                <div class="hike-tier__body">
-                  <h4 data-en="Medium Loop" data-fr="Circuit Moyen">Medium Loop</h4>
-                  <div class="hike-tier__meta">
-                    <span class="hike-tier__stat">🕐 <strong data-en="3–4 hrs" data-fr="3–4 h">3–4 hrs</strong></span>
-                    <span class="hike-tier__stat">💧 <strong data-en="7 waterfalls" data-fr="7 cascades">7 waterfalls</strong></span>
+                  <p class="cascade-tier__desc" data-en="Full expedition through all 7 levels — for experienced hikers" data-fr="Expédition complète à travers les 7 niveaux — pour randonneurs expérimentés">Full expedition through all 7 levels — for experienced hikers</p>
+                  <div class="card__actions">
+                    <button class="btn-add-request" data-item="7 Cascades — Big Loop (5–7hrs, 11 waterfalls)" data-item-fr="7 Cascades — Grand Circuit (5–7h, 11 cascades)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="14" height="14"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg><span data-en="Add to Request" data-fr="Ajouter à la demande">Add to Request</span></button>
+                    <a href="https://wa.me/23052596260?text=Hello!%20I%20am%20interested%20in%20the%207%20Cascades%20Big%20Loop%20hike.%20Could%20you%20share%20details%3F" target="_blank" rel="noopener noreferrer" class="btn btn--whatsapp btn--sm"><svg class="btn__icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg><span data-en="Enquire" data-fr="Demander">Enquire</span></a>
                   </div>
-                  <p data-en="Moderate terrain with a bit more effort" data-fr="Terrain modéré avec un peu plus d'effort">Moderate terrain with a bit more effort</p>
                 </div>
-                <div class="hike-tier__actions">
-                  <button class="btn-add-request" data-item="7 Cascades — Medium Loop (3–4hrs, 7 waterfalls)" data-item-fr="7 Cascades — Circuit Moyen (3–4h, 7 cascades)">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="14" height="14"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                    <span data-en="Add" data-fr="Ajouter">Add</span>
-                  </button>
-                  <a href="https://wa.me/23052596260?text=Hello!%20I%20am%20interested%20in%20the%207%20Cascades%20Medium%20Loop%20hike.%20Could%20you%20share%20details%3F" target="_blank" rel="noopener noreferrer" class="btn btn--whatsapp btn--sm">
-                    <svg class="btn__icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                    <span data-en="Enquire" data-fr="Demander">Enquire</span>
-                  </a>
-                </div>
-              </div>
-              <div class="hike-tier hike-tier--easy">
-                <span class="hike-tier__badge">🌿 <span data-en="Leisure Trail" data-fr="Sentier Loisir">Leisure Trail</span></span>
-                <div class="hike-tier__body">
-                  <h4 data-en="Short Loop" data-fr="Circuit Court">Short Loop</h4>
-                  <div class="hike-tier__meta">
-                    <span class="hike-tier__stat">🕐 <strong data-en="2–3 hrs" data-fr="2–3 h">2–3 hrs</strong></span>
-                    <span class="hike-tier__stat">💧 <strong data-en="4 waterfalls" data-fr="4 cascades">4 waterfalls</strong></span>
+                <div class="cascade-tier">
+                  <div class="cascade-tier__head">
+                    <span class="cascade-tier__badge cascade-tier__badge--medium">🥾 <span data-en="Adventure Path" data-fr="Sentier Aventure">Adventure Path</span></span>
+                    <span class="cascade-tier__name" data-en="Medium Loop" data-fr="Circuit Moyen">Medium Loop</span>
+                    <span class="cascade-tier__meta">🕐 <strong data-en="3–4 hrs" data-fr="3–4 h">3–4 hrs</strong> &nbsp;💧 <strong data-en="7 waterfalls" data-fr="7 cascades">7 waterfalls</strong></span>
                   </div>
-                  <p data-en="Short, scenic route suitable for everyone" data-fr="Itinéraire court et panoramique adapté à tous">Short, scenic route suitable for everyone</p>
+                  <p class="cascade-tier__desc" data-en="Most popular route — great balance of scenery &amp; effort" data-fr="Itinéraire le plus populaire — excellent équilibre entre paysage et effort">Most popular route — great balance of scenery &amp; effort</p>
+                  <div class="card__actions">
+                    <button class="btn-add-request" data-item="7 Cascades — Medium Loop (3–4hrs, 7 waterfalls)" data-item-fr="7 Cascades — Circuit Moyen (3–4h, 7 cascades)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="14" height="14"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg><span data-en="Add to Request" data-fr="Ajouter à la demande">Add to Request</span></button>
+                    <a href="https://wa.me/23052596260?text=Hello!%20I%20am%20interested%20in%20the%207%20Cascades%20Medium%20Loop%20hike.%20Could%20you%20share%20details%3F" target="_blank" rel="noopener noreferrer" class="btn btn--whatsapp btn--sm"><svg class="btn__icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg><span data-en="Enquire" data-fr="Demander">Enquire</span></a>
+                  </div>
                 </div>
-                <div class="hike-tier__actions">
-                  <button class="btn-add-request" data-item="7 Cascades — Short Loop (2–3hrs, 4 waterfalls)" data-item-fr="7 Cascades — Circuit Court (2–3h, 4 cascades)">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="14" height="14"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                    <span data-en="Add" data-fr="Ajouter">Add</span>
-                  </button>
-                  <a href="https://wa.me/23052596260?text=Hello!%20I%20am%20interested%20in%20the%207%20Cascades%20Short%20Loop%20hike.%20Could%20you%20share%20details%3F" target="_blank" rel="noopener noreferrer" class="btn btn--whatsapp btn--sm">
-                    <svg class="btn__icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                    <span data-en="Enquire" data-fr="Demander">Enquire</span>
-                  </a>
+                <div class="cascade-tier">
+                  <div class="cascade-tier__head">
+                    <span class="cascade-tier__badge cascade-tier__badge--easy"><span data-en="Leisure Trail" data-fr="Sentier Loisir">Leisure Trail</span></span>
+                    <span class="cascade-tier__name" data-en="Short Loop" data-fr="Circuit Court">Short Loop</span>
+                    <span class="cascade-tier__meta">🕐 <strong data-en="2–3 hrs" data-fr="2–3 h">2–3 hrs</strong> &nbsp;💧 <strong data-en="4 waterfalls" data-fr="4 cascades">4 waterfalls</strong></span>
+                  </div>
+                  <p class="cascade-tier__desc" data-en="Short, scenic route suitable for everyone" data-fr="Itinéraire court et panoramique adapté à tous">Short, scenic route suitable for everyone</p>
+                  <div class="card__actions">
+                    <button class="btn-add-request" data-item="7 Cascades — Short Loop (2–3hrs, 4 waterfalls)" data-item-fr="7 Cascades — Circuit Court (2–3h, 4 cascades)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="14" height="14"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg><span data-en="Add to Request" data-fr="Ajouter à la demande">Add to Request</span></button>
+                    <a href="https://wa.me/23052596260?text=Hello!%20I%20am%20interested%20in%20the%207%20Cascades%20Short%20Loop%20hike.%20Could%20you%20share%20details%3F" target="_blank" rel="noopener noreferrer" class="btn btn--whatsapp btn--sm"><svg class="btn__icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg><span data-en="Enquire" data-fr="Demander">Enquire</span></a>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-
           <!-- Le Morne -->
           <div class="card fade-in">
             <div class="card__img-wrap">
-              <img src="assets/peak-tours-assets/le-morne-hike-new.jpg" alt="Le Morne Hike Mauritius" loading="lazy" decoding="async" />
+              <img src="assets/peak-tours-assets/le-morne-hike-new.webp" alt="Le Morne Hike Mauritius" loading="lazy" decoding="async" />
               <span class="card__badge card__badge--hike" data-en="UNESCO Hike" data-fr="Randonnée UNESCO">UNESCO Hike</span>
             </div>
             <div class="card__body">
@@ -858,10 +838,9 @@
         <div class="adv-grid">
           <div class="adv-card fade-in">
             <div class="adv-card__img-wrap">
-              <img src="assets/peak-tours-assets/quad-biking.jpg" alt="Quad Biking" loading="lazy" decoding="async" />
+              <img src="assets/peak-tours-assets/quad-biking.webp" alt="Quad Biking" loading="lazy" decoding="async" />
             </div>
             <div class="adv-card__content">
-              <div class="adv-card__icon">🏍️</div>
               <h4 data-en="Quad Biking" data-fr="Quad">Quad Biking</h4>
               <p data-en="Off-road quad adventure through sugar cane fields and rugged terrain." data-fr="Aventure quad tout-terrain à travers les champs de canne à sucre.">Off-road quad adventure through sugar cane fields and rugged terrain.</p>
               <div class="card__actions">
@@ -878,10 +857,9 @@
           </div>
           <div class="adv-card fade-in">
             <div class="adv-card__img-wrap">
-              <img src="assets/peak-tours-assets/ziplines.jpg" alt="Ziplines" loading="lazy" decoding="async" />
+              <img src="assets/peak-tours-assets/ziplines.webp" alt="Ziplines" loading="lazy" decoding="async" />
             </div>
             <div class="adv-card__content">
-              <div class="adv-card__icon">🤸</div>
               <h4 data-en="Ziplines" data-fr="Tyroliennes">Ziplines</h4>
               <p data-en="Soar above the treetops on exhilarating ziplines through the jungle canopy." data-fr="Survolez les cimes des arbres sur des tyroliennes exaltantes à travers la canopée.">Soar above the treetops on exhilarating ziplines through the jungle canopy.</p>
               <div class="card__actions">
@@ -898,10 +876,9 @@
           </div>
           <div class="adv-card fade-in">
             <div class="adv-card__img-wrap">
-              <img src="assets/peak-tours-assets/canyoning.jpg" alt="Canyoning" loading="lazy" decoding="async" />
+              <img src="assets/peak-tours-assets/canyoning.webp" alt="Canyoning" loading="lazy" decoding="async" />
             </div>
             <div class="adv-card__content">
-              <div class="adv-card__icon">🏊</div>
               <h4 data-en="Canyoning" data-fr="Canyoning">Canyoning</h4>
               <p data-en="Descend through dramatic gorges, natural slides and crystal-clear pools." data-fr="Descendez à travers des gorges spectaculaires, des toboggans naturels et des bassins cristallins.">Descend through dramatic gorges, natural slides and crystal-clear pools.</p>
               <div class="card__actions">
@@ -918,10 +895,9 @@
           </div>
           <div class="adv-card fade-in">
             <div class="adv-card__img-wrap">
-              <img src="assets/peak-tours-assets/big-game-fishing.jpg" alt="Big Game Fishing" loading="lazy" decoding="async" />
+              <img src="assets/peak-tours-assets/big-game-fishing.webp" alt="Big Game Fishing" loading="lazy" decoding="async" />
             </div>
             <div class="adv-card__content">
-              <div class="adv-card__icon">🎣</div>
               <h4 data-en="Big Game Fishing" data-fr="Pêche au Gros">Big Game Fishing</h4>
               <p data-en="Deep-sea fishing for marlin, tuna &amp; sailfish in the deep waters of the Indian Ocean." data-fr="Pêche en haute mer pour le marlin, le thon &amp; l'espadon dans les eaux profondes de l'Océan Indien.">Deep-sea fishing for marlin, tuna &amp; sailfish in the deep waters of the Indian Ocean.</p>
               <div class="card__actions">
@@ -939,10 +915,9 @@
           <!-- Nepalese Bridge (moved from Hiking) -->
           <div class="adv-card fade-in">
             <div class="adv-card__img-wrap">
-              <img src="assets/peak-tours-assets/nepalese-bridge.jpg" alt="Nepalese Bridge" loading="lazy" decoding="async" />
+              <img src="assets/peak-tours-assets/nepalese-bridge.webp" alt="Nepalese Bridge" loading="lazy" decoding="async" />
             </div>
             <div class="adv-card__content">
-              <div class="adv-card__icon">🌉</div>
               <h4 data-en="Nepalese Bridge" data-fr="Pont Népalais">Nepalese Bridge</h4>
               <p data-en="Trek through the Black River Gorges to the famous Nepalese suspension bridge — lush jungle, river crossings &amp; stunning gorge views." data-fr="Randonnée à travers les Gorges de la Rivière Noire jusqu'au célèbre pont suspendu népalais — jungle luxuriante &amp; vues époustouflantes.">Trek through the Black River Gorges to the famous Nepalese suspension bridge — lush jungle, river crossings &amp; stunning gorge views.</p>
               <div class="card__actions">
@@ -966,7 +941,7 @@
           <!-- Helicopter first (most premium) -->
           <div class="card card--helicopter fade-in">
             <div class="card__img-wrap">
-              <img src="assets/peak-tours-assets/helicopter-flight.jpg" alt="Helicopter Tour Mauritius" loading="lazy" decoding="async" />
+              <img src="assets/peak-tours-assets/helicopter-flight.webp" alt="Helicopter Tour Mauritius" loading="lazy" decoding="async" />
               <span class="card__badge card__badge--heli" data-en="Premium" data-fr="Premium">Premium</span>
             </div>
             <div class="card__body">
@@ -987,7 +962,7 @@
           <!-- Seaplane second -->
           <div class="card card--sky fade-in">
             <div class="card__img-wrap">
-              <img src="assets/peak-tours-assets/seaplane-water.jpg" alt="Seaplane Tour Mauritius" loading="lazy" decoding="async" />
+              <img src="assets/peak-tours-assets/seaplane-water.webp" alt="Seaplane Tour Mauritius" loading="lazy" decoding="async" />
               <span class="card__badge card__badge--sky" data-en="Luxury Air" data-fr="Luxe Aérien">Luxury Air</span>
             </div>
             <div class="card__body">
@@ -1024,7 +999,7 @@
 
             <!-- Image -->
             <div class="full-service-img-wrap">
-              <img src="assets/peak-tours-assets/bus-exterior.jpg" alt="Private transfer vehicle" loading="lazy" decoding="async" />
+              <img src="assets/peak-tours-assets/bus-exterior.webp" alt="Private transfer vehicle" loading="lazy" decoding="async" />
               <div class="full-service-img-badge">
                 <span class="full-service-img-badge__icon">⭐</span>
                 <div>
@@ -1197,7 +1172,7 @@
 
             <!-- Image -->
             <div class="full-service-img-wrap">
-              <img src="assets/peak-tours-assets/deux-cocos-beach.jpg" alt="Luxury accommodation in Mauritius" loading="lazy" decoding="async" />
+              <img src="assets/peak-tours-assets/deux-cocos-beach.webp" alt="Luxury accommodation in Mauritius" loading="lazy" decoding="async" />
               <div class="full-service-img-badge">
                 <span class="full-service-img-badge__icon">🏨</span>
                 <div>
@@ -1314,7 +1289,7 @@
     <div class="container">
       <div class="about__layout fade-in">
         <div class="about__img-wrap">
-          <img src="assets/peak-tours-assets/group-tour.jpg" alt="Arnaud Peka — Peak Tours guide" loading="lazy" decoding="async" />
+          <img src="assets/peak-tours-assets/group-tour.webp" alt="Arnaud Peka — Peak Tours guide" loading="lazy" decoding="async" />
           <div class="about__badge-wrap">
             <a href="https://www.tripadvisor.fr/Attraction_Review-g488105-d19578942-Reviews-Peak_Tours_by_Arnaud_Peka-Le_Morne.html" target="_blank" rel="noopener noreferrer" class="about__tripadvisor">
               <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 18c-4.418 0-8-3.582-8-8s3.582-8 8-8 8 3.582 8 8-3.582 8-8 8zm0-14a6 6 0 100 12A6 6 0 0012 6zm0 10a4 4 0 110-8 4 4 0 010 8z"/></svg>
@@ -1361,14 +1336,14 @@
         <p class="section-subtitle" data-en="A glimpse of the experiences that await you in Mauritius." data-fr="Un aperçu des expériences qui vous attendent à Maurice.">A glimpse of the experiences that await you in Mauritius.</p>
       </div>
       <div class="gallery__grid fade-in">
-        <div class="gallery__item" data-src="assets/peak-tours-assets/hero-sea-bridge.jpg"><img src="assets/peak-tours-assets/hero-sea-bridge.jpg" alt="Mauritius sea bridge" loading="lazy" decoding="async" /><div class="gallery__overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="28" height="28"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
-        <div class="gallery__item" data-src="assets/peak-tours-assets/waterfall-view.jpg"><img src="assets/peak-tours-assets/waterfall-view.jpg" alt="Mauritius waterfall" loading="lazy" decoding="async" /><div class="gallery__overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="28" height="28"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
-        <div class="gallery__item" data-src="assets/peak-tours-assets/beach-couple-selfie.jpg"><img src="assets/peak-tours-assets/beach-couple-selfie.jpg" alt="Beach couple Mauritius" loading="lazy" decoding="async" /><div class="gallery__overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="28" height="28"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
-        <div class="gallery__item" data-src="assets/peak-tours-assets/tortoise-experience.jpg"><img src="assets/peak-tours-assets/tortoise-experience.jpg" alt="Tortoise experience Mauritius" loading="lazy" decoding="async" /><div class="gallery__overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="28" height="28"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
-        <div class="gallery__item" data-src="assets/peak-tours-assets/wine-tasting.jpg"><img src="assets/peak-tours-assets/wine-tasting.jpg" alt="Rum tasting Mauritius" loading="lazy" decoding="async" /><div class="gallery__overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="28" height="28"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
-        <div class="gallery__item" data-src="assets/peak-tours-assets/beach-swing-couple.jpg"><img src="assets/peak-tours-assets/beach-swing-couple.jpg" alt="Beach swing Mauritius" loading="lazy" decoding="async" /><div class="gallery__overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="28" height="28"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
-        <div class="gallery__item" data-src="assets/peak-tours-assets/nature-greenery.jpg"><img src="assets/peak-tours-assets/nature-greenery.jpg" alt="Mauritius nature" loading="lazy" decoding="async" /><div class="gallery__overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="28" height="28"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
-        <div class="gallery__item" data-src="assets/peak-tours-assets/group-tour.jpg"><img src="assets/peak-tours-assets/group-tour.jpg" alt="Group tour Mauritius" loading="lazy" decoding="async" /><div class="gallery__overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="28" height="28"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+        <div class="gallery__item" data-src="assets/peak-tours-assets/hero-sea-bridge.webp"><img src="assets/peak-tours-assets/hero-sea-bridge.webp" alt="Mauritius sea bridge" loading="lazy" decoding="async" /><div class="gallery__overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="28" height="28"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+        <div class="gallery__item" data-src="assets/peak-tours-assets/waterfall-view.webp"><img src="assets/peak-tours-assets/waterfall-view.webp" alt="Mauritius waterfall" loading="lazy" decoding="async" /><div class="gallery__overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="28" height="28"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+        <div class="gallery__item" data-src="assets/peak-tours-assets/beach-couple-selfie.webp"><img src="assets/peak-tours-assets/beach-couple-selfie.webp" alt="Beach couple Mauritius" loading="lazy" decoding="async" /><div class="gallery__overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="28" height="28"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+        <div class="gallery__item" data-src="assets/peak-tours-assets/tortoise-experience.webp"><img src="assets/peak-tours-assets/tortoise-experience.webp" alt="Tortoise experience Mauritius" loading="lazy" decoding="async" /><div class="gallery__overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="28" height="28"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+        <div class="gallery__item" data-src="assets/peak-tours-assets/wine-tasting.webp"><img src="assets/peak-tours-assets/wine-tasting.webp" alt="Rum tasting Mauritius" loading="lazy" decoding="async" /><div class="gallery__overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="28" height="28"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+        <div class="gallery__item" data-src="assets/peak-tours-assets/beach-swing-couple.webp"><img src="assets/peak-tours-assets/beach-swing-couple.webp" alt="Beach swing Mauritius" loading="lazy" decoding="async" /><div class="gallery__overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="28" height="28"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+        <div class="gallery__item" data-src="assets/peak-tours-assets/nature-greenery.webp"><img src="assets/peak-tours-assets/nature-greenery.webp" alt="Mauritius nature" loading="lazy" decoding="async" /><div class="gallery__overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="28" height="28"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+        <div class="gallery__item" data-src="assets/peak-tours-assets/group-tour.webp"><img src="assets/peak-tours-assets/group-tour.webp" alt="Group tour Mauritius" loading="lazy" decoding="async" /><div class="gallery__overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="28" height="28"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
       </div>
     </div>
   </section>
@@ -1533,7 +1508,7 @@
     <button class="lightbox__prev" id="lightboxPrev" aria-label="Previous image">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="24" height="24"><polyline points="15 18 9 12 15 6"/></svg>
     </button>
-    <img class="lightbox__img" id="lightboxImg" src="" alt="Gallery image" />
+    <img decoding="async" loading="lazy" class="lightbox__img" id="lightboxImg" src="" alt="Gallery image" />
     <button class="lightbox__next" id="lightboxNext" aria-label="Next image">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="24" height="24"><polyline points="9 18 15 12 9 6"/></svg>
     </button>
