@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TEESZ — Not made to blend in.</title>
+  <meta name="description" content="TEESZ. Streetwear that doesn't blend in. Collection 01 — the Off Script Tee and the Moneymaker Tee.">
+  <meta name="theme-color" content="#f0287f">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wdth,wght@62..125,400..900&family=Outfit:wght@300;400;500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script type="importmap">
+    { "imports": {
+      "three": "./vendor/three.module.min.js",
+      "three/addons/environments/RoomEnvironment.js": "./vendor/RoomEnvironment.js"
+    } }
+  </script>
+</head>
+<body class="is-loading" data-theme="pink">
+
+  <!-- Logo symbol, reused everywhere -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="logo" viewBox="0 0 300 240">
+      <g style="fill:var(--logo-fill,currentColor);stroke:var(--logo-stroke,transparent)" stroke-width="10" stroke-linejoin="round">
+        <path d="M128 20 L150 80 L238 56 L222 74 L284 48 L192 112 L160 190 L112 152 L38 214 L70 138 L22 128 L92 100 Z"/>
+        <path d="M90 96 L178 82 L172 106 L140 110 L120 184 L96 186 L114 114 L84 118 Z"/>
+      </g>
+    </symbol>
+    <symbol id="arrow-ur" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+  </svg>
+
+  <!-- Loader -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <svg class="loader__logo" viewBox="0 0 300 240">
+      <path pathLength="1" d="M128 20 L150 80 L238 56 L222 74 L284 48 L192 112 L160 190 L112 152 L38 214 L70 138 L22 128 L92 100 Z"/>
+      <path pathLength="1" d="M90 96 L178 82 L172 106 L140 110 L120 184 L96 186 L114 114 L84 118 Z"/>
+    </svg>
+    <div class="loader__count"><span id="loaderCount">000</span></div>
+    <p class="loader__tag">Not made to blend in.</p>
+  </div>
+
+  <!-- Cursor -->
+  <div class="cursor" aria-hidden="true"><div class="cursor__ring"><span class="cursor__label"></span></div><div class="cursor__dot"></div></div>
+
+  <!-- Navigation -->
+  <header class="nav">
+    <a href="#drop" class="nav__logo" aria-label="TEESZ home"><svg viewBox="0 0 300 240"><use href="#logo"/></svg><span>Teesz</span></a>
+    <p class="nav__tag">Not made to blend in.</p>
+    <div class="nav__right">
+      <button class="pill magnetic" id="menuBtn" aria-expanded="false" aria-controls="menu">Menu <span class="plus">+</span></button>
+      <button class="nav__bag magnetic" id="bagBtn">Bag <span id="bagCount">0</span></button>
+    </div>
+  </header>
+
+  <nav class="dots" aria-label="Sections"></nav>
+
+  <main>
+    <!-- 01 · OFF SCRIPT -->
+    <section class="sec drop" id="drop" data-theme="pink" data-label="Off Script">
+      <h1 class="drop__title fit" aria-label="Off Script"><span>OFF</span> <span>SCRIPT</span></h1>
+      <div class="carousel" id="carousel" data-cursor="Drag"></div>
+      <div class="drop__controls">
+        <div class="ctrl">
+          <button class="ctrl__arrow" id="prevSlide" aria-label="Previous tee">&larr;</button>
+          <span class="ctrl__label" id="slideLabel">01 — Black / Pink</span>
+          <button class="ctrl__arrow" id="nextSlide" aria-label="Next tee">&rarr;</button>
+          <span class="ctrl__sep"></span>
+          <button class="ctrl__add" id="slideOpen" aria-label="View this tee">+</button>
+        </div>
+        <p class="hint">Drag to switch · Scroll to explore</p>
+      </div>
+      <p class="corner corner--bl">Collection 01</p>
+      <a class="btn btn--dark corner--br magnetic" href="#shop">Shop the drop <svg><use href="#arrow-ur"/></svg></a>
+    </section>
+
+    <!-- 02 · MONEYMAKER -->
+    <section class="sec mm" id="moneymaker" data-theme="cream" data-label="Moneymaker">
+      <div class="mm__sticky">
+        <p class="eyebrow mm__eyebrow">02 / The Moneymaker Collection <span class="rule"></span></p>
+        <h2 class="mm__title fit" aria-label="Moneymaker"></h2>
+        <div class="mm__stage" data-cursor="Flip">
+          <div class="flip" id="mmFlip">
+            <img class="flip__face" src="assets/tees/cream-front.svg" alt="Moneymaker Tee, front">
+            <img class="flip__face flip__face--back" src="assets/tees/cream-back.svg" alt="Moneymaker Tee, back">
+          </div>
+          <div class="shadow"></div>
+        </div>
+        <div class="mm__copy">
+          <h3>Wear your<br>ambition.</h3>
+          <p>The Moneymaker Tee</p>
+          <button class="btn btn--burgundy magnetic" data-open="moneymaker">Shop the tee <svg><use href="#arrow-ur"/></svg></button>
+        </div>
+        <div class="mm__side">
+          <p class="swatch"><i></i>Cream / Burgundy</p>
+          <div class="toggle" role="group" aria-label="Show side">
+            <button class="is-active" data-face="front">Front</button>
+            <button data-face="back">Back</button>
+          </div>
+        </div>
+        <p class="hint mm__hint">Scroll to flip it</p>
+        <div class="marquee" aria-hidden="true"><div class="marquee__track"></div></div>
+      </div>
+    </section>
+
+    <!-- 03 · AFTER HOURS -->
+    <section class="sec ah" id="after-hours" data-theme="night" data-label="After Hours">
+      <div class="ah__glow"></div>
+      <div class="ah__floor"></div>
+      <div class="ah__text">
+        <p class="eyebrow ah__eyebrow">03 / A different energy</p>
+        <h2 class="ah__title"><span class="ln"><span>AFTER</span></span><span class="ln"><span>HOURS.</span></span></h2>
+        <button class="btn btn--outline magnetic" data-open="offscript">Explore the tee <svg><use href="#arrow-ur"/></svg></button>
+      </div>
+      <div class="ah__tee tilt" data-cursor="View" data-open="offscript">
+        <img src="assets/tees/black-front.svg" alt="Off Script Tee in black with pink print">
+      </div>
+      <p class="keep">Keep scrolling<br><span>&#8964;</span></p>
+    </section>
+
+    <!-- 04 · PLAY -->
+    <section class="sec play" id="play" data-theme="chrome" data-label="Play" data-cursor="Spin">
+      <h2 class="play__bg fit" aria-hidden="true">TEESZ</h2>
+      <div class="play__ui">
+        <p class="eyebrow">04 / Play</p>
+        <h3>Spin the star.</h3>
+        <p>Grab it. Throw it. See how fast you can make it go.</p>
+      </div>
+      <div class="play__meter"><span class="eyebrow">Spins</span><b id="spinCount">0</b><span class="play__msg" id="spinMsg"></span></div>
+    </section>
+
+    <!-- 05 · SHE'S NEXT -->
+    <section class="sec next" id="next" data-theme="blush" data-label="She's Next">
+      <div class="next__text">
+        <p class="eyebrow">05 / Coming soon</p>
+        <h2 class="next__title"><span class="ln"><span>SHE'S</span></span><span class="ln"><span>NEXT.</span></span></h2>
+        <p class="next__lede">The women's line is in the studio. Get on the list and see it before anyone else.</p>
+        <form class="waitlist" id="waitlist">
+          <label for="wlContact" class="eyebrow">Your Instagram @ or phone</label>
+          <div class="waitlist__row">
+            <input id="wlContact" name="contact" required placeholder="@yourname" autocomplete="off">
+            <button class="btn btn--dark magnetic" type="submit">Join the list <svg><use href="#arrow-ur"/></svg></button>
+          </div>
+          <p class="form-note" id="wlNote" role="status"></p>
+        </form>
+      </div>
+      <div class="next__tee" data-cursor="Soon">
+        <img src="assets/tees/black-front.svg" alt="">
+        <span class="next__stamp">Classified</span>
+      </div>
+    </section>
+
+    <!-- 06 · SHOP -->
+    <section class="sec shop" id="shop" data-theme="paper" data-label="Shop">
+      <div class="shop__head">
+        <p class="eyebrow">06 / The drop</p>
+        <h2 class="shop__title">Collection 01</h2>
+        <p class="shop__lede">Two tees. No restock promises. Pay with <b>Juice</b> or <b>cash</b>.</p>
+      </div>
+      <div class="shop__grid" id="shopGrid"></div>
+    </section>
+
+    <footer class="footer" data-theme="night">
+      <div class="marquee marquee--footer" aria-hidden="true"><div class="marquee__track"></div></div>
+      <div class="footer__grid">
+        <p>Move different.<br>Think bigger.</p>
+        <p><a class="link" id="igLink" href="#" target="_blank" rel="noopener">Instagram</a><br>Juice or cash</p>
+        <p>&copy; <span id="year"></span> Teesz&reg;<br>All rights reserved</p>
+      </div>
+      <h2 class="footer__word fit">TEESZ</h2>
+    </footer>
+  </main>
+
+  <!-- Menu -->
+  <div class="menu" id="menu" aria-hidden="true">
+    <ul class="menu__list"></ul>
+    <svg class="menu__logo" viewBox="0 0 300 240" aria-hidden="true"><use href="#logo"/></svg>
+    <div class="menu__foot"><span>Collection 01</span><a class="link" id="menuIg" href="#" target="_blank" rel="noopener">Instagram</a><span>Juice or cash</span></div>
+  </div>
+
+  <!-- Product view -->
+  <div class="pv" id="pv" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="pvName">
+    <button class="pv__close" data-close aria-label="Close">&times;</button>
+    <div class="pv__media" data-cursor="Flip">
+      <div class="flip" id="pvFlip"><img class="flip__face" id="pvFront" alt=""><img class="flip__face flip__face--back" id="pvBack" alt=""></div>
+      <div class="toggle pv__toggle" role="group" aria-label="Show side"><button class="is-active" data-face="front">Front</button><button data-face="back">Back</button></div>
+    </div>
+    <div class="pv__info">
+      <p class="eyebrow" id="pvColor"></p>
+      <h2 class="pv__name" id="pvName"></h2>
+      <p class="pv__price" id="pvPrice"></p>
+      <ul class="pv__details" id="pvDetails"></ul>
+      <p class="eyebrow">Size</p>
+      <div class="sizes" id="pvSizes" role="radiogroup" aria-label="Size"></div>
+      <button class="btn btn--accent pv__add magnetic" id="pvAdd">Add to bag <svg><use href="#arrow-ur"/></svg></button>
+      <p class="form-note" id="pvNote" role="status"></p>
+    </div>
+  </div>
+
+  <!-- Bag -->
+  <aside class="bag" id="bag" aria-hidden="true" aria-label="Your bag">
+    <div class="bag__head"><h2>Bag (<span id="bagCount2">0</span>)</h2><button class="pv__close" data-close aria-label="Close">&times;</button></div>
+    <div class="bag__items" id="bagItems"></div>
+    <form class="checkout" id="checkout">
+      <div class="bag__total"><span>Total</span><b id="bagTotal"></b></div>
+      <input name="name" required placeholder="Your name" autocomplete="name">
+      <input name="phone" required placeholder="Phone number" autocomplete="tel" inputmode="tel">
+      <div class="seg" role="radiogroup" aria-label="Delivery">
+        <label><input type="radio" name="delivery" value="Pickup" checked><span>Pickup</span></label>
+        <label><input type="radio" name="delivery" value="Delivery"><span>Delivery</span></label>
+      </div>
+      <input name="address" placeholder="Delivery address" autocomplete="street-address" hidden>
+      <div class="seg" role="radiogroup" aria-label="Payment">
+        <label><input type="radio" name="payment" value="Juice" checked><span>Juice</span></label>
+        <label><input type="radio" name="payment" value="Cash"><span>Cash</span></label>
+      </div>
+      <button class="btn btn--accent" type="submit">Send my order <svg><use href="#arrow-ur"/></svg></button>
+      <p class="form-note" id="coNote" role="status">Your order goes straight to Teesz. They confirm and send Juice details.</p>
+    </form>
+  </aside>
+  <div class="scrim" id="scrim"></div>
+
+  <canvas id="star3d" aria-hidden="true"></canvas>
+
+  <!-- GSAP 3.12.5, Lenis 1.1.13, three.js r160 — bundled locally in /vendor -->
+  <script src="vendor/gsap.min.js"></script>
+  <script src="vendor/ScrollTrigger.min.js"></script>
+  <script src="vendor/lenis.min.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/app.js"></script>
+  <script type="module" src="js/star3d.js"></script>
+</body>
+</html>
