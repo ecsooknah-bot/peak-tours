@@ -65,13 +65,11 @@
     const box = el.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight);
     if (!w || !box) return;
     const size = (100 * box) / w;
-    const maxH = el.classList.contains('mm__title') ? innerHeight * 0.48 : el.classList.contains('footer__word') ? innerHeight * 0.62 : Infinity;
+    const maxH = el.classList.contains('footer__word') ? innerHeight * 0.62 : Infinity;
     el.style.fontSize = `${Math.min(size, maxH / 0.8)}px`;
   }
   const fitAll = () => $$('.fit').forEach(fit);
 
-  /* MONEYMAKER letters */
-  $('.mm__title').innerHTML = 'MONEYMAKER'.split('').map((c) => `<span class="ch">${c}</span>`).join('');
 
   /* marquees */
   const logoSvg = '<svg viewBox="0 0 300 240"><use href="#logo"/></svg>';
@@ -79,7 +77,6 @@
     const unit = `<span>${phrase}<i></i>${logoSvg}<i></i></span>`;
     track.innerHTML = unit.repeat(6) + unit.repeat(6);
   }
-  fillMarquee($('.mm .marquee__track'), 'Move different. Think bigger.');
   fillMarquee($('.marquee--footer .marquee__track'), 'Not made to blend in — Juice or cash');
 
   /* dots + menu */
@@ -285,66 +282,10 @@
     pointer.y = e.clientY / innerHeight - 0.5;
   });
 
-  /* ---------------- 02 moneymaker ---------------- */
-  const mm = $('#moneymaker');
-  const mmFlip = $('#mmFlip');
-  const mmToggle = $('.mm .toggle');
-  let mmRot = 0, mmProgress = 0;
-  function mmRange() {
-    const top = mm.getBoundingClientRect().top + scrollY;
-    return { top, len: mm.offsetHeight - innerHeight };
-  }
   function setToggle(toggle, back) {
     toggle.classList.toggle('is-back', back);
     $$('button', toggle).forEach((b) => b.classList.toggle('is-active', (b.dataset.face === 'back') === back));
   }
-  $$('button', mmToggle).forEach((b) =>
-    b.addEventListener('click', () => {
-      const { top, len } = mmRange();
-      scrollToY(top + len * (b.dataset.face === 'back' ? 0.82 : 0.12));
-    }),
-  );
-  $('.mm__stage').addEventListener('click', () => {
-    const { top, len } = mmRange();
-    scrollToY(top + len * (mmRot > 90 ? 0.12 : 0.82));
-  });
-  function updateMM() {
-    const { top, len } = mmRange();
-    mmProgress = Math.min(1, Math.max(0, (scrollY - top) / len));
-    const p = Math.min(1, Math.max(0, (mmProgress - 0.3) / 0.4));
-    const eased = p < 0.5 ? 4 * p * p * p : 1 - Math.pow(-2 * p + 2, 3) / 2;
-    mmRot = eased * 180;
-    setToggle(mmToggle, mmRot > 90);
-  }
-
-  /* ---------------- 03 after hours ---------------- */
-  const ah = $('#after-hours');
-  const glow = $('.ah__glow');
-  const ahTee = $('.ah__tee');
-  const glowPos = { x: 0, y: 0, tx: 0, ty: 0 };
-  ah.addEventListener('pointermove', (e) => {
-    const r = ah.getBoundingClientRect();
-    glowPos.tx = e.clientX - r.left;
-    glowPos.ty = e.clientY - r.top;
-  });
-  function resetGlow() {
-    glowPos.tx = innerWidth * 0.62;
-    glowPos.ty = innerHeight * 0.48;
-  }
-  resetGlow();
-  ah.addEventListener('pointerleave', resetGlow);
-
-  /* ---------------- 04 play ---------------- */
-  const spinMsgs = [[1, 'There it goes.'], [5, 'Okay, okay.'], [10, 'Certified spinner.'], [25, "You're one of us now."], [50, 'Different energy. Confirmed.'], [100, 'Touch grass? Never.']];
-  let best = store.get('teesz-spins', 0);
-  addEventListener('star:spins', (e) => {
-    const n = e.detail;
-    $('#spinCount').textContent = n;
-    const msg = spinMsgs.filter(([k]) => n >= k).pop();
-    $('#spinMsg').textContent = msg ? msg[1] : '';
-    if (n > best) { best = n; store.set('teesz-spins', best); }
-  });
-  if (best) $('#spinMsg').textContent = `Your record: ${best}`;
 
   /* ---------------- 05 waitlist ---------------- */
   $('#waitlist').addEventListener('submit', (e) => {
@@ -527,7 +468,7 @@
 
   /* ---------------- frame loop ---------------- */
   const mmTracks = $$('.marquee__track').map((el) => ({ el, x: 0 }));
-  let lastY = scrollY, vel = 0, glowSeen = false;
+  let lastY = scrollY, vel = 0;
   const tiltCenter = () => slideEls[cur]?.querySelector('.slide__tilt');
   function frame() {
     const dy = scrollY - lastY;
@@ -535,26 +476,11 @@
     vel += (dy - vel) * 0.1;
 
     updateActive();
-    updateMM();
-
-    // moneymaker flip + tilt
-    mmFlip.style.transform = `rotateY(${mmRot + pointer.x * 18}deg) rotateX(${-pointer.y * 10}deg)`;
 
     // carousel tilt
     slideEls.forEach((el) => { const t = el.querySelector('.slide__tilt'); if (t !== tiltCenter()) t.style.transform = ''; });
     const t = tiltCenter();
     if (t && currentSection.id === 'drop') t.style.transform = `perspective(1200px) rotateY(${pointer.x * 16}deg) rotateX(${-pointer.y * 10}deg)`;
-
-    // after-hours glow + tee
-    if (currentSection.id === 'after-hours' || !glowSeen) {
-      glowSeen = true;
-      glowPos.x += (glowPos.tx - glowPos.x) * 0.08;
-      glowPos.y += (glowPos.ty - glowPos.y) * 0.08;
-      glow.style.transform = `translate(${glowPos.x}px, ${glowPos.y}px)`;
-      const r = ah.getBoundingClientRect();
-      const p = (innerHeight - r.top) / (innerHeight + r.height);
-      ahTee.style.transform = `translateY(calc(-50% + ${(0.5 - p) * 120}px)) perspective(1200px) rotateY(${pointer.x * 14}deg) rotateX(${-pointer.y * 8}deg)`;
-    }
 
     // marquees react to scroll speed
     mmTracks.forEach((m) => {
@@ -570,15 +496,10 @@
   function setupReveals() {
     if (!gsap || !ST || reduced) return;
     gsap.registerPlugin(ST);
-    gsap.set('.mm__title .ch', { yPercent: 115 });
-    ST.create({ trigger: mm, start: 'top 70%', once: true,
-      onEnter: () => gsap.to('.mm__title .ch', { yPercent: 0, duration: 1.2, stagger: 0.05, ease: 'expo.out' }) });
-    $$('.ah__title .ln > span, .next__title .ln > span').forEach((el) => gsap.set(el, { yPercent: 105 }));
-    [['#after-hours', '.ah__title .ln > span'], ['#next', '.next__title .ln > span']].forEach(([trig, sel]) =>
+    $$('.next__title .ln > span').forEach((el) => gsap.set(el, { yPercent: 105 }));
+    [['#next', '.next__title .ln > span']].forEach(([trig, sel]) =>
       ST.create({ trigger: trig, start: 'top 60%', once: true,
         onEnter: () => gsap.to(sel, { yPercent: 0, duration: 1.3, stagger: 0.12, ease: 'expo.out' }) }));
-    gsap.from('.ah__tee img', { scrollTrigger: { trigger: '#after-hours', start: 'top 85%', end: 'top 15%', scrub: 1 }, rotate: 30, scale: 0.7, xPercent: 20, ease: 'none' });
-    gsap.from('.mm__copy > *, .mm__side > *', { scrollTrigger: { trigger: mm, start: 'top 40%', once: true }, y: 40, opacity: 0, stagger: 0.08, duration: 1, ease: 'expo.out' });
     gsap.to('.play__bg', { scrollTrigger: { trigger: '#play', start: 'top bottom', end: 'bottom top', scrub: 1 }, xPercent: -14, ease: 'none' });
     gsap.from('.next__tee', { scrollTrigger: { trigger: '#next', start: 'top 80%', end: 'center center', scrub: 1 }, y: 160, rotate: -12, ease: 'none' });
     $$('[data-reveal]').forEach((el, i) => gsap.from(el, { scrollTrigger: { trigger: el, start: 'top 88%', once: true }, y: 90, opacity: 0, duration: 1.2, delay: (i % 2) * 0.12, ease: 'expo.out' }));

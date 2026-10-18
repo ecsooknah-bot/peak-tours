@@ -11,12 +11,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wdth,wght@62..125,400..900&family=Outfit:wght@300;400;500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-  <script type="importmap">
-    { "imports": {
-      "three": "./vendor/three.module.min.js",
-      "three/addons/environments/RoomEnvironment.js": "./vendor/RoomEnvironment.js"
-    } }
-  </script>
 </head>
 <body class="is-loading" data-theme="pink">
 
@@ -75,59 +69,53 @@
       <a class="btn btn--dark corner--br magnetic" href="#shop">Shop the drop <svg><use href="#arrow-ur"/></svg></a>
     </section>
 
-    <!-- 02 · MONEYMAKER -->
-    <section class="sec mm" id="moneymaker" data-theme="cream" data-label="Moneymaker">
-      <div class="mm__sticky">
-        <p class="eyebrow mm__eyebrow">02 / The Moneymaker Collection <span class="rule"></span></p>
-        <h2 class="mm__title fit" aria-label="Moneymaker"></h2>
-        <div class="mm__stage" data-cursor="Flip">
-          <div class="flip" id="mmFlip">
-            <img class="flip__face" src="assets/tees/cream-front.svg" alt="Moneymaker Tee, front">
-            <img class="flip__face flip__face--back" src="assets/tees/cream-back.svg" alt="Moneymaker Tee, back">
-          </div>
-          <div class="shadow"></div>
+    <!-- 02–03 · THE FILM: After Hours → Moneymaker (scroll-driven image sequence) -->
+    <section class="sec film" id="film" data-theme="night" data-label="After Hours">
+      <div class="film__sticky">
+        <canvas class="film__canvas" id="filmCanvas" aria-label="The black Off Script tee transforms into the cream Moneymaker tee"></canvas>
+        <div class="film__flash" aria-hidden="true"></div>
+        <div class="film__scrim" aria-hidden="true"></div>
+
+        <div class="film__chapter film__chapter--night" data-in="-0.1" data-out="0.15">
+          <p class="eyebrow film__eyebrow">02 / A different energy</p>
+          <h2 class="film__huge">AFTER<br>HOURS.</h2>
+          <button class="btn btn--outline magnetic" data-open="offscript">Explore the tee <svg><use href="#arrow-ur"/></svg></button>
         </div>
-        <div class="mm__copy">
-          <h3>Wear your<br>ambition.</h3>
-          <p>The Moneymaker Tee</p>
+        <div class="film__chapter film__chapter--mid" data-in="0.17" data-out="0.3">
+          <p class="film__line">Same energy.<br><em>New mood.</em></p>
+        </div>
+        <div class="film__chapter film__chapter--light" data-in="0.33" data-out="0.5">
+          <p class="eyebrow">03 / The Moneymaker Collection</p>
+          <h3 class="film__mid">Wear your<br>ambition.</h3>
+          <p class="film__sub">The Moneymaker Tee · Cream / Burgundy</p>
+        </div>
+        <div class="film__chapter film__chapter--light" data-in="0.6" data-out="0.79">
+          <h2 class="film__huge film__huge--burgundy">MONEY<br>MAKER</h2>
+        </div>
+        <div class="film__chapter film__chapter--light film__chapter--end" data-in="0.86" data-out="1.2">
+          <h3 class="film__mid">Move different.<br>Think bigger.</h3>
           <button class="btn btn--burgundy magnetic" data-open="moneymaker">Shop the tee <svg><use href="#arrow-ur"/></svg></button>
         </div>
-        <div class="mm__side">
-          <p class="swatch"><i></i>Cream / Burgundy</p>
-          <div class="toggle" role="group" aria-label="Show side">
-            <button class="is-active" data-face="front">Front</button>
-            <button data-face="back">Back</button>
-          </div>
-        </div>
-        <p class="hint mm__hint">Scroll to flip it</p>
-        <div class="marquee" aria-hidden="true"><div class="marquee__track"></div></div>
-      </div>
-    </section>
 
-    <!-- 03 · AFTER HOURS -->
-    <section class="sec ah" id="after-hours" data-theme="night" data-label="After Hours">
-      <div class="ah__glow"></div>
-      <div class="ah__floor"></div>
-      <div class="ah__text">
-        <p class="eyebrow ah__eyebrow">03 / A different energy</p>
-        <h2 class="ah__title"><span class="ln"><span>AFTER</span></span><span class="ln"><span>HOURS.</span></span></h2>
-        <button class="btn btn--outline magnetic" data-open="offscript">Explore the tee <svg><use href="#arrow-ur"/></svg></button>
+        <div class="film__bar" aria-hidden="true"><i></i></div>
+        <p class="hint film__hint">Keep scrolling</p>
       </div>
-      <div class="ah__tee tilt" data-cursor="View" data-open="offscript">
-        <img src="assets/tees/black-front.svg" alt="Off Script Tee in black with pink print">
-      </div>
-      <p class="keep">Keep scrolling<br><span>&#8964;</span></p>
     </section>
 
     <!-- 04 · PLAY -->
-    <section class="sec play" id="play" data-theme="chrome" data-label="Play" data-cursor="Spin">
+    <section class="sec play" id="play" data-theme="chrome" data-label="Play" data-cursor="Grab">
       <h2 class="play__bg fit" aria-hidden="true">TEESZ</h2>
+      <div class="play__stage">
+        <div class="play__star" id="playStar">
+          <img src="assets/star.webp" alt="The TEESZ star logo in pink metal" draggable="false">
+          <span class="play__shine" aria-hidden="true"></span>
+        </div>
+      </div>
       <div class="play__ui">
         <p class="eyebrow">04 / Play</p>
-        <h3>Spin the star.</h3>
-        <p>Grab it. Throw it. See how fast you can make it go.</p>
+        <h3>Grab the star.</h3>
+        <p>Throw it around. It always lands back on its feet.</p>
       </div>
-      <div class="play__meter"><span class="eyebrow">Spins</span><b id="spinCount">0</b><span class="play__msg" id="spinMsg"></span></div>
     </section>
 
     <!-- 05 · SHE'S NEXT -->
@@ -146,7 +134,7 @@
         </form>
       </div>
       <div class="next__tee" data-cursor="Soon">
-        <img src="assets/tees/black-front.svg" alt="">
+        <img src="assets/tees/black-front.webp" alt="">
         <span class="next__stamp">Classified</span>
       </div>
     </section>
@@ -221,14 +209,12 @@
   </aside>
   <div class="scrim" id="scrim"></div>
 
-  <canvas id="star3d" aria-hidden="true"></canvas>
-
-  <!-- GSAP 3.12.5, Lenis 1.1.13, three.js r160 — bundled locally in /vendor -->
+  <!-- GSAP 3.12.5 and Lenis 1.1.13, bundled locally in /vendor -->
   <script src="vendor/gsap.min.js"></script>
   <script src="vendor/ScrollTrigger.min.js"></script>
   <script src="vendor/lenis.min.js"></script>
   <script src="js/config.js"></script>
   <script src="js/app.js"></script>
-  <script type="module" src="js/star3d.js"></script>
+  <script src="js/film.js"></script>
 </body>
 </html>

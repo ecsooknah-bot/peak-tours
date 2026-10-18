@@ -24,8 +24,8 @@ window.TEESZ_CONFIG = {
       swatch: '#151316',
       price: 0, // TODO: set price
       sizes: ['S', 'M', 'L', 'XL', 'XXL'],
-      front: 'assets/tees/black-front.svg', // swap for the real photos
-      back: 'assets/tees/black-back.svg',
+      front: 'assets/tees/black-front.webp',
+      back: 'assets/tees/black-back.webp',
       details: ['Oversized boxy fit', 'Pink star-T chest logo', 'Chrome graffiti print', 'Unisex'],
     },
     {
@@ -35,8 +35,8 @@ window.TEESZ_CONFIG = {
       swatch: '#efe6d6',
       price: 0, // TODO: set price
       sizes: ['S', 'M', 'L', 'XL', 'XXL'],
-      front: 'assets/tees/cream-front.svg',
-      back: 'assets/tees/cream-back.svg',
+      front: 'assets/tees/cream-front.webp',
+      back: 'assets/tees/cream-back.webp',
       details: ['Oversized boxy fit', 'Burgundy star-T chest logo', '“Moneymaker” back print', 'Unisex'],
     },
   ],
