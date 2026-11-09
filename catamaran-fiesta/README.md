@@ -1,22 +1,23 @@
-# Catamaran Fiesta: one-page sample website
+# Mauritius Paradise (Catamaran Mauricien Fiesta): one-page website
 
-A one-page site for Catamaran Fiesta (Catamaran Mauricien Fiesta), Grand Baie, Mauritius.
+A one-page site for Mauritius Paradise, the catamaran cruises from Grand Baie, Mauritius.
 It's plain HTML, CSS and JavaScript with no build step. GSAP, ScrollTrigger and Lenis load from the jsDelivr CDN.
+
+The look follows the two mockups: navy and cream, Playfair Display headlines, square photos, hairline dividers and numbered cruise rows.
+Wording and photos come from the owner's current site (https://mauritius-paradise.my.canva.site).
 
 ```
 catamaran-fiesta/
 ├── index.html        page content, SEO tags, IMAGE MAP comment at the top
-├── styles.css        all styling (mobile-first)
+├── styles.css        all styling (mobile-first); colours and fonts are tokens at the top
 ├── script.js         smooth scroll, animations, menu, FAQ, lightbox, WhatsApp form
-├── images/           all photos (WebP) + og-image.jpg for social previews
-├── fonts/            self-hosted Cormorant Garamond + Inter (OFL licence)
+├── images/           the owner's photos as WebP + og-image.jpg for social previews
+├── fonts/            self-hosted Playfair Display + Inter (OFL licence)
 ├── favicon.svg / favicon.ico / apple-touch-icon.png
 └── _headers          Netlify cache headers
 ```
 
 ## Preview locally
-
-Opening `index.html` directly works, but a local server is closer to the real thing:
 
 ```bash
 cd catamaran-fiesta
@@ -30,51 +31,43 @@ Then open http://localhost:8080.
 
 ## Deploy to Netlify (drag and drop)
 
-1. Sign in (or create a free account) at https://app.netlify.com. Sign in first: if you drop a site without an account, Netlify deletes it after about an hour unless you claim it.
-2. Get the folder onto your computer. On GitHub: **Code → Download ZIP**, unzip it, and find the `catamaran-fiesta` folder.
-3. Go to https://app.netlify.com/drop and drag the **`catamaran-fiesta` folder** onto the page. Drag the folder that contains `index.html`, not the whole repository.
-4. After about 10 seconds the site is live on a random address like `https://random-name-123.netlify.app`.
-5. Rename it: **Site configuration → General → Site details → Change site name** → `catamaran-fiesta`. The address becomes `https://catamaran-fiesta.netlify.app`, which already matches the share-preview tags in `index.html`.
-   - If that name is taken, pick another one. Then, in `index.html`, replace every `https://catamaran-fiesta.netlify.app` with the new address (6 places: canonical, Open Graph, Twitter and the structured data) and redeploy.
-6. To update the site later: open the site in Netlify → **Deploys** → drag the updated folder onto the "drag and drop" area at the bottom.
+1. Sign in at https://app.netlify.com. A site dropped without an account is deleted after about an hour.
+2. Drop the folder (or a zip of its contents, with `index.html` at the top level) on https://app.netlify.com/drop, or into the "Already built it?" box of an existing project.
+   Leave this README out of the upload: anyone could read it at `/README.md` on the live site.
+3. **Site configuration → Change site name.** The share-preview tags in `index.html` point to `https://catamaran-fiesta.netlify.app`.
+   If you pick another name (for example `mauritius-paradise`), replace that address everywhere in `index.html` (6 places) and upload again.
+4. To update later: open the project → **Deploys** → drag the updated folder in again.
 
-Optional: add a custom domain in **Domain management**. Netlify sets up free HTTPS automatically. If you use a custom domain, update the 6 URLs mentioned above as well.
+Check the WhatsApp/Facebook preview at https://developers.facebook.com/tools/debug/ ("Scrape again" refreshes it).
 
-Check the social preview after deploying: paste the link into https://developers.facebook.com/tools/debug/ (Facebook/WhatsApp cache previews; "Scrape again" refreshes them).
+## Changing photos
 
-## Swapping in the owner's photos
-
-Every photo is listed in the **IMAGE MAP** comment at the top of `index.html`, with its size and where it's used.
-
-1. Export the new photo as WebP at the listed size. https://squoosh.app is free; quality 65–75 is plenty.
-2. Save it into `images/` with **exactly the same file name**, replacing the placeholder.
-3. Update the photo's `alt` text in `index.html` (search for the file name).
-4. If the new photo has a different shape (e.g. portrait instead of landscape), also update its `width`/`height` attributes.
-
-The gallery uses two files per photo: `gallery-N.webp` (grid thumbnail) and `gallery-N-large.webp` (opens in the lightbox).
-For the hero, `hero-mobile.webp` is a portrait crop shown on phones. A drone video can be added too (see the comment inside the hero in `index.html`).
+Every photo is listed in the **IMAGE MAP** comment at the top of `index.html`, with its size and where it is used.
+Export the new photo as WebP (https://squoosh.app, quality 65–75), save it over the old file with the same name, and update its `alt` text.
+The gallery uses two files per photo: `gallery-N.webp` (grid) and `gallery-N-large.webp` (lightbox).
 
 ## Placeholders to confirm with the owner
 
 Search the code for `[CONFIRM]`. Every item is listed here:
 
-| # | What | Where it shows | Current placeholder |
-|---|------|----------------|---------------------|
-| 1 | Day trip price, and weekend price | Trip card 1 | "From Rs 1,250 per person · weekdays" |
-| 2 | What's included on the day trip | Trip card 1 | Snorkelling stop · Lunch on board · Drinks |
-| 3 | Sunset party price | Trip card 2 | "Price on request" |
-| 4 | Private charter: dates, times, duration, departure point, max guests | Trip card 3, FAQ | "Date & times on request" |
-| 5 | Follower count and platform | Trust bar | "10K+ followers" |
-| 6 | Exact meeting point at Grand Baie public beach | Booking section | "Grand Baie public beach, Mauritius" (Google Maps search link) |
-| 7 | FAQ: what to bring | FAQ | Swimwear, towel, sunscreen, light layer for the evening |
-| 8 | FAQ: children (ages, prices, life jackets, party policy) | FAQ | Families welcome on day trips/charters; ask first for the party |
-| 9 | FAQ: bad weather / cancellation policy | FAQ | Reschedule or refund |
-| 10 | FAQ: private boat details | FAQ | Quote via WhatsApp |
-| 11 | FAQ: payment methods and deposit | FAQ | "We'll confirm payment options on WhatsApp" |
-| 12 | Real photos (and permission to use them) | Whole site | Unsplash placeholders |
+| # | What | Shown now | Why it needs checking |
+|---|------|-----------|-----------------------|
+| 1 | Northern Islands cruise times | 08:30 – 15:30 | From the first brief; their Canva site says "Time: To be confirmed" |
+| 2 | Northern Islands price | From Rs 1,250 per person, weekdays | From the first brief; their Canva site says "Price: Contact us". Weekend price unknown |
+| 3 | Sunset cruise days | Friday & Saturday | Their Canva site says Friday & Saturday; the first brief said Fridays only |
+| 4 | Sunset cruise times | 17:00 – 22:00 | From the first brief; their Canva site says "To be confirmed" |
+| 5 | Sunset cruise price | On request | Not stated anywhere |
+| 6 | Private charter | Row 03 + FAQ answer | In the first brief, not on their Canva site. Remove the row if they don't offer it |
+| 7 | Follower count | "10K+ followers" in the trust bar | Which platform? Is the number current? |
+| 8 | Meeting point | Grand Baie public beach | Exact spot (and is it the same for the day cruise?) |
+| 9–13 | FAQ answers | Generic answers | What to bring, children, bad weather, private boat, payment |
+| 14 | Photos | The owner's photos from the Canva site | OK to use? Full-size originals would look sharper (the Canva copies are at most 1536 px) |
+| 15 | Name and web address | "Mauritius Paradise · Mauricien Fiesta" | Do they want `mauritius-paradise.netlify.app` or their own domain? |
+
+Already confirmed from their site and now in the copy: BBQ lunch, salads, snacks and soft drinks on the day cruise (alcohol according to reservation arrangements), and sunset, BBQ, drinks, DJ and dancing on the sunset cruise.
 
 ## Credits
 
-- Placeholder photos: [Unsplash](https://unsplash.com) (free to use under the Unsplash License). Source links are in the IMAGE MAP.
-- Fonts: Cormorant Garamond and Inter, SIL Open Font License (see `fonts/`).
+- Photos: the owner's own, from their current Canva website.
+- Fonts: Playfair Display and Inter, SIL Open Font License (see `fonts/`).
 - GSAP / ScrollTrigger (GreenSock, free license), Lenis (MIT), loaded from jsDelivr.

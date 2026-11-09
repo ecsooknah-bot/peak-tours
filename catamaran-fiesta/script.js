@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Catamaran Fiesta | script.js
+   Mauritius Paradise (Catamaran Mauricien Fiesta) | script.js
    Vanilla JS. GSAP, ScrollTrigger and Lenis are loaded from a CDN in index.html.
    Every feature below works without them (the page simply doesn't animate).
 
@@ -11,8 +11,8 @@
 
   /* ---------- Settings ---------- */
   var WHATSAPP_NUMBER = '23059292199';            // +230 5929 2199, digits only for wa.me
-  var PARTY_TRIP = 'Sunset Boat Party with DJ';   // must match the <option> text in the form
-  var PARTY_WEEKDAY = 5;                          // Friday (0 = Sunday)
+  var PARTY_TRIP = 'Sunset Cruise & Boat Party DJ'; // must match the <option> text in the form
+  var PARTY_DAYS = [5, 6];                           // Friday & Saturday (0 = Sunday)
 
   var doc = document.documentElement;
   var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -98,30 +98,24 @@
       reveal(onScreen);
     };
 
-    // Gentle parallax on the hero photo, and the hero text drifting away as you scroll.
-    gsap.to('.hero__media', {
-      yPercent: 14,
-      ease: 'none',
-      scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true }
-    });
-    // fromTo with explicit start values: the CSS entrance animation may still be running here.
-    gsap.fromTo('.hero__content, .hero__caption',
-      { y: 0, opacity: 1 },
+    // Gentle parallax inside the photo frames. The images are scaled up slightly in CSS
+    // so they can drift without showing an edge; the scale matches the CSS value.
+    gsap.fromTo('.hero__media img',
+      { yPercent: 0, scale: 1.08 },
       {
-        y: -60,
-        opacity: 0.15,
+        yPercent: 3.5,
+        scale: 1.08,
         ease: 'none',
-        scrollTrigger: { trigger: '.hero', start: '25% top', end: 'bottom top', scrub: true }
+        scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true }
       }
     );
-
-    // Parallax on the sunset party photo.
-    gsap.fromTo('.sunset__media',
-      { yPercent: -8 },
+    gsap.fromTo('.sunset__media img',
+      { yPercent: -4, scale: 1.1 },
       {
-        yPercent: 8,
+        yPercent: 4,
+        scale: 1.1,
         ease: 'none',
-        scrollTrigger: { trigger: '.sunset', start: 'top bottom', end: 'bottom top', scrub: true }
+        scrollTrigger: { trigger: '.sunset__media', start: 'top bottom', end: 'bottom top', scrub: true }
       }
     );
 
@@ -302,7 +296,7 @@
   }
 
   function updateDateHint() {
-    var show = fTrip.value === PARTY_TRIP && fDate.value && parseISO(fDate.value).getDay() !== PARTY_WEEKDAY;
+    var show = fTrip.value === PARTY_TRIP && fDate.value && PARTY_DAYS.indexOf(parseISO(fDate.value).getDay()) === -1;
     dateHint.hidden = !show;
   }
   fTrip.addEventListener('change', function () { updateDateHint(); clearError(fTrip); });
@@ -352,10 +346,10 @@
 
     var people = parseInt(fPeople.value, 10);
     var message = [
-      'Hello Catamaran Fiesta! 👋',
-      "I'd like to book a trip:",
+      'Hello Mauritius Paradise! 👋',
+      "I'd like to book a cruise:",
       '',
-      '• Trip: ' + fTrip.value,
+      '• Cruise: ' + fTrip.value,
       '• Date: ' + prettyDate(fDate.value),
       '• People: ' + people,
       '• Name: ' + fName.value.trim(),

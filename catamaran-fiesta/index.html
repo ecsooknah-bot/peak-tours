@@ -6,58 +6,47 @@
 
   <!--
   ==========================================================================
-    IMAGE MAP: every photo used on this page lives in /images.
-    To use the owner's real photos, export them as WebP (squoosh.app is free)
-    and save them over these files with the SAME names. No code changes needed.
-    After swapping, update the alt text where the image is used (search the name below).
+    IMAGE MAP: every photo on this page lives in /images.
+    The photos are the owner's own, taken from their current Canva site
+    (https://mauritius-paradise.my.canva.site). To change one, export the new photo
+    as WebP (squoosh.app is free) and save it over the file with the SAME name.
+    Then update its alt text below (search for the file name).
 
-    File                         Used in                       Size (px)    Unsplash placeholder source
-    ---------------------------  ----------------------------  -----------  ---------------------------------------------------------------
-    hero.webp / hero-1280.webp   Hero, desktop & tablet        2048x1280    https://images.unsplash.com/photo-1437719417032-8595fd9e9dc6
-                                                               1280x800
-    hero-mobile.webp             Hero, phones (portrait crop)  828x1380     (same photo, cropped)
-    trip-islands.webp            Trip card: Northern Islands   1000x750     https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5
-    trip-sunset.webp             Trip card: Sunset Boat Party  1000x750     https://images.unsplash.com/photo-1534447677768-be436bb09401
-    trip-private.webp            Trip card: Private Charter    1000x750     https://images.unsplash.com/photo-1540946485063-a40da27545f8
-    sunset.webp / sunset-1280    Sunset Party band, desktop    2400x1350    https://images.unsplash.com/photo-1414609245224-afa02bfb3fda
-                                                               1280x720
-    sunset-mobile.webp           Sunset Party band, phones     900x1300     (same photo, cropped)
-    gallery-1.webp (+ -large)    Gallery 1                     600 / 1050w  https://images.unsplash.com/photo-1501426026826-31c667bdf23d
-    gallery-2.webp (+ -large)    Gallery 2                     800 / 1600w  https://images.unsplash.com/photo-1583212292454-1fe6229603b7
-    gallery-3.webp (+ -large)    Gallery 3                     600 / 1000w  https://images.unsplash.com/photo-1500627964684-141351970a7f
-    gallery-4.webp (+ -large)    Gallery 4                     600 / 1050w  https://images.unsplash.com/photo-1525183995014-bd94c0750cd5
-    gallery-5.webp (+ -large)    Gallery 5                     800 / 1600w  https://images.unsplash.com/photo-1544551763-77ef2d0cfc6c
-    gallery-6.webp (+ -large)    Gallery 6                     600 / 1000w  https://images.unsplash.com/photo-1559494007-9f5847c49d94
-    gallery-7.webp (+ -large)    Gallery 7                     600 / 1120w  https://images.unsplash.com/photo-1506929562872-bb421503ef21
-    gallery-8.webp (+ -large)    Gallery 8                     600 / 1050w  https://images.unsplash.com/photo-1504681869696-d977211a5f4c
-    og-image.jpg                 Social share preview          1200x630     (hero photo, cropped)
+    File                              Used in                          Size (px)
+    --------------------------------  -------------------------------  -----------------
+    hero.webp / hero-900.webp         Hero (catamaran with guests)     1536x1152 / 900x675
+    cruise-islands.webp               Cruise 01: Northern Islands      1100x825
+    cruise-sunset.webp                Cruise 02: Sunset cruise         1100x825
+    sunset-party.webp                 Sunset party band (BBQ, sunset)  1000x1250
+    gallery-1.webp ... gallery-9.webp Gallery grid thumbnails          600 wide (800 landscape)
+    gallery-N-large.webp              Same photo, opened in lightbox   up to 1400 long edge
+    og-image.jpg                      Social share preview             1200x630
 
-    Gallery: the small file is the grid thumbnail; "-large" opens in the lightbox.
-    If a new photo has a different shape, also update its width/height attributes below.
+    If a new photo has a different shape, also update its width/height attributes.
   ==========================================================================
   -->
 
-  <title>Catamaran Fiesta | Island Trips &amp; Sunset Boat Party in Grand Baie, Mauritius</title>
-  <meta name="description" content="Catamaran day trips to Îlot Gabriel, Île Plate and Coin de Mire, a Friday sunset boat party with DJ, and private charters from Grand Baie, Mauritius. Book in 1 minute on WhatsApp.">
-  <meta name="theme-color" content="#0B2A3C">
+  <title>Mauritius Paradise | Island Trips &amp; Sunset Boat Party in Grand Baie, Mauritius</title>
+  <meta name="description" content="Catamaran cruises from Grand Baie, Mauritius: the Northern Islands (Îlot Gabriel, Île Plate, Coin de Mire) with BBQ lunch, and a sunset boat party with DJ. Book in 1 minute on WhatsApp.">
+  <meta name="theme-color" content="#F6F1E7">
 
   <!-- Replace https://catamaran-fiesta.netlify.app with the final address if the site name/domain changes -->
   <link rel="canonical" href="https://catamaran-fiesta.netlify.app/">
 
   <!-- Open Graph / social previews (WhatsApp, Facebook, Instagram link stickers) -->
   <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Catamaran Fiesta">
+  <meta property="og:site_name" content="Mauritius Paradise">
   <meta property="og:locale" content="en_GB">
-  <meta property="og:title" content="Catamaran Fiesta | Island Trips &amp; Sunset Boat Party in Grand Baie">
-  <meta property="og:description" content="Northern islands day trips, Friday sunset boat parties with DJ and private catamaran charters from Grand Baie, Mauritius.">
+  <meta property="og:title" content="Mauritius Paradise | Catamaran cruises from Grand Baie">
+  <meta property="og:description" content="Northern Islands cruise with BBQ lunch, and a sunset boat party with DJ. Book on WhatsApp.">
   <meta property="og:url" content="https://catamaran-fiesta.netlify.app/">
   <meta property="og:image" content="https://catamaran-fiesta.netlify.app/images/og-image.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Turquoise lagoon with a small island and palm trees in Mauritius">
+  <meta property="og:image:alt" content="Guests relaxing on the Mauritius Paradise catamaran in a turquoise lagoon">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Catamaran Fiesta | Island Trips &amp; Sunset Boat Party in Grand Baie">
-  <meta name="twitter:description" content="Northern islands day trips, Friday sunset boat parties with DJ and private catamaran charters from Grand Baie, Mauritius.">
+  <meta name="twitter:title" content="Mauritius Paradise | Catamaran cruises from Grand Baie">
+  <meta name="twitter:description" content="Northern Islands cruise with BBQ lunch, and a sunset boat party with DJ. Book on WhatsApp.">
   <meta name="twitter:image" content="https://catamaran-fiesta.netlify.app/images/og-image.jpg">
 
   <!-- Icons -->
@@ -67,10 +56,9 @@
 
   <!-- Performance: fonts and the hero photo are fetched first -->
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
-  <link rel="preload" href="fonts/cormorant-garamond-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/playfair-display-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" as="image" href="images/hero-mobile.webp" type="image/webp" media="(max-width: 767px)" fetchpriority="high">
-  <link rel="preload" as="image" imagesrcset="images/hero-1280.webp 1280w, images/hero.webp 2048w" imagesizes="100vw" type="image/webp" media="(min-width: 768px)" fetchpriority="high">
+  <link rel="preload" as="image" imagesrcset="images/hero-900.webp 900w, images/hero.webp 1536w" imagesizes="(min-width: 960px) 58vw, 100vw" type="image/webp" fetchpriority="high">
 
   <link rel="stylesheet" href="styles.css">
 
@@ -97,9 +85,9 @@
   {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "name": "Catamaran Fiesta",
+    "name": "Mauritius Paradise",
     "alternateName": "Catamaran Mauricien Fiesta",
-    "description": "Catamaran island day trips, Friday sunset boat parties with DJ and private charters from Grand Baie, Mauritius.",
+    "description": "Catamaran cruises from Grand Baie, Mauritius: Northern Islands cruise and Sunset Cruise & Boat Party DJ.",
     "url": "https://catamaran-fiesta.netlify.app/",
     "image": "https://catamaran-fiesta.netlify.app/images/og-image.jpg",
     "telephone": "+230 5929 2199",
@@ -126,23 +114,25 @@
     <symbol id="i-instagram" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5.2"/><circle cx="12" cy="12" r="4.1"/></g><circle cx="17.3" cy="6.7" r="1.15" fill="currentColor"/></symbol>
     <symbol id="i-tiktok" viewBox="0 0 24 24"><path fill="currentColor" d="M12.53.02C13.84 0 15.14.01 16.44 0c.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></symbol>
     <symbol id="i-facebook" viewBox="0 0 24 24"><path fill="currentColor" d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12z"/></symbol>
-    <symbol id="i-clock" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7.5V12l3 2"/></g></symbol>
-    <symbol id="i-pin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.4"/></g></symbol>
-    <symbol id="i-calendar" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15.5" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/></g></symbol>
-    <symbol id="i-users" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8.5" r="3.3"/><path d="M3 19.5c.7-3.2 3.1-5 6-5s5.3 1.8 6 5M15.5 5.4a3.3 3.3 0 0 1 0 6.3M17.8 14.9c1.6.6 2.7 2.1 3.2 4.6"/></g></symbol>
-    <symbol id="i-hourglass" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h10M7 21h10M8 3v3.5a4 4 0 0 0 1.6 3.2L12 11.5l2.4-1.8A4 4 0 0 0 16 6.5V3M8 21v-3.5a4 4 0 0 1 1.6-3.2L12 12.5l2.4 1.8a4 4 0 0 1 1.6 3.2V21"/></g></symbol>
-    <symbol id="i-music" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5.5l11-2V16"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="17.5" cy="16" r="2.5"/></g></symbol>
-    <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.2 4.2L19 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
-    <symbol id="i-sail" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M11 3 4.5 15.5H11zM13.5 7l5 8.5h-5zM3 18.5h18l-2.2 2.5H5.2z"/></g></symbol>
-    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.3a4.3 4.3 0 0 1 7.5 2.5C19.5 15.4 12 20 12 20z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></symbol>
-    <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
-    <symbol id="i-arrow-down" viewBox="0 0 24 24"><path d="M12 5v14M6 13l6 6 6-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
-    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
-    <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
-    <symbol id="i-chev-left" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
-    <symbol id="i-chev-right" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
-    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 4h3.5l1.7 4.3-2.2 1.4a11 11 0 0 0 6.3 6.3l1.4-2.2L20 15.5V19a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></symbol>
-    <symbol id="i-expand" viewBox="0 0 24 24"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.4"/></g></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.3a4.3 4.3 0 0 1 7.5 2.5C19.5 15.4 12 20 12 20z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></symbol>
+    <symbol id="i-sail" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M11 3 4.5 15.5H11zM13.5 7l5 8.5h-5zM3 18.5h18l-2.2 2.5H5.2z"/></g></symbol>
+    <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-arrow-down" viewBox="0 0 24 24"><path d="M12 4v15M6 13l6 6 6-6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-arrow-up-right" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></symbol>
+    <symbol id="i-chev-left" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-chev-right" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <!-- Logo mark: sun over waves -->
+    <symbol id="logo-mark" viewBox="0 0 56 36">
+      <g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+        <path d="M17 20a11 11 0 0 1 22 0"/>
+        <path d="M28 4.5v-3M37.3 8.4l2-2.3M18.7 8.4l-2-2.3M42.6 15l2.8-1M13.4 15l-2.8-1"/>
+        <path d="M3 25.5c4.2-2.9 8.3-2.9 12.5 0s8.3 2.9 12.5 0 8.3-2.9 12.5 0 8.3 2.9 12.5 0"/>
+      </g>
+      <path d="M10 32c3.4-2.2 6.8-2.2 10.2 0s6.8 2.2 10.2 0 6.8-2.2 10.2 0" fill="none" stroke="#1E9C91" stroke-width="2.2" stroke-linecap="round"/>
+    </symbol>
   </svg>
 
   <a class="skip-link" href="#main">Skip to content</a>
@@ -150,29 +140,26 @@
   <!-- ===================================================== 1. NAVBAR -->
   <header class="site-header" id="site-header">
     <div class="container nav">
-      <a class="brand" href="#top" aria-label="Catamaran Fiesta, back to top">
-        <svg class="brand__mark" viewBox="0 0 64 64" aria-hidden="true">
-          <circle cx="45" cy="17" r="6.5" fill="#FF8A5B"/>
-          <path d="M30 8v32H14z" fill="currentColor"/>
-          <path d="M33.5 16v24H45z" fill="#2EC4B6"/>
-          <path d="M10 44h44l-4.8 6H14.8z" fill="currentColor"/>
-          <path d="M9 57c3.8-3 7.6-3 11.5 0s7.6 3 11.5 0 7.6-3 11.5 0 7.6 3 11.5 0" fill="none" stroke="#2EC4B6" stroke-width="3" stroke-linecap="round"/>
-        </svg>
-        <span class="brand__name">Catamaran Fiesta</span>
+      <a class="brand" href="#top" aria-label="Mauritius Paradise, back to top">
+        <svg class="brand__mark" aria-hidden="true"><use href="#logo-mark"/></svg>
+        <span class="brand__text">
+          <span class="brand__name">Mauritius Paradise</span>
+          <span class="brand__sub">Mauricien Fiesta</span>
+        </span>
       </a>
 
       <nav class="nav__links" aria-label="Main">
-        <a href="#trips">Trips</a>
+        <a href="#cruises">Cruises</a>
         <a href="#sunset-party">Sunset Party</a>
         <a href="#gallery">Gallery</a>
-        <a href="#faq">FAQ</a>
+        <a href="#faq">FAQs</a>
         <a href="#contact">Contact</a>
       </nav>
 
       <div class="nav__actions">
-        <a class="btn btn--primary btn--sm nav__cta" href="https://wa.me/23059292199?text=Hello%20Catamaran%20Fiesta!%20I'd%20like%20to%20book%20a%20trip." target="_blank" rel="noopener">
+        <a class="btn btn--dark btn--sm nav__cta" href="https://wa.me/23059292199?text=Hello%20Mauritius%20Paradise!%20I'd%20like%20to%20book%20a%20cruise." target="_blank" rel="noopener" aria-label="Book on WhatsApp">
           <svg class="icon" aria-hidden="true"><use href="#i-whatsapp"/></svg>
-          <span>Book on WhatsApp</span>
+          <span class="nav__cta-long">Book on WhatsApp</span><span class="nav__cta-short">WhatsApp</span>
         </a>
         <button class="burger" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
           <span class="burger__line"></span>
@@ -185,14 +172,14 @@
   <!-- Mobile menu (phones & tablets) -->
   <div class="mobile-menu" id="mobile-menu" inert data-lenis-prevent>
     <nav class="mobile-menu__links" aria-label="Mobile">
-      <a href="#trips"><span>01</span>Trips</a>
+      <a href="#cruises"><span>01</span>Cruises</a>
       <a href="#sunset-party"><span>02</span>Sunset Party</a>
       <a href="#gallery"><span>03</span>Gallery</a>
-      <a href="#faq"><span>04</span>FAQ</a>
+      <a href="#faq"><span>04</span>FAQs</a>
       <a href="#contact"><span>05</span>Contact</a>
     </nav>
     <div class="mobile-menu__foot">
-      <a class="btn btn--primary btn--block" href="https://wa.me/23059292199?text=Hello%20Catamaran%20Fiesta!%20I'd%20like%20to%20book%20a%20trip." target="_blank" rel="noopener">
+      <a class="btn btn--dark btn--block" href="https://wa.me/23059292199?text=Hello%20Mauritius%20Paradise!%20I'd%20like%20to%20book%20a%20cruise." target="_blank" rel="noopener">
         <svg class="icon" aria-hidden="true"><use href="#i-whatsapp"/></svg>
         Book on WhatsApp
       </a>
@@ -209,182 +196,123 @@
 
     <!-- ===================================================== 2. HERO -->
     <section class="hero" id="top" aria-labelledby="hero-title">
-      <div class="hero__media">
-        <!--
-          OPTIONAL VIDEO HERO: to use the owner's drone video, add the file as images/hero.mp4 (H.264, under ~4 MB, no sound)
-          and paste this inside .hero__media, just before <picture>. The photo stays as the fallback/poster.
-          <video class="hero__video" autoplay muted loop playsinline preload="none" poster="images/hero.webp" aria-hidden="true">
-            <source src="images/hero.mp4" type="video/mp4">
-          </video>
-        -->
-        <picture>
-          <source media="(max-width: 767px)" srcset="images/hero-mobile.webp" width="828" height="1380">
-          <img src="images/hero.webp" srcset="images/hero-1280.webp 1280w, images/hero.webp 2048w" sizes="100vw"
-               width="2048" height="1280" fetchpriority="high"
-               alt="Turquoise lagoon with a small island, palm trees and a boat near the shore">
-        </picture>
-      </div>
-
-      <div class="container hero__content">
-        <p class="eyebrow eyebrow--light hero__in" style="--i:0">Grand Baie · Mauritius</p>
-        <h1 class="hero__title hero__in" id="hero-title" style="--i:1">Sail the North <span class="nowrap">of Mauritius</span></h1>
+      <div class="hero__text">
+        <p class="eyebrow hero__in" style="--i:0"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>Grand Baie, Mauritius</p>
+        <h1 class="hero__title hero__in" id="hero-title" style="--i:1">Sail the North <span class="nowrap">of Mauritius.</span></h1>
         <p class="hero__lead hero__in" style="--i:2">Island day trips and sunset boat parties from Grand Baie.</p>
         <div class="hero__actions hero__in" style="--i:3">
-          <a class="btn btn--primary btn--lg" href="https://wa.me/23059292199?text=Hello%20Catamaran%20Fiesta!%20I'd%20like%20to%20book%20a%20trip." target="_blank" rel="noopener">
+          <a class="btn btn--dark btn--lg" href="https://wa.me/23059292199?text=Hello%20Mauritius%20Paradise!%20I'd%20like%20to%20book%20a%20cruise." target="_blank" rel="noopener">
             <svg class="icon" aria-hidden="true"><use href="#i-whatsapp"/></svg>
             Book on WhatsApp
           </a>
-          <a class="btn btn--ghost btn--lg" href="#trips">
+          <a class="text-link text-link--lg" href="#cruises">
             See our trips
             <svg class="icon icon--move-down" aria-hidden="true"><use href="#i-arrow-down"/></svg>
           </a>
         </div>
       </div>
 
-      <p class="hero__caption hero__in" style="--i:4">
-        <svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>
-        Îlot Gabriel · Île Plate · Coin de Mire
-      </p>
+      <figure class="hero__figure">
+        <div class="hero__media">
+          <!--
+            OPTIONAL VIDEO: add a short drone clip as images/hero.mp4 (H.264, under ~4 MB, no sound)
+            and paste this just before <img>. The photo stays as the fallback/poster.
+            <video class="hero__video" autoplay muted loop playsinline preload="none" poster="images/hero.webp" aria-hidden="true">
+              <source src="images/hero.mp4" type="video/mp4">
+            </video>
+          -->
+          <img src="images/hero.webp" srcset="images/hero-900.webp 900w, images/hero.webp 1536w"
+               sizes="(min-width: 960px) 58vw, 100vw" width="1536" height="1152" fetchpriority="high"
+               alt="Guests relaxing on the Mauritius Paradise catamaran in a turquoise lagoon off the northern islands">
+        </div>
+        <figcaption class="caption">01 / Northern Mauritius</figcaption>
+      </figure>
     </section>
 
     <!-- ===================================================== 3. TRUST BAR -->
-    <section class="trust" aria-label="Why sail with Catamaran Fiesta">
-      <div class="container">
-        <ul class="trust__list">
-          <li class="trust__item">
-            <span class="trust__icon"><svg class="icon" aria-hidden="true"><use href="#i-heart"/></svg></span>
-            <!-- [CONFIRM] follower count (10K+) and which platform it refers to -->
-            <span>10K+ followers</span>
-          </li>
-          <li class="trust__item">
-            <span class="trust__icon"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg></span>
-            <span>Departures from Grand Baie</span>
-          </li>
-          <li class="trust__item">
-            <span class="trust__icon"><svg class="icon" aria-hidden="true"><use href="#i-sail"/></svg></span>
-            <span>Shared or private boat</span>
-          </li>
-          <li class="trust__item">
-            <span class="trust__icon"><svg class="icon" aria-hidden="true"><use href="#i-whatsapp"/></svg></span>
-            <span>Book in 1 minute on WhatsApp</span>
-          </li>
-        </ul>
-      </div>
+    <section class="trust" aria-label="Why sail with Mauritius Paradise">
+      <ul class="container trust__list" data-reveal>
+        <!-- [CONFIRM] follower count (10K+) and which platform it refers to -->
+        <li><svg class="icon" aria-hidden="true"><use href="#i-heart"/></svg>10K+ followers</li>
+        <li><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>Departures from Grand Baie</li>
+        <li><svg class="icon" aria-hidden="true"><use href="#i-sail"/></svg>Shared or private boat</li>
+        <li><svg class="icon" aria-hidden="true"><use href="#i-whatsapp"/></svg>Book in 1 minute on WhatsApp</li>
+      </ul>
     </section>
 
-    <!-- ===================================================== 4. TRIPS -->
-    <section class="section trips" id="trips" aria-labelledby="trips-title">
-      <div class="container">
-        <header class="section-head section-head--split">
-          <div data-reveal>
-            <p class="eyebrow">Our trips</p>
-            <h2 class="section-title" id="trips-title">Three ways to <em>set sail</em></h2>
-          </div>
-          <p class="section-intro" data-reveal>Explore the northern islands, dance at sunset on a Friday, or keep the whole catamaran for your own group.</p>
+    <!-- ===================================================== 4. CRUISES -->
+    <section class="cruises" id="cruises" aria-labelledby="cruises-title">
+      <div class="container cruises__layout">
+        <header class="cruises__head" data-reveal>
+          <p class="eyebrow">The experiences</p>
+          <h2 class="section-title" id="cruises-title">Pick your time on the water.</h2>
+          <p class="section-intro">Both cruises depart from Grand Baie.</p>
         </header>
 
-        <div class="trips__grid">
+        <div class="cruises__list">
 
-          <!-- Trip 1: Northern Islands Day Trip -->
-          <article class="trip-card" data-reveal>
-            <div class="trip-card__media">
-              <img src="images/trip-islands.webp" width="1000" height="750" loading="lazy" decoding="async"
-                   alt="Green, rocky island surrounded by turquoise sea">
-              <span class="trip-card__tag">Day trip</span>
+          <!-- Cruise 01: Northern Islands -->
+          <article class="cruise" id="cruise-islands" data-reveal>
+            <div class="cruise__media">
+              <img src="images/cruise-islands.webp" width="1100" height="825" loading="lazy" decoding="async"
+                   alt="Aerial view of catamarans anchored in the turquoise lagoon by a white sandbank in the northern islands">
             </div>
-            <div class="trip-card__body">
-              <h3 class="trip-card__title">Northern Islands Day Trip</h3>
-              <p class="trip-card__sub">Îlot Gabriel · Île Plate · Coin de Mire</p>
-              <ul class="trip-card__meta">
-                <li><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg>08:30 – 15:30</li>
-                <li><svg class="icon" aria-hidden="true"><use href="#i-hourglass"/></svg>7 hours</li>
-                <li><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>Grand Baie public beach</li>
-              </ul>
-              <div class="trip-card__list">
-                <p class="trip-card__label">What's included</p>
-                <!-- [CONFIRM] PLACEHOLDER items: ask the owner exactly what is included on the day trip (snorkelling? lunch? drinks? anything else?) -->
-                <ul class="checklist">
-                  <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Snorkelling stop</li>
-                  <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Lunch on board</li>
-                  <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Drinks</li>
-                </ul>
-              </div>
-              <div class="trip-card__foot">
-                <!-- [CONFIRM] price: "from Rs 1,250 per person on weekdays", and the weekend price -->
-                <p class="price"><span class="price__from">From</span> <span class="price__value">Rs 1,250</span> <span class="price__unit">per person · weekdays</span></p>
-                <a class="btn btn--dark btn--block" href="#contact" data-book-trip="Northern Islands Day Trip" aria-label="Book the Northern Islands Day Trip">
-                  Book this trip
-                  <svg class="icon icon--move" aria-hidden="true"><use href="#i-arrow-right"/></svg>
-                </a>
-              </div>
+            <div class="cruise__body">
+              <p class="eyebrow eyebrow--num">01 / Day cruise</p>
+              <h3 class="cruise__title">Northern Islands Cruise</h3>
+              <p class="cruise__places">Îlot Gabriel · Île Plate · Coin de Mire</p>
+              <p class="cruise__text">Enjoy the islands, the lagoon, a BBQ lunch, salads, snacks and soft drinks. Alcoholic drinks are available according to reservation arrangements.</p>
+              <dl class="facts">
+                <!-- [CONFIRM] times: 08:30 – 15:30 came from the first brief; their Canva site says "Time: To be confirmed" -->
+                <div><dt>Time</dt><dd>08:30 – 15:30</dd></div>
+                <div><dt>Departure</dt><dd>Grand Baie public beach</dd></div>
+                <!-- [CONFIRM] price: "from Rs 1,250 per person on weekdays" came from the first brief; their Canva site says "Price: Contact us" -->
+                <div><dt>Price</dt><dd>From Rs 1,250 <span>per person, weekdays</span></dd></div>
+              </dl>
+              <a class="text-link" href="#contact" data-book-trip="Northern Islands Cruise" aria-label="Book the Northern Islands Cruise">
+                Book this cruise
+                <svg class="icon icon--move" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+              </a>
             </div>
           </article>
 
-          <!-- Trip 2: Sunset Boat Party with DJ -->
-          <article class="trip-card" data-reveal>
-            <div class="trip-card__media">
-              <img src="images/trip-sunset.webp" width="1000" height="750" loading="lazy" decoding="async"
-                   alt="Sailing boat on calm water at dusk under a starry sky">
-              <span class="trip-card__tag trip-card__tag--sunset">Fridays</span>
+          <!-- Cruise 02: Sunset Cruise & Boat Party DJ -->
+          <article class="cruise" id="cruise-sunset" data-reveal>
+            <div class="cruise__media">
+              <img src="images/cruise-sunset.webp" width="1100" height="825" loading="lazy" decoding="async"
+                   alt="Guests on the catamaran deck watching the sunset over the sea">
             </div>
-            <div class="trip-card__body">
-              <h3 class="trip-card__title">Sunset Boat Party</h3>
-              <p class="trip-card__sub">With a DJ on board</p>
-              <ul class="trip-card__meta">
-                <li><svg class="icon" aria-hidden="true"><use href="#i-calendar"/></svg>Every Friday</li>
-                <li><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg>17:00 – 22:00</li>
-                <li><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>Grand Baie</li>
-              </ul>
-              <div class="trip-card__list">
-                <p class="trip-card__label">On board</p>
-                <ul class="checklist">
-                  <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>DJ on board</li>
-                  <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Music &amp; dancing</li>
-                  <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Sunset views at sea</li>
-                </ul>
-              </div>
-              <div class="trip-card__foot">
-                <!-- [CONFIRM] Sunset party price per person (placeholder text below) -->
-                <p class="price"><span class="price__value price__value--text">Price on request</span> <span class="price__unit">per person</span></p>
-                <a class="btn btn--dark btn--block" href="#contact" data-book-trip="Sunset Boat Party with DJ" aria-label="Book the Sunset Boat Party">
-                  Book this trip
-                  <svg class="icon icon--move" aria-hidden="true"><use href="#i-arrow-right"/></svg>
-                </a>
-              </div>
+            <div class="cruise__body">
+              <p class="eyebrow eyebrow--num">02 / Sunset cruise</p>
+              <h3 class="cruise__title">Sunset Cruise &amp; Boat Party</h3>
+              <p class="cruise__places">DJ on board · BBQ · Drinks</p>
+              <p class="cruise__text">Sunset, BBQ, drinks, DJ and dancing aboard the boat.</p>
+              <dl class="facts">
+                <!-- [CONFIRM] days: their Canva site says Friday & Saturday, the first brief said Fridays only -->
+                <div><dt>Days</dt><dd>Friday &amp; Saturday</dd></div>
+                <!-- [CONFIRM] times: 17:00 – 22:00 came from the first brief; their Canva site says "Time: To be confirmed" -->
+                <div><dt>Time</dt><dd>17:00 – 22:00</dd></div>
+                <!-- [CONFIRM] sunset party price per person -->
+                <div><dt>Price</dt><dd>On request</dd></div>
+              </dl>
+              <a class="text-link" href="#contact" data-book-trip="Sunset Cruise &amp; Boat Party DJ" aria-label="Book the Sunset Cruise and Boat Party">
+                Book this cruise
+                <svg class="icon icon--move" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+              </a>
             </div>
           </article>
 
-          <!-- Trip 3: Private Charter -->
-          <article class="trip-card" data-reveal>
-            <div class="trip-card__media">
-              <img src="images/trip-private.webp" width="1000" height="750" loading="lazy" decoding="async"
-                   alt="Sailing boat with guests on board out on the open sea">
-              <span class="trip-card__tag">Private</span>
+          <!-- Private charter: one line, no photo -->
+          <!-- [CONFIRM] private charter: in the first brief, not on their Canva site. Remove this block if they don't offer it -->
+          <article class="cruise cruise--slim" data-reveal>
+            <div class="cruise__body">
+              <p class="eyebrow eyebrow--num">03 / Private charter</p>
+              <h3 class="cruise__title">The whole catamaran, just for your group</h3>
+              <p class="cruise__text">Birthdays, families, groups and events. Date, times and price on request.</p>
             </div>
-            <div class="trip-card__body">
-              <h3 class="trip-card__title">Private Charter</h3>
-              <p class="trip-card__sub">The whole catamaran, just for you</p>
-              <ul class="trip-card__meta">
-                <li><svg class="icon" aria-hidden="true"><use href="#i-users"/></svg>Your group only</li>
-                <!-- [CONFIRM] charter dates, times, duration and departure point -->
-                <li><svg class="icon" aria-hidden="true"><use href="#i-calendar"/></svg>Date &amp; times on request</li>
-              </ul>
-              <div class="trip-card__list">
-                <p class="trip-card__label">Perfect for</p>
-                <ul class="checklist">
-                  <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Birthdays &amp; celebrations</li>
-                  <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Families &amp; friends</li>
-                  <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Groups &amp; events</li>
-                </ul>
-              </div>
-              <div class="trip-card__foot">
-                <p class="price"><span class="price__value price__value--text">On request</span> <span class="price__unit">for the whole boat</span></p>
-                <a class="btn btn--dark btn--block" href="#contact" data-book-trip="Private Charter" aria-label="Book a Private Charter">
-                  Book this trip
-                  <svg class="icon icon--move" aria-hidden="true"><use href="#i-arrow-right"/></svg>
-                </a>
-              </div>
-            </div>
+            <a class="arrow-link" href="#contact" data-book-trip="Private Charter" aria-label="Ask about a private charter">
+              <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+            </a>
           </article>
 
         </div>
@@ -393,69 +321,100 @@
 
     <!-- ===================================================== 5. SUNSET PARTY HIGHLIGHT -->
     <section class="sunset" id="sunset-party" aria-labelledby="sunset-title">
-      <div class="sunset__media" aria-hidden="true">
-        <picture>
-          <source media="(max-width: 767px)" srcset="images/sunset-mobile.webp" width="900" height="1300">
-          <img src="images/sunset.webp" srcset="images/sunset-1280.webp 1280w, images/sunset.webp 2400w" sizes="100vw"
-               width="2400" height="1350" loading="lazy" decoding="async" alt="">
-        </picture>
-      </div>
-      <div class="container sunset__inner">
+      <div class="container sunset__layout">
         <div class="sunset__content" data-reveal>
           <p class="eyebrow eyebrow--light">
             <span class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
-            Every Friday night
+            Friday &amp; Saturday
           </p>
-          <h2 class="section-title section-title--light" id="sunset-title">Dance into the <em>sunset</em></h2>
-          <p class="sunset__lead">Golden hour on the water, a DJ on deck and music until the stars come out. The best way to start the weekend in Grand Baie.</p>
-          <dl class="sunset__facts">
-            <div><dt>When</dt><dd>Fridays</dd></div>
+          <h2 class="section-title section-title--light" id="sunset-title">Dance into the sunset.</h2>
+          <p class="sunset__lead">Golden hour on the water, a BBQ on deck and a DJ playing until the stars come out. The best way to spend your evening in Grand Baie.</p>
+          <dl class="facts facts--light">
+            <div><dt>When</dt><dd>Friday &amp; Saturday</dd></div>
             <div><dt>Time</dt><dd>17:00 – 22:00</dd></div>
-            <div><dt>From</dt><dd>Grand Baie</dd></div>
+            <div><dt>Meeting point</dt><dd>Grand Baie public beach</dd></div>
           </dl>
-          <a class="btn btn--primary btn--lg" href="#contact" data-book-trip="Sunset Boat Party with DJ">
+          <a class="btn btn--light btn--lg" href="#contact" data-book-trip="Sunset Cruise &amp; Boat Party DJ">
             Reserve your spot
             <svg class="icon icon--move" aria-hidden="true"><use href="#i-arrow-right"/></svg>
           </a>
         </div>
+        <figure class="sunset__figure" data-reveal>
+          <div class="sunset__media">
+            <img src="images/sunset-party.webp" width="1000" height="1250" loading="lazy" decoding="async"
+                 alt="BBQ grilling on the side of the catamaran as the sun sets over the sea">
+          </div>
+          <figcaption class="caption caption--light">02 / BBQ on board at sunset</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ===================================================== WHY CHOOSE (wording from their Canva site) -->
+    <section class="section why" aria-labelledby="why-title">
+      <div class="container">
+        <header class="section-head" data-reveal>
+          <p class="eyebrow">Why Mauritius Paradise</p>
+          <h2 class="section-title" id="why-title">A day at sea, done properly.</h2>
+        </header>
+        <ol class="why__grid">
+          <li data-reveal>
+            <span class="why__num" aria-hidden="true">01</span>
+            <h3>Beautiful islands</h3>
+            <p>Explore the turquoise waters and northern islands of Mauritius.</p>
+          </li>
+          <li data-reveal>
+            <span class="why__num" aria-hidden="true">02</span>
+            <h3>Catamaran experience</h3>
+            <p>Enjoy a day at sea departing from Grand Baie.</p>
+          </li>
+          <li data-reveal>
+            <span class="why__num" aria-hidden="true">03</span>
+            <h3>Great atmosphere</h3>
+            <p>BBQ, drinks and entertainment, including our Sunset Boat Party DJ.</p>
+          </li>
+          <li data-reveal>
+            <span class="why__num" aria-hidden="true">04</span>
+            <h3>Easy booking</h3>
+            <p>Contact us directly on WhatsApp for availability and reservations.</p>
+          </li>
+        </ol>
       </div>
     </section>
 
     <!-- ===================================================== 6. HOW IT WORKS -->
     <section class="section steps" id="how" aria-labelledby="steps-title">
-      <div class="container">
-        <header class="section-head section-head--center" data-reveal>
+      <div class="container steps__layout">
+        <header class="steps__head" data-reveal>
           <p class="eyebrow">How it works</p>
-          <h2 class="section-title" id="steps-title">Booking takes <em>a minute</em></h2>
-        </header>
-
-        <ol class="steps__list">
-          <li class="step" data-reveal>
-            <span class="step__num" aria-hidden="true">01</span>
-            <span class="step__icon"><svg class="icon" aria-hidden="true"><use href="#i-sail"/></svg></span>
-            <h3 class="step__title">Choose your trip</h3>
-            <p>Island day trip, Friday sunset party or the whole boat to yourselves.</p>
-          </li>
-          <li class="step" data-reveal>
-            <span class="step__num" aria-hidden="true">02</span>
-            <span class="step__icon"><svg class="icon" aria-hidden="true"><use href="#i-whatsapp"/></svg></span>
-            <h3 class="step__title">Message us on WhatsApp</h3>
-            <p>Send your date and group size. We'll confirm your spot and all the details.</p>
-          </li>
-          <li class="step" data-reveal>
-            <span class="step__num" aria-hidden="true">03</span>
-            <span class="step__icon"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg></span>
-            <h3 class="step__title">Meet us at Grand Baie beach</h3>
-            <p>Find the crew at Grand Baie public beach, kick off your shoes and set sail.</p>
-          </li>
-        </ol>
-
-        <div class="steps__cta" data-reveal>
-          <a class="btn btn--primary btn--lg" href="https://wa.me/23059292199?text=Hello%20Catamaran%20Fiesta!%20I'd%20like%20to%20book%20a%20trip." target="_blank" rel="noopener">
+          <h2 class="section-title" id="steps-title">Booked in a minute.</h2>
+          <a class="btn btn--dark" href="https://wa.me/23059292199?text=Hello%20Mauritius%20Paradise!%20I'd%20like%20to%20book%20a%20cruise." target="_blank" rel="noopener">
             <svg class="icon" aria-hidden="true"><use href="#i-whatsapp"/></svg>
             Start on WhatsApp
           </a>
-        </div>
+        </header>
+        <ol class="steps__list">
+          <li data-reveal>
+            <span class="steps__num" aria-hidden="true">01</span>
+            <div>
+              <h3>Choose your trip</h3>
+              <p>Northern Islands cruise, sunset boat party or the whole boat to yourselves.</p>
+            </div>
+          </li>
+          <li data-reveal>
+            <span class="steps__num" aria-hidden="true">02</span>
+            <div>
+              <h3>Message us on WhatsApp</h3>
+              <p>Send your date and group size. We'll confirm your spot and all the details.</p>
+            </div>
+          </li>
+          <li data-reveal>
+            <span class="steps__num" aria-hidden="true">03</span>
+            <div>
+              <h3>Meet us at Grand Baie beach</h3>
+              <p>Find the crew at Grand Baie public beach, kick off your shoes and set sail.</p>
+            </div>
+          </li>
+        </ol>
       </div>
     </section>
 
@@ -465,36 +424,38 @@
         <header class="section-head section-head--split">
           <div data-reveal>
             <p class="eyebrow">Gallery</p>
-            <h2 class="section-title" id="gallery-title">Life on the <em>lagoon</em></h2>
+            <h2 class="section-title" id="gallery-title">Life on the lagoon.</h2>
           </div>
-          <p class="section-intro" data-reveal>A taste of a day at sea in the north of Mauritius. Tap a photo to see it full size.</p>
+          <p class="section-intro" data-reveal>Islands, turtles, BBQ and music. Tap a photo to see it full size.</p>
         </header>
 
-        <!-- Placeholder photos from Unsplash: replace with the owner's own (see IMAGE MAP at the top of this file) -->
         <div class="gallery__grid">
           <a class="gallery__item" href="images/gallery-1-large.webp" data-reveal>
-            <img src="images/gallery-1.webp" width="600" height="800" loading="lazy" decoding="async" alt="Pink flamingo float on clear turquoise water">
+            <img src="images/gallery-1.webp" width="600" height="800" loading="lazy" decoding="async" alt="The cliffs of Coin de Mire island rising from the deep blue sea">
           </a>
           <a class="gallery__item" href="images/gallery-2-large.webp" data-reveal>
-            <img src="images/gallery-2.webp" width="800" height="600" loading="lazy" decoding="async" alt="Colourful fish over a coral reef in sunlit water">
+            <img src="images/gallery-2.webp" width="600" height="800" loading="lazy" decoding="async" alt="Sea turtle swimming in clear turquoise water">
           </a>
           <a class="gallery__item" href="images/gallery-3-large.webp" data-reveal>
-            <img src="images/gallery-3.webp" width="600" height="900" loading="lazy" decoding="async" alt="View along the deck of a sailing boat towards the sea">
+            <img src="images/gallery-3.webp" width="600" height="900" loading="lazy" decoding="async" alt="Guests sharing lunch at a long wooden table on the island">
           </a>
           <a class="gallery__item" href="images/gallery-4-large.webp" data-reveal>
-            <img src="images/gallery-4.webp" width="600" height="800" loading="lazy" decoding="async" alt="Aerial view of a white sand beach with colourful umbrellas">
+            <img src="images/gallery-4.webp" width="800" height="600" loading="lazy" decoding="async" alt="Guests dancing to the DJ on the boat at night">
           </a>
           <a class="gallery__item" href="images/gallery-5-large.webp" data-reveal>
-            <img src="images/gallery-5.webp" width="800" height="534" loading="lazy" decoding="async" alt="School of silver fish swimming underwater">
+            <img src="images/gallery-5.webp" width="600" height="800" loading="lazy" decoding="async" alt="Crystal-clear shallow lagoon water over a white sandbank">
           </a>
           <a class="gallery__item" href="images/gallery-6-large.webp" data-reveal>
-            <img src="images/gallery-6.webp" width="600" height="900" loading="lazy" decoding="async" alt="Sunset over the sea from a palm-lined beach">
+            <img src="images/gallery-6.webp" width="600" height="750" loading="lazy" decoding="async" alt="White sand beach and turquoise lagoon on one of the northern islands">
           </a>
           <a class="gallery__item" href="images/gallery-7-large.webp" data-reveal>
-            <img src="images/gallery-7.webp" width="600" height="750" loading="lazy" decoding="async" alt="Aerial view of small boats anchored in a turquoise bay">
+            <img src="images/gallery-7.webp" width="600" height="800" loading="lazy" decoding="async" alt="White-tailed tropicbird nesting under a tree on the island">
           </a>
           <a class="gallery__item" href="images/gallery-8-large.webp" data-reveal>
-            <img src="images/gallery-8.webp" width="600" height="800" loading="lazy" decoding="async" alt="Aerial view of a lagoon, reef and green coastline">
+            <img src="images/gallery-8.webp" width="600" height="800" loading="lazy" decoding="async" alt="Chicken grilling on the BBQ on board">
+          </a>
+          <a class="gallery__item" href="images/gallery-9-large.webp" data-reveal>
+            <img src="images/gallery-9.webp" width="600" height="800" loading="lazy" decoding="async" alt="Seabird flying over a white sand beach and turquoise water">
           </a>
         </div>
 
@@ -518,10 +479,10 @@
     <section class="section faq" id="faq" aria-labelledby="faq-title">
       <div class="container faq__layout">
         <header class="faq__head" data-reveal>
-          <p class="eyebrow">FAQ</p>
-          <h2 class="section-title" id="faq-title">Good to <em>know</em></h2>
+          <p class="eyebrow">FAQs</p>
+          <h2 class="section-title" id="faq-title">Good to know.</h2>
           <p class="section-intro">Can't find your answer? Send us a message on WhatsApp and we'll help.</p>
-          <a class="text-link" href="https://wa.me/23059292199?text=Hello%20Catamaran%20Fiesta!%20I%20have%20a%20question." target="_blank" rel="noopener">
+          <a class="text-link" href="https://wa.me/23059292199?text=Hello%20Mauritius%20Paradise!%20I%20have%20a%20question." target="_blank" rel="noopener">
             Ask a question
             <svg class="icon icon--move" aria-hidden="true"><use href="#i-arrow-right"/></svg>
           </a>
@@ -540,7 +501,7 @@
             <summary>Is it suitable for children?<span class="faq__icon" aria-hidden="true"><svg class="icon"><use href="#i-plus"/></svg></span></summary>
             <div class="faq__answer">
               <!-- [CONFIRM] child policy, age limits, child prices, life jackets for kids -->
-              <p>Families are welcome on our island day trips and private charters. Let us know the children's ages when you book so we can prepare. For the Friday sunset party, please ask us first.</p>
+              <p>Families are welcome on the Northern Islands cruise. Let us know the children's ages when you book so we can prepare. For the sunset boat party, please ask us first.</p>
             </div>
           </details>
           <details class="faq__item">
@@ -553,7 +514,7 @@
           <details class="faq__item">
             <summary>Can I book a private boat?<span class="faq__icon" aria-hidden="true"><svg class="icon"><use href="#i-plus"/></svg></span></summary>
             <div class="faq__answer">
-              <!-- [CONFIRM] max guests and anything special (decorations, cake, own DJ...) -->
+              <!-- [CONFIRM] whether private charters are offered, max guests, extras -->
               <p>Yes. You can book the whole catamaran for birthdays, families, groups or events. Message us on WhatsApp with your date and number of guests and we'll send you a quote.</p>
             </div>
           </details>
@@ -573,28 +534,22 @@
       <div class="container contact__layout">
         <div class="contact__intro" data-reveal>
           <p class="eyebrow eyebrow--light">Book your trip</p>
-          <h2 class="section-title section-title--light" id="contact-title">Ready to <em>set sail?</em></h2>
-          <p class="contact__lead">Choose your trip, date and group size. Your details open in WhatsApp ready to send, and we'll reply to confirm your spot.</p>
+          <h2 class="section-title section-title--light" id="contact-title">Ready for your Mauritius adventure?</h2>
+          <p class="contact__lead">Message us on WhatsApp to check availability and make your booking. Fill in the form and your details open in WhatsApp, ready to send.</p>
 
-          <ul class="contact__details">
-            <li>
-              <span class="contact__icon"><svg class="icon" aria-hidden="true"><use href="#i-whatsapp"/></svg></span>
-              <div>
-                <span class="contact__label">WhatsApp &amp; phone</span>
-                <a href="tel:+23059292199">+230&nbsp;5929&nbsp;2199</a>
-              </div>
-            </li>
-            <li>
-              <span class="contact__icon"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg></span>
-              <div>
-                <span class="contact__label">Departures</span>
-                <!-- [CONFIRM] exact meeting point at Grand Baie public beach -->
-                <a href="https://www.google.com/maps/search/?api=1&amp;query=Grand%20Baie%20Public%20Beach%2C%20Mauritius" target="_blank" rel="noopener">Grand Baie public beach, Mauritius</a>
-              </div>
-            </li>
-          </ul>
+          <dl class="contact__details">
+            <div>
+              <dt>WhatsApp &amp; phone</dt>
+              <dd><a href="tel:+23059292199">+230&nbsp;5929&nbsp;2199</a></dd>
+            </div>
+            <div>
+              <dt>Meeting point</dt>
+              <!-- [CONFIRM] exact meeting point at Grand Baie public beach -->
+              <dd><a href="https://www.google.com/maps/search/?api=1&amp;query=Grand%20Baie%20Public%20Beach%2C%20Mauritius" target="_blank" rel="noopener">Grand Baie public beach, Mauritius</a></dd>
+            </div>
+          </dl>
 
-          <div class="socials socials--light">
+          <div class="socials">
             <a href="https://www.instagram.com/mauritius_paradise29/" target="_blank" rel="noopener" aria-label="Instagram @mauritius_paradise29"><svg class="icon" aria-hidden="true"><use href="#i-instagram"/></svg></a>
             <a href="https://www.tiktok.com/@mauritiusparadise29" target="_blank" rel="noopener" aria-label="TikTok @mauritiusparadise29"><svg class="icon" aria-hidden="true"><use href="#i-tiktok"/></svg></a>
             <a href="https://www.facebook.com/catamaran.mauricien.fiesta/" target="_blank" rel="noopener" aria-label="Facebook Catamaran Mauricien Fiesta"><svg class="icon" aria-hidden="true"><use href="#i-facebook"/></svg></a>
@@ -604,7 +559,7 @@
         <!-- No backend: script.js turns the answers into a pre-filled WhatsApp message.
              Without JavaScript the form still opens WhatsApp with a generic message. -->
         <form class="book-form" id="book-form" action="https://wa.me/23059292199" method="get" target="_blank" novalidate data-reveal>
-          <input type="hidden" name="text" value="Hello Catamaran Fiesta! I'd like to book a trip.">
+          <input type="hidden" name="text" value="Hello Mauritius Paradise! I'd like to book a cruise.">
           <h3 class="book-form__title">Request a booking</h3>
 
           <div class="field">
@@ -614,16 +569,16 @@
           </div>
 
           <div class="field">
-            <label for="f-trip">Trip</label>
+            <label for="f-trip">Cruise</label>
             <div class="select">
               <select id="f-trip" required aria-describedby="e-trip">
-                <option value="" disabled selected>Choose a trip</option>
-                <option>Northern Islands Day Trip</option>
-                <option>Sunset Boat Party with DJ</option>
+                <option value="" disabled selected>Choose a cruise</option>
+                <option>Northern Islands Cruise</option>
+                <option>Sunset Cruise &amp; Boat Party DJ</option>
                 <option>Private Charter</option>
               </select>
             </div>
-            <p class="field__error" id="e-trip">Please choose a trip.</p>
+            <p class="field__error" id="e-trip">Please choose a cruise.</p>
           </div>
 
           <div class="field-row">
@@ -631,7 +586,7 @@
               <label for="f-date">Date</label>
               <input id="f-date" type="date" required aria-describedby="e-date h-date">
               <p class="field__error" id="e-date">Please choose a date (today or later).</p>
-              <p class="field__hint" id="h-date" hidden>Heads up: the Sunset Boat Party sails on Fridays.</p>
+              <p class="field__hint" id="h-date" hidden>Heads up: the sunset boat party sails on Fridays and Saturdays.</p>
             </div>
             <div class="field">
               <label for="f-people">Number of people</label>
@@ -659,17 +614,14 @@
     <div class="container">
       <div class="footer__grid">
         <div class="footer__brand">
-          <a class="brand brand--footer" href="#top" aria-label="Catamaran Fiesta, back to top">
-            <svg class="brand__mark" viewBox="0 0 64 64" aria-hidden="true">
-              <circle cx="45" cy="17" r="6.5" fill="#FF8A5B"/>
-              <path d="M30 8v32H14z" fill="currentColor"/>
-              <path d="M33.5 16v24H45z" fill="#2EC4B6"/>
-              <path d="M10 44h44l-4.8 6H14.8z" fill="currentColor"/>
-              <path d="M9 57c3.8-3 7.6-3 11.5 0s7.6 3 11.5 0 7.6-3 11.5 0 7.6 3 11.5 0" fill="none" stroke="#2EC4B6" stroke-width="3" stroke-linecap="round"/>
-            </svg>
-            <span class="brand__name">Catamaran Fiesta</span>
+          <a class="brand" href="#top" aria-label="Mauritius Paradise, back to top">
+            <svg class="brand__mark" aria-hidden="true"><use href="#logo-mark"/></svg>
+            <span class="brand__text">
+              <span class="brand__name">Mauritius Paradise</span>
+              <span class="brand__sub">Mauricien Fiesta</span>
+            </span>
           </a>
-          <p>Catamaran Mauricien Fiesta. Island day trips, sunset boat parties and private charters from Grand Baie.</p>
+          <p>Catamaran Mauricien Fiesta. Northern Islands cruises and sunset boat parties from Grand Baie.</p>
         </div>
 
         <div class="footer__col">
@@ -680,7 +632,7 @@
         <div class="footer__col">
           <h2 class="footer__title">Contact</h2>
           <p><a href="tel:+23059292199">+230&nbsp;5929&nbsp;2199</a><br>
-             <a href="https://wa.me/23059292199?text=Hello%20Catamaran%20Fiesta!%20I'd%20like%20to%20book%20a%20trip." target="_blank" rel="noopener">Message on WhatsApp</a></p>
+             <a href="https://wa.me/23059292199?text=Hello%20Mauritius%20Paradise!%20I'd%20like%20to%20book%20a%20cruise." target="_blank" rel="noopener">Message on WhatsApp</a></p>
         </div>
 
         <div class="footer__col">
@@ -694,14 +646,14 @@
       </div>
 
       <div class="footer__bottom">
-        <p>© 2026 Catamaran Fiesta</p>
-        <a class="text-link text-link--light" href="#top">Back to top</a>
+        <p>© 2026 Mauritius Paradise</p>
+        <p>Grand Baie, Mauritius</p>
       </div>
     </div>
   </footer>
 
   <!-- ===================================================== 11. FLOATING WHATSAPP BUTTON -->
-  <a class="wa-fab" href="https://wa.me/23059292199?text=Hello%20Catamaran%20Fiesta!%20I'd%20like%20to%20book%20a%20trip." target="_blank" rel="noopener" aria-label="Chat with Catamaran Fiesta on WhatsApp">
+  <a class="wa-fab" href="https://wa.me/23059292199?text=Hello%20Mauritius%20Paradise!%20I'd%20like%20to%20book%20a%20cruise." target="_blank" rel="noopener" aria-label="Chat with Mauritius Paradise on WhatsApp">
     <svg class="icon" aria-hidden="true"><use href="#i-whatsapp"/></svg>
     <span class="wa-fab__label" aria-hidden="true">Chat with us</span>
   </a>
