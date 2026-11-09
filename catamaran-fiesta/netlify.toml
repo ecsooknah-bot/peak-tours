@@ -1,0 +1,9 @@
+# Netlify settings for the Mauritius Paradise site.
+# In Netlify, set "Base directory" to: catamaran-fiesta
+# Everything else is read from this file.
+
+[build]
+  # The site is plain HTML/CSS/JS: nothing to build.
+  publish = "."
+  # Keep the internal notes (with the [CONFIRM] checklist) off the live site.
+  command = "rm -f README.md"
