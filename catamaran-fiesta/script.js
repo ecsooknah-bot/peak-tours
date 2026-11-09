@@ -11,7 +11,7 @@
 
   /* ---------- Settings ---------- */
   var WHATSAPP_NUMBER = '23059292199';            // +230 5929 2199, digits only for wa.me
-  var PARTY_TRIP = 'Sunset Cruise & Boat Party DJ'; // must match the <option> text in the form
+  var PARTY_TRIP = 'Sunset Cruise with DJ';      // must match the <option> text in the form
   var PARTY_DAYS = [5, 6];                           // Friday & Saturday (0 = Sunday)
 
   var doc = document.documentElement;
@@ -98,24 +98,15 @@
       reveal(onScreen);
     };
 
-    // Gentle parallax inside the photo frames. The images are scaled up slightly in CSS
-    // so they can drift without showing an edge; the scale matches the CSS value.
+    // Gentle parallax inside the hero frame. The photo is scaled up slightly in CSS
+    // so it can drift without showing an edge; the scale matches the CSS value.
     gsap.fromTo('.hero__media img',
-      { yPercent: 0, scale: 1.08 },
+      { yPercent: 0, scale: 1.06 },
       {
-        yPercent: 3.5,
-        scale: 1.08,
+        yPercent: 3,
+        scale: 1.06,
         ease: 'none',
         scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true }
-      }
-    );
-    gsap.fromTo('.sunset__media img',
-      { yPercent: -4, scale: 1.1 },
-      {
-        yPercent: 4,
-        scale: 1.1,
-        ease: 'none',
-        scrollTrigger: { trigger: '.sunset__media', start: 'top bottom', end: 'bottom top', scrub: true }
       }
     );
 
@@ -214,7 +205,9 @@
   function scrollToTarget(target, done) {
     if (lenis) {
       // Absolute position from the live scroll value, so the target is always exact.
-      var y = typeof target === 'number' ? target : target.getBoundingClientRect().top + window.scrollY;
+      // Sections have their own top padding; anything else is kept clear of the fixed header.
+      var offset = typeof target === 'number' || target.tagName === 'SECTION' || target === document.body ? 0 : header.offsetHeight + 24;
+      var y = typeof target === 'number' ? target : target.getBoundingClientRect().top + window.scrollY - offset;
       lenis.scrollTo(y, { duration: 1.4, onComplete: done });
     } else if (typeof target === 'number') {
       window.scrollTo({ top: target, behavior: prefersReducedMotion ? 'auto' : 'smooth' });
@@ -241,9 +234,13 @@
     var trip = link.getAttribute('data-book-trip');
     if (trip) selectTrip(trip);
 
+    // Hero links ("Northern Islands Cruise"): open that cruise's details once we arrive.
+    var cruiseToOpen = link.hasAttribute('data-open-cruise') ? target : null;
+
     var go = function () {
       scrollToTarget(id === '#top' ? 0 : target, function () {
         if (trip) highlightForm();
+        if (cruiseToOpen) openCruise(cruiseToOpen);
       });
       try { history.replaceState(null, '', id === '#top' ? location.pathname : id); } catch (err) { /* sandboxed previews */ }
     };
@@ -405,6 +402,46 @@
         faqItems.forEach(function (other) { if (other !== item && other.open) closeFaq(other); });
         openFaq(item);
       }
+    });
+  });
+
+  /* ==========================================================================
+     6b. Cruise rows: click a row (or its arrow) to show the details.
+         Details are visible without JavaScript; JS folds them away at start.
+     ========================================================================== */
+  function refreshTriggers() {
+    if (window.__cfAnimReady && window.ScrollTrigger) window.ScrollTrigger.refresh();
+  }
+  function setCruise(btn, open, animate) {
+    var panel = document.getElementById(btn.getAttribute('aria-controls'));
+    if (!panel) return;
+    btn.setAttribute('aria-expanded', String(open));
+    if (!animate || prefersReducedMotion || !panel.animate) {
+      panel.hidden = !open;
+      refreshTriggers();
+      return;
+    }
+    if (open) {
+      panel.hidden = false;
+      panel.animate(
+        [{ height: '0px', opacity: 0 }, { height: panel.scrollHeight + 'px', opacity: 1 }],
+        { duration: 520, easing: EASE }
+      ).onfinish = refreshTriggers;
+    } else {
+      panel.animate(
+        [{ height: panel.offsetHeight + 'px', opacity: 1 }, { height: '0px', opacity: 0 }],
+        { duration: 420, easing: EASE }
+      ).onfinish = function () { panel.hidden = true; refreshTriggers(); };
+    }
+  }
+  function openCruise(article) {
+    var btn = $('.cruise__toggle', article);
+    if (btn && btn.getAttribute('aria-expanded') !== 'true') setCruise(btn, true, true);
+  }
+  $$('.cruise__toggle').forEach(function (btn) {
+    setCruise(btn, false, false);
+    btn.addEventListener('click', function () {
+      setCruise(btn, btn.getAttribute('aria-expanded') !== 'true', true);
     });
   });
 

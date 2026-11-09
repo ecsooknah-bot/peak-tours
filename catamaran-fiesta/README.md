@@ -3,8 +3,10 @@
 A one-page site for Mauritius Paradise, the catamaran cruises from Grand Baie, Mauritius.
 It's plain HTML, CSS and JavaScript with no build step. GSAP, ScrollTrigger and Lenis load from the jsDelivr CDN.
 
-The look follows the two mockups: navy and cream, Playfair Display headlines, square photos, hairline dividers and numbered cruise rows.
-Wording and photos come from the owner's current site (https://mauritius-paradise.my.canva.site).
+The page follows the two mockups: mockup 1 for the header and the framed "Sail Mauritius." hero,
+mockup 2 for the "Mauritius, beyond the shore." intro, the "Pick your time on the water." cruise rows and the footer.
+Hero, intro and cruise photos come from the mockups; the gallery uses the owner's own photos.
+Wording comes from the owner's current site (https://mauritius-paradise.my.canva.site).
 
 ```
 catamaran-fiesta/
@@ -57,17 +59,17 @@ Search the code for `[CONFIRM]`. Every item is listed here:
 | 3 | Sunset cruise days | Friday & Saturday | Their Canva site says Friday & Saturday; the first brief said Fridays only |
 | 4 | Sunset cruise times | 17:00 – 22:00 | From the first brief; their Canva site says "To be confirmed" |
 | 5 | Sunset cruise price | On request | Not stated anywhere |
-| 6 | Private charter | Row 03 + FAQ answer | In the first brief, not on their Canva site. Remove the row if they don't offer it |
+| 6 | Private charter | FAQ answer + form option | In the first brief, not on their Canva site. Remove both if they don't offer it |
 | 7 | Follower count | "10K+ followers" in the trust bar | Which platform? Is the number current? |
 | 8 | Meeting point | Grand Baie public beach | Exact spot (and is it the same for the day cruise?) |
 | 9–13 | FAQ answers | Generic answers | What to bring, children, bad weather, private boat, payment |
-| 14 | Photos | The owner's photos from the Canva site | OK to use? Full-size originals would look sharper (the Canva copies are at most 1536 px) |
+| 14 | Photos | Mockup photos (hero, intro, cruises) + owner's photos (gallery) | The mockup photos show a boat named "Evasion Lucas": is that their boat? Real full-size photos would look sharper |
 | 15 | Name and web address | "Mauritius Paradise · Mauricien Fiesta" | Do they want `mauritius-paradise.netlify.app` or their own domain? |
 
 Already confirmed from their site and now in the copy: BBQ lunch, salads, snacks and soft drinks on the day cruise (alcohol according to reservation arrangements), and sunset, BBQ, drinks, DJ and dancing on the sunset cruise.
 
 ## Credits
 
-- Photos: the owner's own, from their current Canva website.
+- Photos: hero, intro and cruise rows from the design mockups; gallery from the owner's current Canva website.
 - Fonts: Playfair Display and Inter, SIL Open Font License (see `fonts/`).
 - GSAP / ScrollTrigger (GreenSock, free license), Lenis (MIT), loaded from jsDelivr.
