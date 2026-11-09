@@ -1,0 +1,12 @@
+# Netlify response headers (picked up automatically, also on drag-and-drop deploys)
+
+/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Photos: cached for 1 day so swapped photos show up quickly for returning visitors
+/images/*
+  Cache-Control: public, max-age=86400
+
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
