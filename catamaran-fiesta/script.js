@@ -98,7 +98,59 @@
       reveal(onScreen);
     };
 
-    // (No parallax on the hero photo: it stays at its natural size so it looks sharp.)
+    // ---- Opening (trial): "Scroll" -> zoom on the catamaran -> photo becomes the picture on the right
+    var story = $('.story');
+    if (story) {
+      var stage = $('.story__stage', story);
+      var fig = $('.story__figure', story);
+      var slot = $('.story__slot', story);
+      var storyImg = $('.story__media img', story);
+      var frame = function () { return parseFloat(getComputedStyle(doc).getPropertyValue('--frame')) || 0; };
+      var navH = function () { return header.offsetHeight; };
+      // Where the picture ends up, relative to the stage (recomputed on resize)
+      var end = function (key) {
+        var s = stage.getBoundingClientRect();
+        var r = slot.getBoundingClientRect();
+        return { x: r.left - s.left, y: r.top - s.top, w: r.width, h: r.height }[key];
+      };
+
+      var tl = gsap.timeline({
+        defaults: { ease: 'none' },
+        // The stage is "sticky" in CSS, so the section's extra height is the scroll distance.
+        // (No GSAP pin: pinning re-inserts the photo and would delay its first paint.)
+        scrollTrigger: {
+          trigger: story,
+          start: 'top top',
+          end: 'bottom bottom',
+          scrub: 0.8,
+          invalidateOnRefresh: true
+        }
+      });
+
+      // 1. "Scroll" lifts away while the camera zooms in on the catamaran
+      tl.to('.story__cover', { opacity: 0, y: -50, duration: 0.25 }, 0.02)
+        .fromTo(storyImg, { scale: 1, objectPosition: '50% 50%' }, { scale: 1.22, duration: 0.4, ease: 'power1.inOut' }, 0)
+      // 2. The photo shrinks into the picture on the right (mockup 2 position)
+        .fromTo(fig, {
+          left: frame,
+          top: navH,
+          width: function () { return stage.clientWidth - 2 * frame(); },
+          height: function () { return stage.clientHeight - navH() - frame(); }
+        }, {
+          left: function () { return end('x'); },
+          top: function () { return end('y'); },
+          width: function () { return end('w'); },
+          height: function () { return end('h'); },
+          duration: 0.5,
+          ease: 'power2.inOut'
+        }, 0.3)
+        .to(storyImg, { scale: 1.08, objectPosition: '64% 55%', duration: 0.5, ease: 'power2.inOut' }, 0.3)
+        .fromTo(stage, { backgroundColor: '#F7F2EA' }, { backgroundColor: '#F8FAF7', duration: 0.3 }, 0.45)
+      // 3. "Mauritius, beyond the shore." comes in on the left
+        .to('.story__item', { opacity: 1, y: 0, duration: 0.22, stagger: 0.05, ease: 'power2.out' }, 0.72)
+        .to('.story__caption', { opacity: 1, duration: 0.15 }, 0.85)
+        .to({}, { duration: 0.12 }); // short hold before the page carries on
+    }
 
     window.__cfAnimReady = true;
     window.ScrollTrigger.addEventListener('scrollEnd', revealCheck);

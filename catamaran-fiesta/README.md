@@ -3,9 +3,11 @@
 A one-page site for Mauritius Paradise, the catamaran cruises from Grand Baie, Mauritius.
 It's plain HTML, CSS and JavaScript with no build step. GSAP, ScrollTrigger and Lenis load from the jsDelivr CDN.
 
-The page follows the two mockups: mockup 1 for the header and the framed "Sail Mauritius." hero,
-mockup 2 for the "Mauritius, beyond the shore." intro, the "Pick your time on the water." cruise rows and the footer.
-Hero, intro and cruise photos come from the mockups; the gallery uses the owner's own photos.
+The page follows the two mockups: mockup 1 for the header and the framed opening photo,
+mockup 2 for "Mauritius, beyond the shore.", the "Pick your time on the water." cruise rows and the footer.
+Opening (trial): the photo starts full-frame with a big white "Scroll"; scrolling zooms in on the catamaran
+and shrinks the photo into the picture on the right while "Mauritius, beyond the shore." comes in.
+Opening and cruise photos come from the mockups; the gallery uses the owner's own photos.
 Wording comes from the owner's current site (https://mauritius-paradise.my.canva.site).
 
 ```

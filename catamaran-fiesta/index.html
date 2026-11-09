@@ -12,9 +12,9 @@
 
     File                                Used in                               Size (px)
     ----------------------------------  ------------------------------------  -----------
-    hero.webp                           Hero, desktop & tablet (mockup 1)     1538x870
-    hero-mobile.webp                    Hero, phones (catamaran crop)         778x870
-    intro.webp                          "Mauritius, beyond the shore." photo  1100x872
+    hero.webp                           Opening photo, desktop & tablet       1538x870
+                                        (starts full-frame, ends as the picture on the right)
+    hero-mobile.webp                    Opening photo, phones                 778x870
     cruise-islands.webp                 Cruise row 01                         712x436
     cruise-sunset.webp                  Cruise row 02                         712x428
     gallery-1.webp ... gallery-12.webp  Gallery grid (owner's own photos)     600 wide (800 landscape)
@@ -189,45 +189,43 @@
 
   <main id="main">
 
-    <!-- ===================================================== HERO (mockup 1) -->
-    <section class="hero" id="top" aria-labelledby="hero-title">
-      <div class="hero__frame">
-        <div class="hero__media">
-          <picture>
-            <source media="(max-width: 767px)" srcset="images/hero-mobile.webp" width="778" height="870">
-            <img src="images/hero.webp" width="1538" height="870" fetchpriority="high"
-                 alt="Catamaran with guests on deck sailing across turquoise water, with Coin de Mire island on the horizon">
-          </picture>
+    <!-- ===================================================== OPENING (trial scroll animation)
+         1. The hero photo fills the frame with a big white "Scroll" (mockup 1 framing).
+         2. Scrolling zooms in on the catamaran, then the photo shrinks into the picture on the right.
+         3. "Mauritius, beyond the shore." (mockup 2 typography) comes in on the left.
+         Without JavaScript, or with reduced motion, the section simply shows step 3. -->
+    <section class="story" id="top" aria-labelledby="story-title">
+      <div class="story__stage">
+        <div class="story__text">
+          <p class="eyebrow story__item"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>Grand Baie, Mauritius</p>
+          <h1 class="story__title story__item" id="story-title">Mauritius, beyond the shore.</h1>
+          <p class="story__lead story__item">Two catamaran cruises from Grand Baie. Sail the Northern Islands or dance into the sunset.</p>
+          <a class="btn btn--green story__btn story__item" href="#cruises">
+            Explore the cruises
+            <svg class="icon icon--move-down" aria-hidden="true"><use href="#i-arrow-down"/></svg>
+          </a>
         </div>
-        <div class="hero__content">
-          <p class="hero__eyebrow hero__in" style="--i:0">Grand Baie, Mauritius</p>
-          <h1 class="hero__title hero__in" id="hero-title" style="--i:1">Sail Mauritius.</h1>
-          <ul class="hero__links hero__in" style="--i:2" aria-label="Our cruises">
-            <li><a href="#cruise-islands" data-open-cruise>Northern Islands Cruise <svg class="icon" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a></li>
-            <li><a href="#cruise-sunset" data-open-cruise>Sunset Cruise with DJ <svg class="icon" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a></li>
-          </ul>
-        </div>
-      </div>
-    </section>
 
-    <!-- ===================================================== INTRO (mockup 2, top) -->
-    <section class="intro" id="intro" aria-labelledby="intro-title">
-      <div class="intro__text" data-reveal>
-        <p class="eyebrow"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>Departures from Grand Baie</p>
-        <h2 class="intro__title" id="intro-title">Mauritius, beyond the shore.</h2>
-        <p class="intro__lead">Two catamaran cruises from Grand Baie. Sail the Northern Islands or dance into the sunset.</p>
-        <a class="btn btn--dark btn--lg" href="#cruises">
-          Explore the cruises
-          <svg class="icon icon--move-down" aria-hidden="true"><use href="#i-arrow-down"/></svg>
-        </a>
-      </div>
-      <figure class="intro__figure" data-reveal>
-        <div class="intro__media">
-          <img src="images/intro.webp" width="1100" height="872" loading="lazy" decoding="async"
-               alt="Aerial view of the catamaran anchored in a turquoise lagoon beside a white beach, Coin de Mire in the distance">
+        <div class="story__col">
+          <div class="story__slot">
+            <figure class="story__figure">
+              <div class="story__media">
+                <picture>
+                  <source media="(max-width: 767px)" srcset="images/hero-mobile.webp" width="778" height="870">
+                  <img src="images/hero.webp" width="1538" height="870" fetchpriority="high"
+                       alt="Catamaran with guests on deck sailing across turquoise water, with Coin de Mire island on the horizon">
+                </picture>
+              </div>
+              <div class="story__cover" aria-hidden="true">
+                <p class="story__cover-eyebrow">Sail Mauritius · Grand Baie</p>
+                <p class="story__scroll">Scroll</p>
+                <span class="story__line"></span>
+              </div>
+            </figure>
+          </div>
+          <p class="caption story__caption">01 / Northern Mauritius</p>
         </div>
-        <figcaption class="caption">01 / Northern Mauritius</figcaption>
-      </figure>
+      </div>
     </section>
 
     <!-- ===================================================== THE EXPERIENCES (mockup 2, bottom) -->

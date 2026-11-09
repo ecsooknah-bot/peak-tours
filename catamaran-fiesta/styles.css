@@ -396,117 +396,143 @@ html.lenis, html.lenis body { height: auto; }
 .socials a .icon { width: 20px; height: 20px; }
 
 /* ==========================================================================
-   HERO (mockup 1): framed full-width photo, text bottom-left
+   OPENING (trial): one photo zooms in, then shrinks into the picture on the right.
+   The static layout below is the END state (mockup 2 layout and typography).
+   With JS + motion, ".js-anim" sets the START state (mockup 1: full framed photo
+   with a big white "Scroll") and script.js animates between the two as you scroll.
    ========================================================================== */
-.hero { padding: var(--nav-h) var(--frame) var(--frame); background: var(--cream); }
-.hero__frame {
+.story { background: var(--page); }
+.story__stage {
   position: relative;
-  isolation: isolate;
-  height: calc(100vh - var(--nav-h) - var(--frame));
-  height: calc(100svh - var(--nav-h) - var(--frame));
-  min-height: 520px;
-  max-height: 980px;
+  display: grid;
+  align-content: center;
+  gap: 22px;
+  min-height: 100vh;
+  min-height: 100svh;
+  padding: calc(var(--nav-h) + 16px) var(--gutter) 20px;
   overflow: hidden;
+}
+/* Phones: picture on top (full width), text underneath */
+.story__col { order: -1; margin-inline: calc(-1 * var(--gutter)); }
+.story__slot { height: 36vh; height: 36svh; }
+.story__figure { position: relative; width: 100%; height: 100%; margin: 0; overflow: hidden; background: var(--mint); }
+.story__media, .story__media picture, .story__media img { width: 100%; height: 100%; }
+.story__media img { object-fit: cover; object-position: 64% 55%; transform-origin: 66% 56%; }
+.story__caption { margin-top: 10px; padding-inline: var(--gutter); }
+.story__cover { display: none; }
+
+/* Mockup 2 typography, sized in proportion to the screen like the mockup */
+.story .eyebrow { margin-bottom: clamp(14px, 2vw, 26px); font-size: clamp(0.75rem, 1.25vw, 1rem); }
+.story .eyebrow .icon { width: 1.3em; height: 1.3em; }
+.story__title {
+  color: var(--heading);
+  font-size: clamp(2.5rem, 6.7vw, 6rem);
+  font-weight: 800;
+  line-height: 1.02;
+  letter-spacing: -0.05em;
+  text-wrap: balance;
+}
+.story__lead {
+  max-width: 26rem;
+  margin: clamp(16px, 2.2vw, 30px) 0 clamp(20px, 2.8vw, 38px);
+  color: var(--ink);
+  font-size: clamp(1.0625rem, 1.65vw, 1.45rem);
+  line-height: 1.55;
+}
+.btn--green { background: var(--green); color: #fff; }
+@media (hover: hover) { .btn--green:hover { background: var(--green-700); } }
+.story__btn { min-height: clamp(52px, 5vw, 64px); padding: 0 clamp(22px, 2.4vw, 32px); font-size: clamp(1rem, 1.5vw, 1.2rem); }
+@media (max-width: 899px) and (max-height: 700px) {
+  .story__lead { display: none; }
+  .story__title { margin-bottom: 20px; }
+}
+
+@media (min-width: 900px) {
+  .story__stage {
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.4fr);
+    align-items: center;
+    column-gap: clamp(32px, 4.5vw, 72px);
+    padding: calc(var(--nav-h) + 24px) 0 32px max(var(--gutter), calc((100vw - var(--container)) / 2));
+  }
+  .story__col { order: 0; margin: 0; }
+  .story__slot { width: 100%; aspect-ratio: 1.26; height: auto; max-height: calc(100svh - var(--nav-h) - 110px); }
+  .story__caption { padding-inline: 0; }
+}
+
+/* ---- Animated version: START state (mockup 1) ----
+   The section is taller than the screen and the stage sticks to the top while you
+   scroll through it; that scroll distance drives the animation. */
+.js-anim .story { height: 260vh; height: 260svh; }
+.js-anim .story__stage {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  height: 100svh;
+  min-height: 0;
+  background: var(--cream);
+}
+.js-anim .story__figure {
+  position: absolute;
+  z-index: 3;
+  top: var(--nav-h);
+  left: var(--frame);
+  width: calc(100% - 2 * var(--frame));
+  height: calc(100% - var(--nav-h) - var(--frame));
   background: var(--navy);
-  color: #fff;
 }
-.hero__media { position: absolute; inset: 0; z-index: -2; }
-.hero__media picture,
-.hero__media img { width: 100%; height: 100%; }
-.hero__media img {
-  object-fit: cover;
-  object-position: 50% 50%;
-  /* Ends at its natural size so the photo stays pin-sharp */
-  animation: hero-settle 2.4s var(--ease-out) backwards;
-}
-@keyframes hero-settle { from { transform: scale(1.05); } to { transform: none; } }
-/* Mockup 1 keeps the photo bright: only a soft shade in the bottom-left corner behind the text */
-.hero__frame::after {
-  content: "";
+.js-anim .story__media img { object-position: 50% 50%; }
+.js-anim .story__item { opacity: 0; transform: translateY(30px); }
+.js-anim .story__caption { opacity: 0; }
+.js-anim .story__cover {
   position: absolute;
   inset: 0;
-  z-index: -1;
-  background: linear-gradient(20deg, rgba(2, 20, 30, 0.42) 0%, rgba(2, 20, 30, 0.16) 32%, rgba(2, 20, 30, 0) 52%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0 clamp(20px, 4.2vw, 66px) clamp(18px, 3vw, 44px);
+  color: #fff;
+  text-shadow: 0 1px 24px rgba(2, 20, 30, 0.25);
+  /* mockup 1: only a soft shade in the bottom-left corner */
+  background: linear-gradient(20deg, rgba(2, 20, 30, 0.42) 0%, rgba(2, 20, 30, 0.14) 34%, rgba(2, 20, 30, 0) 55%);
 }
-.hero__content { text-shadow: 0 1px 18px rgba(2, 20, 30, 0.25); }
-.hero__content {
-  position: absolute;
-  left: clamp(20px, 4.2vw, 66px);
-  right: 20px;
-  bottom: clamp(28px, 4.6vw, 64px);
-}
-.hero__eyebrow {
-  font-size: clamp(0.8125rem, 0.75rem + 0.3vw, 1rem);
+.story__cover-eyebrow {
+  font-size: clamp(0.8125rem, 1.2vw, 1.2rem);
   font-weight: 500;
   letter-spacing: 0.16em;
   text-transform: uppercase;
+  animation: cover-in 1s var(--ease-out) 0.15s backwards;
 }
-.hero__title {
-  margin: 12px 0 26px;
+.story__scroll {
   font-family: var(--font-serif);
-  font-size: clamp(3.4rem, 1.6rem + 5.4vw, 6.4rem);
+  font-size: clamp(5.5rem, 17vw, 17rem);
   font-weight: 500;
-  line-height: 1;
-  letter-spacing: -0.02em;
+  line-height: 0.82;
+  letter-spacing: -0.035em;
+  animation: cover-rise 1.2s var(--ease-out) backwards;
 }
-.hero__links { display: grid; gap: 12px; }
-.hero__links a {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  color: #fff;
-  font-size: clamp(1.125rem, 1rem + 0.5vw, 1.6rem);
-  font-weight: 400;
-  text-decoration: none;
-  background: linear-gradient(currentColor, currentColor) 0 100% / 0 1px no-repeat;
-  transition: background-size 0.45s var(--ease-out);
+/* Scroll cue: a thin line with a dot travelling down */
+.story__line {
+  position: absolute;
+  right: clamp(24px, 4.2vw, 66px);
+  bottom: clamp(24px, 3.4vw, 52px);
+  width: 1px;
+  height: clamp(56px, 7vw, 96px);
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.35);
 }
-.hero__links a:hover { background-size: 100% 1px; }
-.hero__links .icon { width: 0.9em; height: 0.9em; }
-
-/* Hero entrance (pure CSS). The headline only rises, so it paints immediately. */
-.hero__in { animation: hero-in 1.1s var(--ease-out) backwards; animation-delay: calc(0.15s + var(--i, 0) * 0.12s); }
-.hero__title.hero__in { animation-name: hero-rise; animation-delay: 0s; }
-@keyframes hero-in { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }
-@keyframes hero-rise { from { transform: translateY(18px); } to { transform: none; } }
-
-/* ==========================================================================
-   INTRO (mockup 2): text left, photo bleeding off the right edge
-   ========================================================================== */
-.intro {
-  display: grid;
-  gap: 36px;
-  padding-block: var(--section-y);
+.story__line::after {
+  content: "";
+  position: absolute;
+  left: -1px;
+  top: -30%;
+  width: 3px;
+  height: 30%;
+  background: #fff;
+  animation: scroll-cue 1.8s var(--ease) infinite;
 }
-.intro__text { padding-inline: var(--gutter); }
-.intro__title {
-  color: var(--navy);
-  font-size: clamp(2.9rem, 1.7rem + 3.4vw, 4.4rem);
-  font-weight: 800;
-  line-height: 1;
-  letter-spacing: -0.045em;
-  text-wrap: balance;
-}
-.intro__lead {
-  max-width: 24rem;
-  margin: 22px 0 32px;
-  color: var(--ink);
-  font-size: clamp(1.125rem, 1.05rem + 0.3vw, 1.3rem);
-  line-height: 1.5;
-}
-.intro__figure { margin: 0; }
-.intro__media { aspect-ratio: 1100 / 872; overflow: hidden; background: var(--mint); }
-.intro__media img { width: 100%; height: 100%; object-fit: cover; }
-.intro__figure .caption { padding-inline: var(--gutter); }
-@media (min-width: 900px) {
-  .intro {
-    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.4fr);
-    align-items: center;
-    column-gap: clamp(32px, 4vw, 64px);
-  }
-  .intro__text { padding: 0 0 0 max(var(--gutter), calc((100vw - var(--container)) / 2)); }
-  .intro__figure .caption { padding-inline: 0; }
-}
+@keyframes cover-in { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+@keyframes cover-rise { from { transform: translateY(24px); } to { transform: none; } }
+@keyframes scroll-cue { from { top: -30%; } to { top: 100%; } }
 
 /* ==========================================================================
    THE EXPERIENCES (mockup 2): pale green band, image rows with arrows
