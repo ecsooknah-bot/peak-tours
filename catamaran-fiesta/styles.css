@@ -81,7 +81,10 @@
 
 /* ---------- Reset & base ---------- */
 *, *::before, *::after { box-sizing: border-box; }
-html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+/* Keep the site's own colours in dark mode: browsers must not recolour it,
+   and form fields, date pickers and scrollbars stay light. */
+:root { color-scheme: only light; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; background-color: #F8FAF7; }
 @media (prefers-reduced-motion: no-preference) {
   html:not(.lenis) { scroll-behavior: smooth; }
 }
