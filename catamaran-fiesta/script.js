@@ -251,7 +251,7 @@
       scrollToTarget(id === '#top' ? 0 : target, function () {
         if (trip) highlightForm();
       });
-      if (history.replaceState) history.replaceState(null, '', id === '#top' ? location.pathname : id);
+      try { history.replaceState(null, '', id === '#top' ? location.pathname : id); } catch (err) { /* sandboxed previews */ }
     };
     // Let the menu fade out first so the scroll reads clearly.
     if (wasMenuOpen) setTimeout(go, 250); else go();
