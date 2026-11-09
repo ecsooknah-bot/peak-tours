@@ -98,17 +98,7 @@
       reveal(onScreen);
     };
 
-    // Gentle parallax inside the hero frame. The photo is scaled up slightly in CSS
-    // so it can drift without showing an edge; the scale matches the CSS value.
-    gsap.fromTo('.hero__media img',
-      { yPercent: 0, scale: 1.06 },
-      {
-        yPercent: 3,
-        scale: 1.06,
-        ease: 'none',
-        scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true }
-      }
-    );
+    // (No parallax on the hero photo: it stays at its natural size so it looks sharp.)
 
     window.__cfAnimReady = true;
     window.ScrollTrigger.addEventListener('scrollEnd', revealCheck);
